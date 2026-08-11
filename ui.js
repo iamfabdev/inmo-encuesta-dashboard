@@ -13,6 +13,7 @@ const state = {
   detailSort: { col: 'composite', dir: 'desc' },
   activaFilter: { projects: null, waveId: null, vendedor: 'todos', filtersOpen: true },
   configAiWaveId: null,
+  resumenCluster: 'all',
 };
 const charts = {};
 
@@ -254,19 +255,49 @@ function downloadJSON(obj, filename) {
 /* ------------------------------------------------------------
    RESUMEN
    ------------------------------------------------------------ */
+function buildClusters(wave) {
+  const byId = {};
+  (wave.masterUsed || []).forEach((p) => {
+    if (!p.grupo) return;
+    if (!byId[p.grupo]) byId[p.grupo] = { id: p.grupo, projects: [] };
+    byId[p.grupo].projects.push(p);
+  });
+  return Object.values(byId)
+    .map((c) => ({
+      ...c,
+      label: (c.projects.find((p) => p.inmobiliaria === 'ACTIVA GRUPO INMOBILIARIO') || {}).nombre || `Cluster ${c.id}`,
+    }))
+    .sort((a, b) => a.id.localeCompare(b.id));
+}
+
 function renderResumenTab() {
   const root = $('#panel-resumen');
   if (!state.waves.length) { root.innerHTML = emptyState('Sube una encuesta en "Cargar datos" para ver el resumen.'); return; }
   const wave = getWave(state.selectedWaveId) || lastWave();
   state.selectedWaveId = wave.id;
 
-  const activa = wave.visits.filter((v) => v.is_activa);
-  const comp = wave.visits.filter((v) => !v.is_activa);
-  const avg = (arr, key) => { const vals = arr.map((v) => v.composite).filter((x) => x !== null); return vals.length ? vals.reduce((a, b) => a + b, 0) / vals.length : null; };
+  const clusters = buildClusters(wave);
+  if (state.resumenCluster !== 'all' && !clusters.some((c) => c.id === state.resumenCluster)) {
+    state.resumenCluster = 'all';
+  }
+
+  const scopedVisits = state.resumenCluster === 'all'
+    ? wave.visits
+    : wave.visits.filter((v) => v.grupo === state.resumenCluster);
+  const activa = scopedVisits.filter((v) => v.is_activa);
+  const comp = scopedVisits.filter((v) => !v.is_activa);
+  const avg = (arr) => { const vals = arr.map((v) => v.composite).filter((x) => x !== null); return vals.length ? vals.reduce((a, b) => a + b, 0) / vals.length : null; };
   const idxActiva = avg(activa), idxComp = avg(comp);
   const gap = idxActiva !== null && idxComp !== null ? idxActiva - idxComp : null;
-  const coverage = Math.round((wave.visits.length / (wave.visits.length + wave.notSurveyed.length)) * 100);
-  const segPct = Math.round((wave.visits.filter((v) => v.seguimiento_disponible).length / wave.visits.length) * 100);
+
+  const activeCluster = clusters.find((c) => c.id === state.resumenCluster);
+  const clusterMaster = state.resumenCluster === 'all' ? (wave.masterUsed || []) : (activeCluster ? activeCluster.projects : (wave.masterUsed || []));
+  const notSurveyedInScope = state.resumenCluster === 'all'
+    ? wave.notSurveyed.length
+    : wave.notSurveyed.filter((p) => p.grupo === state.resumenCluster).length;
+  const surveyedProjectCount = new Set(scopedVisits.map((v) => v.project_id)).size;
+  const coverage = clusterMaster.length ? Math.round((surveyedProjectCount / clusterMaster.length) * 100) : 0;
+  const segPct = scopedVisits.length ? Math.round((scopedVisits.filter((v) => v.seguimiento_disponible).length / scopedVisits.length) * 100) : 0;
 
   root.innerHTML = `
     <div class="wave-selector">
@@ -276,29 +307,38 @@ function renderResumenTab() {
       </select>
     </div>
 
+    ${clusters.length ? `
+    <div class="filterbar chart-card">
+      <label class="filter-label">Cluster de competencia directa</label>
+      <div class="project-pills" id="resumen-cluster-pills">
+        <div class="pill all ${state.resumenCluster === 'all' ? 'active' : ''}" data-all="1">Todos los clusters</div>
+        ${clusters.map((c) => `<div class="pill ${state.resumenCluster === c.id ? 'active' : ''}" data-cluster="${c.id}">${c.label}</div>`).join('')}
+      </div>
+    </div>` : `<p class="config-hint">Esta ola no tiene clusters de competencia directa (el maestro usado no traía la columna "Grupo") — vuelve a cargarlo para habilitar esta comparación. Mientras tanto, se muestra el comparativo global.</p>`}
+
     <div class="kpi-row">
       <div class="kpi-card kpi-card--activa">
-        <div class="kpi-label">Índice ACTIVA</div>
+        ${kpiLabelHtml('indice_activa', 'Índice ACTIVA', 'Promedio del índice compuesto (0-100) de las visitas a proyectos ACTIVA dentro de la selección actual.')}
         <div class="kpi-value">${fmt1(idxActiva)}</div>
         <div class="kpi-sub">n=${activa.length} proyectos</div>
       </div>
       <div class="kpi-card">
-        <div class="kpi-label">Índice competencia</div>
+        ${kpiLabelHtml('indice_competencia', 'Índice competencia', 'Promedio del índice compuesto de las visitas a la competencia dentro de la selección actual (solo el cluster elegido, si hay uno).')}
         <div class="kpi-value">${fmt1(idxComp)}</div>
         <div class="kpi-sub">n=${comp.length} proyectos</div>
       </div>
       <div class="kpi-card ${gap >= 0 ? 'kpi-card--pos' : 'kpi-card--neg'}">
-        <div class="kpi-label">Brecha ACTIVA vs competencia</div>
+        ${kpiLabelHtml('brecha', 'Brecha ACTIVA vs competencia', 'Diferencia entre el índice ACTIVA y el de competencia, en puntos sobre 100.')}
         <div class="kpi-value">${gap === null ? '—' : (gap >= 0 ? '+' : '') + fmt1(gap)}</div>
         <div class="kpi-sub">puntos sobre 100</div>
       </div>
       <div class="kpi-card">
-        <div class="kpi-label">Cobertura del maestro</div>
+        ${kpiLabelHtml('cobertura', 'Cobertura del maestro', '% de proyectos del maestro (dentro de la selección actual) que tuvieron al menos una visita en esta ola.')}
         <div class="kpi-value">${coverage}%</div>
-        <div class="kpi-sub">${wave.visits.length} de ${wave.visits.length + wave.notSurveyed.length} proyectos</div>
+        <div class="kpi-sub">${surveyedProjectCount} de ${surveyedProjectCount + notSurveyedInScope} proyectos</div>
       </div>
       <div class="kpi-card">
-        <div class="kpi-label">Seguimiento registrado</div>
+        ${kpiLabelHtml('seguimiento', 'Seguimiento registrado', '% de visitas con seguimiento a 7 días (P26) registrado, dentro de la selección actual.')}
         <div class="kpi-value">${segPct}%</div>
         <div class="kpi-sub">visitas con P26 completo</div>
       </div>
@@ -309,23 +349,32 @@ function renderResumenTab() {
         <h3>ACTIVA vs Competencia — por bloque</h3>
         <canvas id="chart-blocks"></canvas>
       </div>
+      ${clusters.length ? `
       <div class="chart-card">
-        <h3>Índice compuesto por comuna</h3>
-        <canvas id="chart-comuna"></canvas>
-      </div>
+        <h3>Índice compuesto por cluster</h3>
+        <canvas id="chart-cluster"></canvas>
+      </div>` : ''}
     </div>
 
     <div class="chart-card">
       <h3>Ranking de proyectos</h3>
-      <canvas id="chart-ranking" style="min-height:${Math.max(280, wave.visits.length * 26)}px"></canvas>
+      <canvas id="chart-ranking" style="min-height:${Math.max(280, scopedVisits.length * 26)}px"></canvas>
     </div>
   `;
 
   $('#resumen-wave-select').addEventListener('change', (e) => { state.selectedWaveId = e.target.value; renderResumenTab(); });
+  if (clusters.length) {
+    $('#resumen-cluster-pills').addEventListener('click', (e) => {
+      const pill = e.target.closest('.pill');
+      if (!pill) return;
+      state.resumenCluster = pill.dataset.all ? 'all' : pill.dataset.cluster;
+      renderResumenTab();
+    });
+  }
 
   renderBlocksChart(activa, comp);
-  renderComunaChart(wave.visits);
-  renderRankingChart(wave.visits);
+  if (clusters.length) renderClusterChart(wave, clusters);
+  renderRankingChart(scopedVisits);
 }
 
 function blockAvg(arr, key) {
@@ -350,18 +399,18 @@ function renderBlocksChart(activa, comp) {
   });
 }
 
-function renderComunaChart(visits) {
-  const comunas = [...new Set(visits.map((v) => v.comuna))].sort();
-  const activaData = comunas.map((c) => blockAvgComposite(visits.filter((v) => v.comuna === c && v.is_activa)));
-  const compData = comunas.map((c) => blockAvgComposite(visits.filter((v) => v.comuna === c && !v.is_activa)));
-  destroyChart('comuna');
-  charts.comuna = new Chart($('#chart-comuna'), {
+function renderClusterChart(wave, clusters) {
+  const labels = clusters.map((c) => c.label);
+  const activaData = clusters.map((c) => blockAvgComposite(wave.visits.filter((v) => v.grupo === c.id && v.is_activa)));
+  const compData = clusters.map((c) => blockAvgComposite(wave.visits.filter((v) => v.grupo === c.id && !v.is_activa)));
+  destroyChart('cluster');
+  charts.cluster = new Chart($('#chart-cluster'), {
     type: 'bar',
     data: {
-      labels: comunas,
+      labels,
       datasets: [
         { label: 'ACTIVA', data: activaData, backgroundColor: '#B8862B' },
-        { label: 'Competencia', data: compData, backgroundColor: '#5B6472' },
+        { label: 'Competencia directa', data: compData, backgroundColor: '#5B6472' },
       ],
     },
     options: chartBaseOptions({ y: { max: 100 } }),
@@ -414,6 +463,11 @@ const KPI_ICONS = {
   conocimiento_vendedor: 'school',
   cierre_seguimiento: 'task_alt',
   satisfaccion_general: 'sentiment_satisfied',
+  indice_activa: 'apartment',
+  indice_competencia: 'store',
+  brecha: 'compare_arrows',
+  cobertura: 'fact_check',
+  seguimiento: 'event_available',
 };
 function kpiLabelHtml(iconKey, text, tooltip) {
   return `<div class="kpi-label tooltip" data-tooltip="${tooltip.replace(/"/g, '&quot;')}"><span class="material-symbols-outlined kpi-icon">${KPI_ICONS[iconKey]}</span>${text}</div>`;
