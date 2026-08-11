@@ -60,7 +60,6 @@ function renderActiveTab() {
   if (state.activeTab === 'cargar') renderCargarTab();
   if (state.activeTab === 'resumen') renderResumenTab();
   if (state.activeTab === 'activa') renderProyectosActivaTab();
-  if (state.activeTab === 'evolucion') renderEvolucionTab();
   if (state.activeTab === 'detalle') renderDetalleTab();
   if (state.activeTab === 'calidad') renderCalidadTab();
   if (state.activeTab === 'config') renderConfigTab();
@@ -364,7 +363,9 @@ function renderResumenTab() {
 
     <div class="chart-card">
       <h3>Ranking de proyectos</h3>
-      <canvas id="chart-ranking" style="min-height:${Math.max(280, scopedVisits.length * 26)}px"></canvas>
+      <div class="chart-ranking-wrap" style="height:${Math.max(280, scopedVisits.length * 26)}px">
+        <canvas id="chart-ranking"></canvas>
+      </div>
     </div>
   `;
 
@@ -728,56 +729,6 @@ function severityTagClass(sev) {
   if (sev === 'Alta') return 'tag--alta';
   if (sev === 'Baja') return 'tag--baja';
   return 'tag--media';
-}
-
-/* ------------------------------------------------------------
-   EVOLUCIÓN
-   ------------------------------------------------------------ */
-function renderEvolucionTab() {
-  const root = $('#panel-evolucion');
-  if (state.waves.length < 2) {
-    root.innerHTML = emptyState(`Vas ${state.waves.length} de 2 olas mínimo para ver evolución. Cuando cargues la próxima medición, este panel mostrará tendencia automáticamente.`);
-    return;
-  }
-  const waves = [...state.waves].sort((a, b) => new Date(a.refDate) - new Date(b.refDate));
-  root.innerHTML = `
-    <div class="chart-card">
-      <h3>Evolución del índice compuesto — ACTIVA vs Competencia</h3>
-      <canvas id="chart-evo-composite"></canvas>
-    </div>
-    <div class="chart-card">
-      <h3>Evolución por bloque (ACTIVA)</h3>
-      <canvas id="chart-evo-blocks"></canvas>
-    </div>
-  `;
-  const labels = waves.map((w) => `${w.label}\n${w.refDate}`);
-  destroyChart('evoComposite');
-  charts.evoComposite = new Chart($('#chart-evo-composite'), {
-    type: 'line',
-    data: {
-      labels,
-      datasets: [
-        { label: 'ACTIVA', data: waves.map((w) => blockAvgComposite(w.visits.filter((v) => v.is_activa))), borderColor: '#B8862B', backgroundColor: '#B8862B33', tension: 0.25, fill: true },
-        { label: 'Competencia', data: waves.map((w) => blockAvgComposite(w.visits.filter((v) => !v.is_activa))), borderColor: '#5B6472', backgroundColor: '#5B647233', tension: 0.25, fill: true },
-      ],
-    },
-    options: chartBaseOptions({ y: { max: 100 } }),
-  });
-  const keys = Object.keys(APP.BLOCK_LABELS);
-  const palette = ['#B8862B', '#1F6F5C', '#8B5E3C', '#5B6472', '#A45C6B', '#3E6E8E'];
-  destroyChart('evoBlocks');
-  charts.evoBlocks = new Chart($('#chart-evo-blocks'), {
-    type: 'line',
-    data: {
-      labels,
-      datasets: keys.map((k, i) => ({
-        label: APP.BLOCK_LABELS[k],
-        data: waves.map((w) => blockAvg(w.visits.filter((v) => v.is_activa), k)),
-        borderColor: palette[i], backgroundColor: palette[i], tension: 0.25,
-      })),
-    },
-    options: chartBaseOptions({ y: { max: 100 } }),
-  });
 }
 
 /* ------------------------------------------------------------

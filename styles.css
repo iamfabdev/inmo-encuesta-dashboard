@@ -251,6 +251,8 @@ select, input { font-family: var(--font-body); }
 .chart-card { background: var(--card); border: 1px solid var(--line-soft); border-radius: var(--radius); padding: 18px 20px; margin-bottom: 18px; }
 .chart-card h3 { font-size: 13.5px; margin-bottom: 14px; color: var(--text-soft); font-family: var(--font-body); font-weight: 600; text-transform: uppercase; letter-spacing: 0.3px; }
 .chart-card canvas { max-height: 340px; }
+.chart-ranking-wrap { position: relative; max-height: none; }
+.chart-ranking-wrap canvas#chart-ranking { max-height: none; }
 
 /* -------------------- detalle filters -------------------- */
 .filters-row { display: flex; gap: 10px; margin-bottom: 14px; }

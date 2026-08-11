@@ -14,16 +14,15 @@
 <div class="app-shell">
   <aside class="sidebar">
     <div class="brand">
-      <div class="brand-mark">A</div>
-      <div class="brand-title">Cliente Incógnito</div>
-      <div class="brand-sub">Panel de calidad · ACTIVA</div>
+      <!-- <div class="brand-mark">T</div> -->
+      <div class="brand-title">Dashboard · ACTIVA</div>
+      <!-- <div class="brand-sub">Dashboard · ACTIVA</div> -->
     </div>
 
     <nav class="tab-nav">
-      <button class="tab-btn is-active" data-tab="resumen"><span class="tab-num">01</span>Resumen</button>
-      <button class="tab-btn" data-tab="activa"><span class="tab-num">02</span>Proyectos ACTIVA</button>
-      <button class="tab-btn" data-tab="evolucion"><span class="tab-num">03</span>Evolución</button>
-      <button class="tab-btn" data-tab="detalle"><span class="tab-num">04</span>Detalle</button>
+      <button class="tab-btn is-active" data-tab="resumen"><span class="tab-num">01</span>ACTIVA vs. Competencia</button>
+      <button class="tab-btn" data-tab="activa"><span class="tab-num">02</span>Análisis Comercial</button>
+      <button class="tab-btn" data-tab="detalle"><span class="tab-num">03</span>Datos de Visitas</button>
     </nav>
 
     <div class="sidebar-footer">
@@ -34,14 +33,13 @@
   <main class="main">
     <div class="page-header">
       <div>
-        <h1 id="page-title">Resumen</h1>
+        <h1 id="page-title">ACTIVA vs. Competencia</h1>
         <div class="page-sub" id="page-sub">Índice de calidad de servicio ACTIVA vs. competencia — global o por cluster de competencia directa.</div>
       </div>
     </div>
 
     <section class="tab-panel is-active" id="panel-resumen"></section>
     <section class="tab-panel" id="panel-activa"></section>
-    <section class="tab-panel" id="panel-evolucion"></section>
     <section class="tab-panel" id="panel-detalle"></section>
   </main>
 </div>
@@ -51,10 +49,9 @@
 <script src="ui.js"></script>
 <script>
   const TITLES = {
-    resumen: ['Resumen', 'Índice de calidad de servicio ACTIVA vs. competencia — global o por cluster de competencia directa.'],
-    activa: ['Proyectos ACTIVA', 'Desempeño de los proyectos propios de Inmobiliaria Activa, con opción de sumar proyectos de la competencia a la comparación.'],
-    evolucion: ['Evolución', 'Tendencia del índice de calidad entre olas de medición.'],
-    detalle: ['Detalle por proyecto', 'Todas las visitas, filtrables y ordenables por columna.'],
+    resumen: ['ACTIVA vs. Competencia', 'Índice de calidad de servicio ACTIVA vs. competencia — global o por cluster de competencia directa.'],
+    activa: ['Análisis Comercial', 'Desempeño de los proyectos propios de Inmobiliaria Activa, con opción de sumar proyectos de la competencia a la comparación.'],
+    detalle: ['Datos de Visitas', 'Todas las visitas, filtrables y ordenables por columna.'],
   };
   document.querySelectorAll('.tab-btn').forEach((btn) => {
     btn.addEventListener('click', () => {

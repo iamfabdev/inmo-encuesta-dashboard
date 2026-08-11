@@ -22,12 +22,11 @@
 
     <nav class="tab-nav">
       <button class="tab-btn is-active" data-tab="cargar"><span class="tab-num">01</span>Cargar datos</button>
-      <button class="tab-btn" data-tab="resumen"><span class="tab-num">02</span>Resumen</button>
-      <button class="tab-btn" data-tab="activa"><span class="tab-num">03</span>Proyectos ACTIVA</button>
-      <button class="tab-btn" data-tab="evolucion"><span class="tab-num">04</span>Evolución</button>
-      <button class="tab-btn" data-tab="detalle"><span class="tab-num">05</span>Detalle</button>
-      <button class="tab-btn" data-tab="calidad"><span class="tab-num">06</span>Calidad de datos</button>
-      <button class="tab-btn" data-tab="config"><span class="tab-num">07</span>Configuración</button>
+      <button class="tab-btn" data-tab="resumen"><span class="tab-num">02</span>ACTIVA vs. Competencia</button>
+      <button class="tab-btn" data-tab="activa"><span class="tab-num">03</span>Análisis Comercial</button>
+      <button class="tab-btn" data-tab="detalle"><span class="tab-num">04</span>Datos de Visitas</button>
+      <button class="tab-btn" data-tab="calidad"><span class="tab-num">05</span>Calidad de datos</button>
+      <button class="tab-btn" data-tab="config"><span class="tab-num">06</span>Configuración</button>
     </nav>
 
     <div class="sidebar-footer">
@@ -47,7 +46,6 @@
     <section class="tab-panel is-active" id="panel-cargar"></section>
     <section class="tab-panel" id="panel-resumen"></section>
     <section class="tab-panel" id="panel-activa"></section>
-    <section class="tab-panel" id="panel-evolucion"></section>
     <section class="tab-panel" id="panel-detalle"></section>
     <section class="tab-panel" id="panel-calidad"></section>
     <section class="tab-panel" id="panel-config"></section>
@@ -60,10 +58,9 @@
 <script>
   const TITLES = {
     cargar: ['Cargar datos', 'Arrastra la planilla de la nueva ola de evaluación para procesarla.'],
-    resumen: ['Resumen', 'Índice de calidad de servicio ACTIVA vs. competencia — global o por cluster de competencia directa.'],
-    activa: ['Proyectos ACTIVA', 'Desempeño de los proyectos propios de Inmobiliaria Activa, con opción de sumar proyectos de la competencia a la comparación.'],
-    evolucion: ['Evolución', 'Tendencia del índice de calidad entre olas de medición.'],
-    detalle: ['Detalle por proyecto', 'Todas las visitas, filtrables y ordenables por columna.'],
+    resumen: ['ACTIVA vs. Competencia', 'Índice de calidad de servicio ACTIVA vs. competencia — global o por cluster de competencia directa.'],
+    activa: ['Análisis Comercial', 'Desempeño de los proyectos propios de Inmobiliaria Activa, con opción de sumar proyectos de la competencia a la comparación.'],
+    detalle: ['Datos de Visitas', 'Todas las visitas, filtrables y ordenables por columna.'],
     calidad: ['Calidad de datos', 'Alertas, fusiones de nombres y cobertura del universo de proyectos.'],
     config: ['Configuración', 'Ponderadores del índice, maestro de proyectos y respaldo de datos.'],
   };

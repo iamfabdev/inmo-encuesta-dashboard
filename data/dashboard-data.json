@@ -1,10 +1,10 @@
 {
   "waves": [
     {
-      "id": "w_d1gyridemsp4u203",
+      "id": "w_gv32fnrcmsp6ienx",
       "label": "MS-001",
       "refDate": "2026-08-11",
-      "uploadedAt": "2026-08-11T20:48:10.659Z",
+      "uploadedAt": "2026-08-11T21:35:06.429Z",
       "masterUsed": [
         {
           "id": 4911,
@@ -13,8 +13,8 @@
           "nombre": "EDIFICIO AVENIDA PERU PLAZA",
           "direccion": "PERU PLAZA 1471",
           "inmobiliaria": "ABSAL INMOBILIARIA",
-          "grupo": null,
-          "link": "https://absal.cl/proyectos/avenida-peru-plaza"
+          "grupo": "1",
+          "link": null
         },
         {
           "id": 5859,
@@ -23,8 +23,8 @@
           "nombre": "EDIFICIO SAN CRISTOBAL",
           "direccion": "SAN CRISTOBAL 543",
           "inmobiliaria": "DICSA",
-          "grupo": null,
-          "link": "https://idicsa.cl/proyectos-inmobiliarios/?commune=recoleta&price=2527%3B15800"
+          "grupo": "1",
+          "link": null
         },
         {
           "id": 6077,
@@ -33,8 +33,8 @@
           "nombre": "EDIFICIO CONQUISTA EINSTEIN",
           "direccion": "EINSTEIN 568",
           "inmobiliaria": "INMOBILIARIA CONQUISTA",
-          "grupo": null,
-          "link": "https://iconquista.cl/index.php/proyecto/?proyecto=52"
+          "grupo": "1",
+          "link": null
         },
         {
           "id": 6122,
@@ -43,8 +43,8 @@
           "nombre": "ACTIVA DOMINICA",
           "direccion": "PERU 1290",
           "inmobiliaria": "ACTIVA GRUPO INMOBILIARIO",
-          "grupo": null,
-          "link": "https://www.activa.cl/edificio-activa-dominica/"
+          "grupo": "1",
+          "link": null
         },
         {
           "id": 6827,
@@ -53,8 +53,8 @@
           "nombre": "EDIFICIO CUMBRE",
           "direccion": "MAESTRA LIDIA TORRES 92",
           "inmobiliaria": "INMOBILIARIA CREAR",
-          "grupo": null,
-          "link": "https://icrear.cl/edificio-cumbre/home"
+          "grupo": "1",
+          "link": null
         },
         {
           "id": 4421,
@@ -63,8 +63,8 @@
           "nombre": "EDIFICIO PARQUE HIPODROMO",
           "direccion": "INDEPENDENCIA 2264",
           "inmobiliaria": "INMOBILIARIA DESARROLLO URBANO",
-          "grupo": null,
-          "link": "https://inmobiliaria.idicsa.cl/proyectos-inmobiliarios/independencia/edificio-parque-hipodromo/?gad_source=1&gad_campaignid=21702528385&gbraid=0AAAAABy9ZPpw7PSTQbXEgFSq6RFaQBvT5&gclid=CjwKCAjwmdLSBhANEiwAkREMNwFOxqF0Tj3gh9zFd6v0T40RFFRyqmQkGOgD91IqqWfjfIJvCuAtVBoCwhYQAvD_BwE"
+          "grupo": "2",
+          "link": null
         },
         {
           "id": 5818,
@@ -73,8 +73,8 @@
           "nombre": "EDIFICIO CONEXIÓN INDEPENDENCIA",
           "direccion": "CORONEL ALVARADO 2180",
           "inmobiliaria": "INMOBILIARIA LARRAIN PRIETO",
-          "grupo": null,
-          "link": "https://larrainprieto.cl/proyectos/edificio-conexion-independencia/"
+          "grupo": "2",
+          "link": null
         },
         {
           "id": 6008,
@@ -83,8 +83,8 @@
           "nombre": "EDIFICIO DAVID ARELLANO",
           "direccion": "DAVID ARELLANO 1810",
           "inmobiliaria": "DICSA",
-          "grupo": null,
-          "link": "https://inmobiliaria.idicsa.cl/proyectos-inmobiliarios/independencia/edificio-david-arellano/?gad_source=1&gad_campaignid=22245070938&gbraid=0AAAAABy9ZPrlPWE4mzeeWvkKkeWlBUawy&gclid=CjwKCAjwmdLSBhANEiwAkREMN5TTp4auntQ1yLIpXZ6vsw_s-EjiAPM4V1KDqsonh96dQJ-_v5MnVBoCkGcQAvD_BwE"
+          "grupo": "2",
+          "link": null
         },
         {
           "id": 6011,
@@ -93,8 +93,8 @@
           "nombre": "JARDINES DE ALVARADO",
           "direccion": "CORONEL ALVARADO 2505",
           "inmobiliaria": "INMOBILIARIA MAESTRA",
-          "grupo": null,
-          "link": "https://www.maestra.cl/proyectos/jardines-de-alvarado/"
+          "grupo": "2",
+          "link": null
         },
         {
           "id": 6086,
@@ -103,8 +103,8 @@
           "nombre": "ACTIVA PLAZA CHACABUCO",
           "direccion": "HUANUCO 2290",
           "inmobiliaria": "ACTIVA GRUPO INMOBILIARIO",
-          "grupo": null,
-          "link": "https://www.activa.cl/activa-plaza-chacabuco/"
+          "grupo": "2",
+          "link": null
         },
         {
           "id": 6009,
@@ -113,18 +113,8 @@
           "nombre": "EDIFICIO INDI",
           "direccion": "HIPODROMO 1816",
           "inmobiliaria": "LEBEN",
-          "grupo": "NUEVO",
-          "link": "https://indi.ileben.cl/"
-        },
-        {
-          "id": 6151,
-          "tpo": "DEPARTAMENTO",
-          "comuna": "INDEPENDENCIA",
-          "nombre": "INDEPENDENCIA 2935",
-          "direccion": "INDEPENDENCIA 2935",
-          "inmobiliaria": "INMOBILIARIA NUCLEOS",
-          "grupo": null,
-          "link": "https://nucleos.cl/oportunidades/independencia-2935-1202/"
+          "grupo": "3",
+          "link": null
         },
         {
           "id": 6417,
@@ -133,8 +123,8 @@
           "nombre": "EDIFICIO PLAY",
           "direccion": "ISIDORA ERRAZURIZ 2305",
           "inmobiliaria": "INMOBILIARIA ECHEVERRIA IZQUIERDO",
-          "grupo": null,
-          "link": "https://eiii.cl/proyecto-play/?utm_source=google-ads&utm_medium=search&utm_campaign=play-search-ao&utm_term=responsivo&utm_content=1&gad_source=1&gad_campaignid=15623654096&gbraid=0AAAAADRiIC4yhcF_7sFyUrIM0ThavqLhJ&gclid=CjwKCAjwmdLSBhANEiwAkREMNxHmq29barXOjvepe1kQ_dEV6pobFdD6YMtwPaDTq0pUsDza_n50sxoCK48QAvD_BwE"
+          "grupo": "3",
+          "link": null
         },
         {
           "id": 6459,
@@ -143,8 +133,8 @@
           "nombre": "EDIFICIO TERRAZAS VIVACETA",
           "direccion": "FERMIN VIVACETA 2648",
           "inmobiliaria": "DICSA",
-          "grupo": null,
-          "link": "https://idicsa.cl/proyectos-inmobiliarios/independencia/edificio-terrazas-vivaceta/?gad_source=1&gad_campaignid=22245070938&gbraid=0AAAAABy9ZPrlPWE4mzeeWvkKkeWlBUawy&gclid=CjwKCAjwmdLSBhANEiwAkREMNwKU5UwuaP1je7P8CgRmgCr1QBWJuB5w7T0eKS3AJz9FoGLieQzW2hoCCGgQAvD_BwE"
+          "grupo": "3",
+          "link": null
         },
         {
           "id": 6649,
@@ -153,8 +143,8 @@
           "nombre": "ACTIVA HIPODROMO PLAZA",
           "direccion": "DAVID ARELLANO 1954",
           "inmobiliaria": "ACTIVA GRUPO INMOBILIARIO",
-          "grupo": null,
-          "link": "https://www.activa.cl/proyecto-activa-hipodromo-plaza/"
+          "grupo": "3",
+          "link": null
         },
         {
           "id": 6859,
@@ -163,8 +153,8 @@
           "nombre": "EDIFICIO HIPODROMO 1613",
           "direccion": "HIPODROMO 1613",
           "inmobiliaria": "INMOBILIARIA COPAHUE",
-          "grupo": null,
-          "link": "https://copahue.cl/proyecto/edificio-hipodromo-1613"
+          "grupo": "3",
+          "link": null
         },
         {
           "id": 6380,
@@ -173,8 +163,8 @@
           "nombre": "ACTIVA WM815",
           "direccion": "WALKER MARTINEZ 815",
           "inmobiliaria": "ACTIVA GRUPO INMOBILIARIO",
-          "grupo": null,
-          "link": "https://www.activa.cl/proyecto-activa-wm-815/"
+          "grupo": "4",
+          "link": null
         },
         {
           "id": 6481,
@@ -183,8 +173,8 @@
           "nombre": "ECO VALDES I",
           "direccion": "GERONIMO DE ALDERETE 396",
           "inmobiliaria": "INMOBILIARIA FUNDAMENTA",
-          "grupo": null,
-          "link": "https://www.fundamenta.cl/proyectos-en-venta/departamento-en-la-florida/eco-valdes-i/"
+          "grupo": "4",
+          "link": null
         },
         {
           "id": 6517,
@@ -193,8 +183,8 @@
           "nombre": "CONCEPTO WALKER TOWN",
           "direccion": "WALKER MARTINEZ 725",
           "inmobiliaria": "IMAGINA INMOBILIARIA",
-          "grupo": null,
-          "link": "https://www.imagina.cl/proyectos/walker-town/"
+          "grupo": "4",
+          "link": null
         },
         {
           "id": 6767,
@@ -203,18 +193,8 @@
           "nombre": "Edificio Walker Martínez 880",
           "direccion": "WALKER MARTINEZ 880",
           "inmobiliaria": "Inmobiliaria Santolaya",
-          "grupo": "NUEVO",
-          "link": "https://santolaya.cl/proyecto/walkermartinez"
-        },
-        {
-          "id": 6652,
-          "tpo": "DEPARTAMENTO",
-          "comuna": "LA FLORIDA",
-          "nombre": "EDIFICIO VISTA SANTUARIO",
-          "direccion": "COLOMBIA 7642",
-          "inmobiliaria": "INMOBILIARIA VISTA SANTUARIO",
-          "grupo": null,
-          "link": "https://www.edificiovistasantuario.cl/"
+          "grupo": "4",
+          "link": null
         },
         {
           "id": 6724,
@@ -223,8 +203,8 @@
           "nombre": "EDIFICIO PARQUE PLATINO",
           "direccion": "VICENTE VALDES 755",
           "inmobiliaria": "PANGEA GESTION INMOBILIARIA",
-          "grupo": null,
-          "link": "https://www.edificioparqueplatino.cl/"
+          "grupo": "4",
+          "link": null
         },
         {
           "id": 6123,
@@ -233,8 +213,8 @@
           "nombre": "CONDOMINIO MIRADOR ACTIVA",
           "direccion": "LLANQUIHUE 6290",
           "inmobiliaria": "ACTIVA GRUPO INMOBILIARIO",
-          "grupo": null,
-          "link": "https://www.activa.cl/proyecto-mirador-activa/"
+          "grupo": "5",
+          "link": null
         },
         {
           "id": 6651,
@@ -243,8 +223,8 @@
           "nombre": "EDIFICIO MILLALONGO 72",
           "direccion": "MILLALONGO 72",
           "inmobiliaria": "SSILVA GESTION INMOBILIARIA",
-          "grupo": null,
-          "link": "https://www.ssilva.cl/millalongo72/"
+          "grupo": "5",
+          "link": null
         },
         {
           "id": 6781,
@@ -253,8 +233,8 @@
           "nombre": "EDIFICIO VICUÑA MACKENNA 6896",
           "direccion": "VICUÑA MACKENNA PONIENTE 6896",
           "inmobiliaria": "INMOBILIARIA NORTE VERDE",
-          "grupo": null,
-          "link": "https://norte-verde.cl/secciones_internas/edificio-vicuna-mackenna-6896/"
+          "grupo": "5",
+          "link": null
         },
         {
           "id": 6895,
@@ -263,18 +243,8 @@
           "nombre": "VIVE BARCELONA",
           "direccion": "BARCELONA 150",
           "inmobiliaria": "BRICSA",
-          "grupo": null,
-          "link": "https://www.bricsa.cl/edificio-barcelona/"
-        },
-        {
-          "id": 6932,
-          "tpo": "DEPARTAMENTO",
-          "comuna": "LA FLORIDA",
-          "nombre": "EDIFICIO LOS LILENES",
-          "direccion": "VICUÑA MACKENNA 6988",
-          "inmobiliaria": "INMOBILIARIA INGEVEC",
-          "grupo": null,
-          "link": "https://ingevecinmobiliaria.cl/proyecto-loslilenes"
+          "grupo": "5",
+          "link": null
         },
         {
           "id": 6377,
@@ -283,8 +253,8 @@
           "nombre": "Edificio Mirador Casona",
           "direccion": "Av. Vicuña Mackenna 7197",
           "inmobiliaria": "Inmobiliaria Exxacon",
-          "grupo": "NUEVO",
-          "link": "https://exxacon.cl/projects/mirador-casona/"
+          "grupo": "5",
+          "link": null
         }
       ],
       "visits": [
@@ -294,7 +264,7 @@
           "project_name": "EDIFICIO CONEXIÓN INDEPENDENCIA",
           "comuna": "INDEPENDENCIA",
           "inmobiliaria": "INMOBILIARIA LARRAIN PRIETO",
-          "grupo": null,
+          "grupo": "2",
           "is_activa": false,
           "vendedor": "Elva Barahona",
           "vendedor_raw": "Elva Barahona",
@@ -334,7 +304,7 @@
           "project_name": "EDIFICIO DAVID ARELLANO",
           "comuna": "INDEPENDENCIA",
           "inmobiliaria": "DICSA",
-          "grupo": null,
+          "grupo": "2",
           "is_activa": false,
           "vendedor": "Andres Sanchez",
           "vendedor_raw": "Andres Sanchez",
@@ -368,7 +338,7 @@
           "project_name": "EDIFICIO AVENIDA PERU PLAZA",
           "comuna": "RECOLETA",
           "inmobiliaria": "ABSAL INMOBILIARIA",
-          "grupo": null,
+          "grupo": "1",
           "is_activa": false,
           "vendedor": "Agustina Ramirez Bustos",
           "vendedor_raw": "Agustina Ramirez Bustos",
@@ -408,7 +378,7 @@
           "project_name": "EDIFICIO SAN CRISTOBAL",
           "comuna": "RECOLETA",
           "inmobiliaria": "DICSA",
-          "grupo": null,
+          "grupo": "1",
           "is_activa": false,
           "vendedor": "Juliana Marin Tamayo",
           "vendedor_raw": "Juliana Marin Tamayo",
@@ -442,7 +412,7 @@
           "project_name": "EDIFICIO TERRAZAS VIVACETA",
           "comuna": "INDEPENDENCIA",
           "inmobiliaria": "DICSA",
-          "grupo": null,
+          "grupo": "3",
           "is_activa": false,
           "vendedor": "Ariana Sanchez",
           "vendedor_raw": "Ariana Sanchez",
@@ -480,7 +450,7 @@
           "project_name": "JARDINES DE ALVARADO",
           "comuna": "INDEPENDENCIA",
           "inmobiliaria": "INMOBILIARIA MAESTRA",
-          "grupo": null,
+          "grupo": "2",
           "is_activa": false,
           "vendedor": "Neudys Chirinos",
           "vendedor_raw": "Neudys Chirinos",
@@ -520,7 +490,7 @@
           "project_name": "EDIFICIO PLAY",
           "comuna": "INDEPENDENCIA",
           "inmobiliaria": "INMOBILIARIA ECHEVERRIA IZQUIERDO",
-          "grupo": null,
+          "grupo": "3",
           "is_activa": false,
           "vendedor": "Maricel Moreno",
           "vendedor_raw": "Maricel Moreno",
@@ -559,7 +529,7 @@
           "project_name": "ECO VALDES I",
           "comuna": "LA FLORIDA",
           "inmobiliaria": "INMOBILIARIA FUNDAMENTA",
-          "grupo": null,
+          "grupo": "4",
           "is_activa": false,
           "vendedor": "Barbara Armijo",
           "vendedor_raw": "Barbara Armijo",
@@ -597,7 +567,7 @@
           "project_name": "ACTIVA WM815",
           "comuna": "LA FLORIDA",
           "inmobiliaria": "ACTIVA GRUPO INMOBILIARIO",
-          "grupo": null,
+          "grupo": "4",
           "is_activa": true,
           "vendedor": "Yetzi Gomez",
           "vendedor_raw": "Yetzi Gomez",
@@ -640,7 +610,7 @@
           "project_name": "CONCEPTO WALKER TOWN",
           "comuna": "LA FLORIDA",
           "inmobiliaria": "IMAGINA INMOBILIARIA",
-          "grupo": null,
+          "grupo": "4",
           "is_activa": false,
           "vendedor": "Gisele Ferlissi",
           "vendedor_raw": "Gisele Ferlissi",
@@ -678,7 +648,7 @@
           "project_name": "ACTIVA PLAZA CHACABUCO",
           "comuna": "INDEPENDENCIA",
           "inmobiliaria": "ACTIVA GRUPO INMOBILIARIO",
-          "grupo": null,
+          "grupo": "2",
           "is_activa": true,
           "vendedor": "Camila Tapia",
           "vendedor_raw": "Camila Tapia",
@@ -725,7 +695,7 @@
           "project_name": "EDIFICIO CONQUISTA EINSTEIN",
           "comuna": "RECOLETA",
           "inmobiliaria": "INMOBILIARIA CONQUISTA",
-          "grupo": null,
+          "grupo": "1",
           "is_activa": false,
           "vendedor": "Cristian Repenning",
           "vendedor_raw": "Cristian Repenning",
@@ -767,7 +737,7 @@
           "project_name": "EDIFICIO PARQUE HIPODROMO",
           "comuna": "INDEPENDENCIA",
           "inmobiliaria": "INMOBILIARIA DESARROLLO URBANO",
-          "grupo": null,
+          "grupo": "2",
           "is_activa": false,
           "vendedor": "Juliana Marin Tamayo",
           "vendedor_raw": "Juliana Marin",
@@ -805,7 +775,7 @@
           "project_name": "CONDOMINIO MIRADOR ACTIVA",
           "comuna": "LA FLORIDA",
           "inmobiliaria": "ACTIVA GRUPO INMOBILIARIO",
-          "grupo": null,
+          "grupo": "5",
           "is_activa": true,
           "vendedor": "Grecia Tamariz",
           "vendedor_raw": "Grecia Tamariz",
@@ -852,7 +822,7 @@
           "project_name": "EDIFICIO MILLALONGO 72",
           "comuna": "LA FLORIDA",
           "inmobiliaria": "SSILVA GESTION INMOBILIARIA",
-          "grupo": null,
+          "grupo": "5",
           "is_activa": false,
           "vendedor": "Paulina Figueroa",
           "vendedor_raw": "Paulina Figueroa",
@@ -892,7 +862,7 @@
           "project_name": "EDIFICIO VICUÑA MACKENNA 6896",
           "comuna": "LA FLORIDA",
           "inmobiliaria": "INMOBILIARIA NORTE VERDE",
-          "grupo": null,
+          "grupo": "5",
           "is_activa": false,
           "vendedor": "Jocelyn Godoy",
           "vendedor_raw": "Jocelyn Godoy",
@@ -935,7 +905,7 @@
           "project_name": "VIVE BARCELONA",
           "comuna": "LA FLORIDA",
           "inmobiliaria": "BRICSA",
-          "grupo": null,
+          "grupo": "5",
           "is_activa": false,
           "vendedor": "Carola Uribe",
           "vendedor_raw": "Carola Uribe",
@@ -984,7 +954,7 @@
           "project_name": "EDIFICIO PARQUE PLATINO",
           "comuna": "LA FLORIDA",
           "inmobiliaria": "PANGEA GESTION INMOBILIARIA",
-          "grupo": null,
+          "grupo": "4",
           "is_activa": false,
           "vendedor": "Verónica Trejo",
           "vendedor_raw": "Verónica Trejo",
@@ -1026,7 +996,7 @@
           "project_name": "EDIFICIO INDI",
           "comuna": "INDEPENDENCIA",
           "inmobiliaria": "LEBEN",
-          "grupo": "NUEVO",
+          "grupo": "3",
           "is_activa": false,
           "vendedor": "Marcia Jaramillo",
           "vendedor_raw": "Marcia Jaramillo",
@@ -1066,7 +1036,7 @@
           "project_name": "Edificio Mirador Casona",
           "comuna": "LA FLORIDA",
           "inmobiliaria": "Inmobiliaria Exxacon",
-          "grupo": "NUEVO",
+          "grupo": "5",
           "is_activa": false,
           "vendedor": "Rodrigo Molina",
           "vendedor_raw": "Rodrigo molina",
@@ -1114,7 +1084,7 @@
           "project_name": "Edificio Walker Martínez 880",
           "comuna": "LA FLORIDA",
           "inmobiliaria": "Inmobiliaria Santolaya",
-          "grupo": "NUEVO",
+          "grupo": "4",
           "is_activa": false,
           "vendedor": "Elizabeth Toloza",
           "vendedor_raw": "Elizabeth Toloza",
@@ -1156,7 +1126,7 @@
           "project_name": "EDIFICIO CUMBRE",
           "comuna": "RECOLETA",
           "inmobiliaria": "INMOBILIARIA CREAR",
-          "grupo": null,
+          "grupo": "1",
           "is_activa": false,
           "vendedor": "Mitchele Vidal",
           "vendedor_raw": "Mitchele Vidal",
@@ -1199,7 +1169,7 @@
           "project_name": "ACTIVA DOMINICA",
           "comuna": "RECOLETA",
           "inmobiliaria": "ACTIVA GRUPO INMOBILIARIO",
-          "grupo": null,
+          "grupo": "1",
           "is_activa": true,
           "vendedor": "Camila Tapia",
           "vendedor_raw": "Camila Tapia",
@@ -1259,7 +1229,7 @@
           "project_name": "ACTIVA HIPODROMO PLAZA",
           "comuna": "INDEPENDENCIA",
           "inmobiliaria": "ACTIVA GRUPO INMOBILIARIO",
-          "grupo": null,
+          "grupo": "3",
           "is_activa": true,
           "vendedor": "Maria Soledad Villa",
           "vendedor_raw": "Maria Soledad Villa",
@@ -1305,7 +1275,7 @@
           "project_name": "EDIFICIO HIPODROMO 1613",
           "comuna": "INDEPENDENCIA",
           "inmobiliaria": "INMOBILIARIA COPAHUE",
-          "grupo": null,
+          "grupo": "3",
           "is_activa": false,
           "vendedor": "Sandra Quezada",
           "vendedor_raw": "Sandra Quezada",
@@ -1352,38 +1322,7 @@
         "Proyecto 6859 (EDIFICIO HIPODROMO 1613): sin registro de seguimiento (P26) en la hoja \"Encuesta Seguimiento\"."
       ],
       "notFoundInMaster": [],
-      "notSurveyed": [
-        {
-          "id": 6151,
-          "tpo": "DEPARTAMENTO",
-          "comuna": "INDEPENDENCIA",
-          "nombre": "INDEPENDENCIA 2935",
-          "direccion": "INDEPENDENCIA 2935",
-          "inmobiliaria": "INMOBILIARIA NUCLEOS",
-          "grupo": null,
-          "link": "https://nucleos.cl/oportunidades/independencia-2935-1202/"
-        },
-        {
-          "id": 6652,
-          "tpo": "DEPARTAMENTO",
-          "comuna": "LA FLORIDA",
-          "nombre": "EDIFICIO VISTA SANTUARIO",
-          "direccion": "COLOMBIA 7642",
-          "inmobiliaria": "INMOBILIARIA VISTA SANTUARIO",
-          "grupo": null,
-          "link": "https://www.edificiovistasantuario.cl/"
-        },
-        {
-          "id": 6932,
-          "tpo": "DEPARTAMENTO",
-          "comuna": "LA FLORIDA",
-          "nombre": "EDIFICIO LOS LILENES",
-          "direccion": "VICUÑA MACKENNA 6988",
-          "inmobiliaria": "INMOBILIARIA INGEVEC",
-          "grupo": null,
-          "link": "https://ingevecinmobiliaria.cl/proyecto-loslilenes"
-        }
-      ],
+      "notSurveyed": [],
       "vendorMerges": [
         {
           "de": "Juliana Marin",
@@ -1408,8 +1347,8 @@
       "nombre": "EDIFICIO AVENIDA PERU PLAZA",
       "direccion": "PERU PLAZA 1471",
       "inmobiliaria": "ABSAL INMOBILIARIA",
-      "grupo": null,
-      "link": "https://absal.cl/proyectos/avenida-peru-plaza"
+      "grupo": "1",
+      "link": null
     },
     {
       "id": 5859,
@@ -1418,8 +1357,8 @@
       "nombre": "EDIFICIO SAN CRISTOBAL",
       "direccion": "SAN CRISTOBAL 543",
       "inmobiliaria": "DICSA",
-      "grupo": null,
-      "link": "https://idicsa.cl/proyectos-inmobiliarios/?commune=recoleta&price=2527%3B15800"
+      "grupo": "1",
+      "link": null
     },
     {
       "id": 6077,
@@ -1428,8 +1367,8 @@
       "nombre": "EDIFICIO CONQUISTA EINSTEIN",
       "direccion": "EINSTEIN 568",
       "inmobiliaria": "INMOBILIARIA CONQUISTA",
-      "grupo": null,
-      "link": "https://iconquista.cl/index.php/proyecto/?proyecto=52"
+      "grupo": "1",
+      "link": null
     },
     {
       "id": 6122,
@@ -1438,8 +1377,8 @@
       "nombre": "ACTIVA DOMINICA",
       "direccion": "PERU 1290",
       "inmobiliaria": "ACTIVA GRUPO INMOBILIARIO",
-      "grupo": null,
-      "link": "https://www.activa.cl/edificio-activa-dominica/"
+      "grupo": "1",
+      "link": null
     },
     {
       "id": 6827,
@@ -1448,8 +1387,8 @@
       "nombre": "EDIFICIO CUMBRE",
       "direccion": "MAESTRA LIDIA TORRES 92",
       "inmobiliaria": "INMOBILIARIA CREAR",
-      "grupo": null,
-      "link": "https://icrear.cl/edificio-cumbre/home"
+      "grupo": "1",
+      "link": null
     },
     {
       "id": 4421,
@@ -1458,8 +1397,8 @@
       "nombre": "EDIFICIO PARQUE HIPODROMO",
       "direccion": "INDEPENDENCIA 2264",
       "inmobiliaria": "INMOBILIARIA DESARROLLO URBANO",
-      "grupo": null,
-      "link": "https://inmobiliaria.idicsa.cl/proyectos-inmobiliarios/independencia/edificio-parque-hipodromo/?gad_source=1&gad_campaignid=21702528385&gbraid=0AAAAABy9ZPpw7PSTQbXEgFSq6RFaQBvT5&gclid=CjwKCAjwmdLSBhANEiwAkREMNwFOxqF0Tj3gh9zFd6v0T40RFFRyqmQkGOgD91IqqWfjfIJvCuAtVBoCwhYQAvD_BwE"
+      "grupo": "2",
+      "link": null
     },
     {
       "id": 5818,
@@ -1468,8 +1407,8 @@
       "nombre": "EDIFICIO CONEXIÓN INDEPENDENCIA",
       "direccion": "CORONEL ALVARADO 2180",
       "inmobiliaria": "INMOBILIARIA LARRAIN PRIETO",
-      "grupo": null,
-      "link": "https://larrainprieto.cl/proyectos/edificio-conexion-independencia/"
+      "grupo": "2",
+      "link": null
     },
     {
       "id": 6008,
@@ -1478,8 +1417,8 @@
       "nombre": "EDIFICIO DAVID ARELLANO",
       "direccion": "DAVID ARELLANO 1810",
       "inmobiliaria": "DICSA",
-      "grupo": null,
-      "link": "https://inmobiliaria.idicsa.cl/proyectos-inmobiliarios/independencia/edificio-david-arellano/?gad_source=1&gad_campaignid=22245070938&gbraid=0AAAAABy9ZPrlPWE4mzeeWvkKkeWlBUawy&gclid=CjwKCAjwmdLSBhANEiwAkREMN5TTp4auntQ1yLIpXZ6vsw_s-EjiAPM4V1KDqsonh96dQJ-_v5MnVBoCkGcQAvD_BwE"
+      "grupo": "2",
+      "link": null
     },
     {
       "id": 6011,
@@ -1488,8 +1427,8 @@
       "nombre": "JARDINES DE ALVARADO",
       "direccion": "CORONEL ALVARADO 2505",
       "inmobiliaria": "INMOBILIARIA MAESTRA",
-      "grupo": null,
-      "link": "https://www.maestra.cl/proyectos/jardines-de-alvarado/"
+      "grupo": "2",
+      "link": null
     },
     {
       "id": 6086,
@@ -1498,8 +1437,8 @@
       "nombre": "ACTIVA PLAZA CHACABUCO",
       "direccion": "HUANUCO 2290",
       "inmobiliaria": "ACTIVA GRUPO INMOBILIARIO",
-      "grupo": null,
-      "link": "https://www.activa.cl/activa-plaza-chacabuco/"
+      "grupo": "2",
+      "link": null
     },
     {
       "id": 6009,
@@ -1508,18 +1447,8 @@
       "nombre": "EDIFICIO INDI",
       "direccion": "HIPODROMO 1816",
       "inmobiliaria": "LEBEN",
-      "grupo": "NUEVO",
-      "link": "https://indi.ileben.cl/"
-    },
-    {
-      "id": 6151,
-      "tpo": "DEPARTAMENTO",
-      "comuna": "INDEPENDENCIA",
-      "nombre": "INDEPENDENCIA 2935",
-      "direccion": "INDEPENDENCIA 2935",
-      "inmobiliaria": "INMOBILIARIA NUCLEOS",
-      "grupo": null,
-      "link": "https://nucleos.cl/oportunidades/independencia-2935-1202/"
+      "grupo": "3",
+      "link": null
     },
     {
       "id": 6417,
@@ -1528,8 +1457,8 @@
       "nombre": "EDIFICIO PLAY",
       "direccion": "ISIDORA ERRAZURIZ 2305",
       "inmobiliaria": "INMOBILIARIA ECHEVERRIA IZQUIERDO",
-      "grupo": null,
-      "link": "https://eiii.cl/proyecto-play/?utm_source=google-ads&utm_medium=search&utm_campaign=play-search-ao&utm_term=responsivo&utm_content=1&gad_source=1&gad_campaignid=15623654096&gbraid=0AAAAADRiIC4yhcF_7sFyUrIM0ThavqLhJ&gclid=CjwKCAjwmdLSBhANEiwAkREMNxHmq29barXOjvepe1kQ_dEV6pobFdD6YMtwPaDTq0pUsDza_n50sxoCK48QAvD_BwE"
+      "grupo": "3",
+      "link": null
     },
     {
       "id": 6459,
@@ -1538,8 +1467,8 @@
       "nombre": "EDIFICIO TERRAZAS VIVACETA",
       "direccion": "FERMIN VIVACETA 2648",
       "inmobiliaria": "DICSA",
-      "grupo": null,
-      "link": "https://idicsa.cl/proyectos-inmobiliarios/independencia/edificio-terrazas-vivaceta/?gad_source=1&gad_campaignid=22245070938&gbraid=0AAAAABy9ZPrlPWE4mzeeWvkKkeWlBUawy&gclid=CjwKCAjwmdLSBhANEiwAkREMNwKU5UwuaP1je7P8CgRmgCr1QBWJuB5w7T0eKS3AJz9FoGLieQzW2hoCCGgQAvD_BwE"
+      "grupo": "3",
+      "link": null
     },
     {
       "id": 6649,
@@ -1548,8 +1477,8 @@
       "nombre": "ACTIVA HIPODROMO PLAZA",
       "direccion": "DAVID ARELLANO 1954",
       "inmobiliaria": "ACTIVA GRUPO INMOBILIARIO",
-      "grupo": null,
-      "link": "https://www.activa.cl/proyecto-activa-hipodromo-plaza/"
+      "grupo": "3",
+      "link": null
     },
     {
       "id": 6859,
@@ -1558,8 +1487,8 @@
       "nombre": "EDIFICIO HIPODROMO 1613",
       "direccion": "HIPODROMO 1613",
       "inmobiliaria": "INMOBILIARIA COPAHUE",
-      "grupo": null,
-      "link": "https://copahue.cl/proyecto/edificio-hipodromo-1613"
+      "grupo": "3",
+      "link": null
     },
     {
       "id": 6380,
@@ -1568,8 +1497,8 @@
       "nombre": "ACTIVA WM815",
       "direccion": "WALKER MARTINEZ 815",
       "inmobiliaria": "ACTIVA GRUPO INMOBILIARIO",
-      "grupo": null,
-      "link": "https://www.activa.cl/proyecto-activa-wm-815/"
+      "grupo": "4",
+      "link": null
     },
     {
       "id": 6481,
@@ -1578,8 +1507,8 @@
       "nombre": "ECO VALDES I",
       "direccion": "GERONIMO DE ALDERETE 396",
       "inmobiliaria": "INMOBILIARIA FUNDAMENTA",
-      "grupo": null,
-      "link": "https://www.fundamenta.cl/proyectos-en-venta/departamento-en-la-florida/eco-valdes-i/"
+      "grupo": "4",
+      "link": null
     },
     {
       "id": 6517,
@@ -1588,8 +1517,8 @@
       "nombre": "CONCEPTO WALKER TOWN",
       "direccion": "WALKER MARTINEZ 725",
       "inmobiliaria": "IMAGINA INMOBILIARIA",
-      "grupo": null,
-      "link": "https://www.imagina.cl/proyectos/walker-town/"
+      "grupo": "4",
+      "link": null
     },
     {
       "id": 6767,
@@ -1598,18 +1527,8 @@
       "nombre": "Edificio Walker Martínez 880",
       "direccion": "WALKER MARTINEZ 880",
       "inmobiliaria": "Inmobiliaria Santolaya",
-      "grupo": "NUEVO",
-      "link": "https://santolaya.cl/proyecto/walkermartinez"
-    },
-    {
-      "id": 6652,
-      "tpo": "DEPARTAMENTO",
-      "comuna": "LA FLORIDA",
-      "nombre": "EDIFICIO VISTA SANTUARIO",
-      "direccion": "COLOMBIA 7642",
-      "inmobiliaria": "INMOBILIARIA VISTA SANTUARIO",
-      "grupo": null,
-      "link": "https://www.edificiovistasantuario.cl/"
+      "grupo": "4",
+      "link": null
     },
     {
       "id": 6724,
@@ -1618,8 +1537,8 @@
       "nombre": "EDIFICIO PARQUE PLATINO",
       "direccion": "VICENTE VALDES 755",
       "inmobiliaria": "PANGEA GESTION INMOBILIARIA",
-      "grupo": null,
-      "link": "https://www.edificioparqueplatino.cl/"
+      "grupo": "4",
+      "link": null
     },
     {
       "id": 6123,
@@ -1628,8 +1547,8 @@
       "nombre": "CONDOMINIO MIRADOR ACTIVA",
       "direccion": "LLANQUIHUE 6290",
       "inmobiliaria": "ACTIVA GRUPO INMOBILIARIO",
-      "grupo": null,
-      "link": "https://www.activa.cl/proyecto-mirador-activa/"
+      "grupo": "5",
+      "link": null
     },
     {
       "id": 6651,
@@ -1638,8 +1557,8 @@
       "nombre": "EDIFICIO MILLALONGO 72",
       "direccion": "MILLALONGO 72",
       "inmobiliaria": "SSILVA GESTION INMOBILIARIA",
-      "grupo": null,
-      "link": "https://www.ssilva.cl/millalongo72/"
+      "grupo": "5",
+      "link": null
     },
     {
       "id": 6781,
@@ -1648,8 +1567,8 @@
       "nombre": "EDIFICIO VICUÑA MACKENNA 6896",
       "direccion": "VICUÑA MACKENNA PONIENTE 6896",
       "inmobiliaria": "INMOBILIARIA NORTE VERDE",
-      "grupo": null,
-      "link": "https://norte-verde.cl/secciones_internas/edificio-vicuna-mackenna-6896/"
+      "grupo": "5",
+      "link": null
     },
     {
       "id": 6895,
@@ -1658,18 +1577,8 @@
       "nombre": "VIVE BARCELONA",
       "direccion": "BARCELONA 150",
       "inmobiliaria": "BRICSA",
-      "grupo": null,
-      "link": "https://www.bricsa.cl/edificio-barcelona/"
-    },
-    {
-      "id": 6932,
-      "tpo": "DEPARTAMENTO",
-      "comuna": "LA FLORIDA",
-      "nombre": "EDIFICIO LOS LILENES",
-      "direccion": "VICUÑA MACKENNA 6988",
-      "inmobiliaria": "INMOBILIARIA INGEVEC",
-      "grupo": null,
-      "link": "https://ingevecinmobiliaria.cl/proyecto-loslilenes"
+      "grupo": "5",
+      "link": null
     },
     {
       "id": 6377,
@@ -1678,8 +1587,8 @@
       "nombre": "Edificio Mirador Casona",
       "direccion": "Av. Vicuña Mackenna 7197",
       "inmobiliaria": "Inmobiliaria Exxacon",
-      "grupo": "NUEVO",
-      "link": "https://exxacon.cl/projects/mirador-casona/"
+      "grupo": "5",
+      "link": null
     }
   ]
 }

@@ -69,7 +69,6 @@ El proyecto tiene **dos puntos de entrada** que comparten el mismo motor
 5. Click en **Procesar archivo** → revisa el preview (alertas, cobertura) →
    **Guardar esta ola**.
 
-Con 2 o más olas guardadas, la pestaña **Evolución** se activa sola.
 Recuerda seguir el "Flujo de trabajo" de arriba (Exportar todo → reemplazar
 `data/dashboard-data.json` → commit → push) para que el dashboard público
 se actualice.
