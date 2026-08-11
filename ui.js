@@ -255,17 +255,19 @@ function downloadJSON(obj, filename) {
 /* ------------------------------------------------------------
    RESUMEN
    ------------------------------------------------------------ */
+// Los clusters se derivan desde las salas ACTIVA, no desde todos los
+// valores de "Grupo" que aparezcan en el maestro — así un grupo sin sala
+// ACTIVA (ej. competidores nuevos aún sin asignar) no genera un filtro
+// vacío tipo "Cluster NUEVO": esta vista es para comparar cada sala ACTIVA
+// contra su competencia directa, no para listar grupos sueltos.
 function buildClusters(wave) {
-  const byId = {};
-  (wave.masterUsed || []).forEach((p) => {
-    if (!p.grupo) return;
-    if (!byId[p.grupo]) byId[p.grupo] = { id: p.grupo, projects: [] };
-    byId[p.grupo].projects.push(p);
-  });
-  return Object.values(byId)
-    .map((c) => ({
-      ...c,
-      label: (c.projects.find((p) => p.inmobiliaria === 'ACTIVA GRUPO INMOBILIARIO') || {}).nombre || `Cluster ${c.id}`,
+  const master = wave.masterUsed || [];
+  return master
+    .filter((p) => p.inmobiliaria === 'ACTIVA GRUPO INMOBILIARIO' && p.grupo)
+    .map((activaP) => ({
+      id: activaP.grupo,
+      label: activaP.nombre,
+      projects: master.filter((p) => p.grupo === activaP.grupo),
     }))
     .sort((a, b) => a.id.localeCompare(b.id));
 }
