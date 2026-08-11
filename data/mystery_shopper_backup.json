@@ -1,0 +1,1685 @@
+{
+  "waves": [
+    {
+      "id": "w_d1gyridemsp4u203",
+      "label": "MS-001",
+      "refDate": "2026-08-11",
+      "uploadedAt": "2026-08-11T20:48:10.659Z",
+      "masterUsed": [
+        {
+          "id": 4911,
+          "tpo": "DEPARTAMENTO",
+          "comuna": "RECOLETA",
+          "nombre": "EDIFICIO AVENIDA PERU PLAZA",
+          "direccion": "PERU PLAZA 1471",
+          "inmobiliaria": "ABSAL INMOBILIARIA",
+          "grupo": null,
+          "link": "https://absal.cl/proyectos/avenida-peru-plaza"
+        },
+        {
+          "id": 5859,
+          "tpo": "DEPARTAMENTO",
+          "comuna": "RECOLETA",
+          "nombre": "EDIFICIO SAN CRISTOBAL",
+          "direccion": "SAN CRISTOBAL 543",
+          "inmobiliaria": "DICSA",
+          "grupo": null,
+          "link": "https://idicsa.cl/proyectos-inmobiliarios/?commune=recoleta&price=2527%3B15800"
+        },
+        {
+          "id": 6077,
+          "tpo": "DEPARTAMENTO",
+          "comuna": "RECOLETA",
+          "nombre": "EDIFICIO CONQUISTA EINSTEIN",
+          "direccion": "EINSTEIN 568",
+          "inmobiliaria": "INMOBILIARIA CONQUISTA",
+          "grupo": null,
+          "link": "https://iconquista.cl/index.php/proyecto/?proyecto=52"
+        },
+        {
+          "id": 6122,
+          "tpo": "DEPARTAMENTO",
+          "comuna": "RECOLETA",
+          "nombre": "ACTIVA DOMINICA",
+          "direccion": "PERU 1290",
+          "inmobiliaria": "ACTIVA GRUPO INMOBILIARIO",
+          "grupo": null,
+          "link": "https://www.activa.cl/edificio-activa-dominica/"
+        },
+        {
+          "id": 6827,
+          "tpo": "DEPARTAMENTO",
+          "comuna": "RECOLETA",
+          "nombre": "EDIFICIO CUMBRE",
+          "direccion": "MAESTRA LIDIA TORRES 92",
+          "inmobiliaria": "INMOBILIARIA CREAR",
+          "grupo": null,
+          "link": "https://icrear.cl/edificio-cumbre/home"
+        },
+        {
+          "id": 4421,
+          "tpo": "DEPARTAMENTO",
+          "comuna": "INDEPENDENCIA",
+          "nombre": "EDIFICIO PARQUE HIPODROMO",
+          "direccion": "INDEPENDENCIA 2264",
+          "inmobiliaria": "INMOBILIARIA DESARROLLO URBANO",
+          "grupo": null,
+          "link": "https://inmobiliaria.idicsa.cl/proyectos-inmobiliarios/independencia/edificio-parque-hipodromo/?gad_source=1&gad_campaignid=21702528385&gbraid=0AAAAABy9ZPpw7PSTQbXEgFSq6RFaQBvT5&gclid=CjwKCAjwmdLSBhANEiwAkREMNwFOxqF0Tj3gh9zFd6v0T40RFFRyqmQkGOgD91IqqWfjfIJvCuAtVBoCwhYQAvD_BwE"
+        },
+        {
+          "id": 5818,
+          "tpo": "DEPARTAMENTO",
+          "comuna": "INDEPENDENCIA",
+          "nombre": "EDIFICIO CONEXIÓN INDEPENDENCIA",
+          "direccion": "CORONEL ALVARADO 2180",
+          "inmobiliaria": "INMOBILIARIA LARRAIN PRIETO",
+          "grupo": null,
+          "link": "https://larrainprieto.cl/proyectos/edificio-conexion-independencia/"
+        },
+        {
+          "id": 6008,
+          "tpo": "DEPARTAMENTO",
+          "comuna": "INDEPENDENCIA",
+          "nombre": "EDIFICIO DAVID ARELLANO",
+          "direccion": "DAVID ARELLANO 1810",
+          "inmobiliaria": "DICSA",
+          "grupo": null,
+          "link": "https://inmobiliaria.idicsa.cl/proyectos-inmobiliarios/independencia/edificio-david-arellano/?gad_source=1&gad_campaignid=22245070938&gbraid=0AAAAABy9ZPrlPWE4mzeeWvkKkeWlBUawy&gclid=CjwKCAjwmdLSBhANEiwAkREMN5TTp4auntQ1yLIpXZ6vsw_s-EjiAPM4V1KDqsonh96dQJ-_v5MnVBoCkGcQAvD_BwE"
+        },
+        {
+          "id": 6011,
+          "tpo": "DEPARTAMENTO",
+          "comuna": "INDEPENDENCIA",
+          "nombre": "JARDINES DE ALVARADO",
+          "direccion": "CORONEL ALVARADO 2505",
+          "inmobiliaria": "INMOBILIARIA MAESTRA",
+          "grupo": null,
+          "link": "https://www.maestra.cl/proyectos/jardines-de-alvarado/"
+        },
+        {
+          "id": 6086,
+          "tpo": "DEPARTAMENTO",
+          "comuna": "INDEPENDENCIA",
+          "nombre": "ACTIVA PLAZA CHACABUCO",
+          "direccion": "HUANUCO 2290",
+          "inmobiliaria": "ACTIVA GRUPO INMOBILIARIO",
+          "grupo": null,
+          "link": "https://www.activa.cl/activa-plaza-chacabuco/"
+        },
+        {
+          "id": 6009,
+          "tpo": "DEPARTAMENTO",
+          "comuna": "INDEPENDENCIA",
+          "nombre": "EDIFICIO INDI",
+          "direccion": "HIPODROMO 1816",
+          "inmobiliaria": "LEBEN",
+          "grupo": "NUEVO",
+          "link": "https://indi.ileben.cl/"
+        },
+        {
+          "id": 6151,
+          "tpo": "DEPARTAMENTO",
+          "comuna": "INDEPENDENCIA",
+          "nombre": "INDEPENDENCIA 2935",
+          "direccion": "INDEPENDENCIA 2935",
+          "inmobiliaria": "INMOBILIARIA NUCLEOS",
+          "grupo": null,
+          "link": "https://nucleos.cl/oportunidades/independencia-2935-1202/"
+        },
+        {
+          "id": 6417,
+          "tpo": "DEPARTAMENTO",
+          "comuna": "INDEPENDENCIA",
+          "nombre": "EDIFICIO PLAY",
+          "direccion": "ISIDORA ERRAZURIZ 2305",
+          "inmobiliaria": "INMOBILIARIA ECHEVERRIA IZQUIERDO",
+          "grupo": null,
+          "link": "https://eiii.cl/proyecto-play/?utm_source=google-ads&utm_medium=search&utm_campaign=play-search-ao&utm_term=responsivo&utm_content=1&gad_source=1&gad_campaignid=15623654096&gbraid=0AAAAADRiIC4yhcF_7sFyUrIM0ThavqLhJ&gclid=CjwKCAjwmdLSBhANEiwAkREMNxHmq29barXOjvepe1kQ_dEV6pobFdD6YMtwPaDTq0pUsDza_n50sxoCK48QAvD_BwE"
+        },
+        {
+          "id": 6459,
+          "tpo": "DEPARTAMENTO",
+          "comuna": "INDEPENDENCIA",
+          "nombre": "EDIFICIO TERRAZAS VIVACETA",
+          "direccion": "FERMIN VIVACETA 2648",
+          "inmobiliaria": "DICSA",
+          "grupo": null,
+          "link": "https://idicsa.cl/proyectos-inmobiliarios/independencia/edificio-terrazas-vivaceta/?gad_source=1&gad_campaignid=22245070938&gbraid=0AAAAABy9ZPrlPWE4mzeeWvkKkeWlBUawy&gclid=CjwKCAjwmdLSBhANEiwAkREMNwKU5UwuaP1je7P8CgRmgCr1QBWJuB5w7T0eKS3AJz9FoGLieQzW2hoCCGgQAvD_BwE"
+        },
+        {
+          "id": 6649,
+          "tpo": "DEPARTAMENTO",
+          "comuna": "INDEPENDENCIA",
+          "nombre": "ACTIVA HIPODROMO PLAZA",
+          "direccion": "DAVID ARELLANO 1954",
+          "inmobiliaria": "ACTIVA GRUPO INMOBILIARIO",
+          "grupo": null,
+          "link": "https://www.activa.cl/proyecto-activa-hipodromo-plaza/"
+        },
+        {
+          "id": 6859,
+          "tpo": "DEPARTAMENTO",
+          "comuna": "INDEPENDENCIA",
+          "nombre": "EDIFICIO HIPODROMO 1613",
+          "direccion": "HIPODROMO 1613",
+          "inmobiliaria": "INMOBILIARIA COPAHUE",
+          "grupo": null,
+          "link": "https://copahue.cl/proyecto/edificio-hipodromo-1613"
+        },
+        {
+          "id": 6380,
+          "tpo": "DEPARTAMENTO",
+          "comuna": "LA FLORIDA",
+          "nombre": "ACTIVA WM815",
+          "direccion": "WALKER MARTINEZ 815",
+          "inmobiliaria": "ACTIVA GRUPO INMOBILIARIO",
+          "grupo": null,
+          "link": "https://www.activa.cl/proyecto-activa-wm-815/"
+        },
+        {
+          "id": 6481,
+          "tpo": "DEPARTAMENTO",
+          "comuna": "LA FLORIDA",
+          "nombre": "ECO VALDES I",
+          "direccion": "GERONIMO DE ALDERETE 396",
+          "inmobiliaria": "INMOBILIARIA FUNDAMENTA",
+          "grupo": null,
+          "link": "https://www.fundamenta.cl/proyectos-en-venta/departamento-en-la-florida/eco-valdes-i/"
+        },
+        {
+          "id": 6517,
+          "tpo": "DEPARTAMENTO",
+          "comuna": "LA FLORIDA",
+          "nombre": "CONCEPTO WALKER TOWN",
+          "direccion": "WALKER MARTINEZ 725",
+          "inmobiliaria": "IMAGINA INMOBILIARIA",
+          "grupo": null,
+          "link": "https://www.imagina.cl/proyectos/walker-town/"
+        },
+        {
+          "id": 6767,
+          "tpo": "DEPARTAMENTO",
+          "comuna": "LA FLORIDA",
+          "nombre": "Edificio Walker Martínez 880",
+          "direccion": "WALKER MARTINEZ 880",
+          "inmobiliaria": "Inmobiliaria Santolaya",
+          "grupo": "NUEVO",
+          "link": "https://santolaya.cl/proyecto/walkermartinez"
+        },
+        {
+          "id": 6652,
+          "tpo": "DEPARTAMENTO",
+          "comuna": "LA FLORIDA",
+          "nombre": "EDIFICIO VISTA SANTUARIO",
+          "direccion": "COLOMBIA 7642",
+          "inmobiliaria": "INMOBILIARIA VISTA SANTUARIO",
+          "grupo": null,
+          "link": "https://www.edificiovistasantuario.cl/"
+        },
+        {
+          "id": 6724,
+          "tpo": "DEPARTAMENTO",
+          "comuna": "LA FLORIDA",
+          "nombre": "EDIFICIO PARQUE PLATINO",
+          "direccion": "VICENTE VALDES 755",
+          "inmobiliaria": "PANGEA GESTION INMOBILIARIA",
+          "grupo": null,
+          "link": "https://www.edificioparqueplatino.cl/"
+        },
+        {
+          "id": 6123,
+          "tpo": "DEPARTAMENTO",
+          "comuna": "LA FLORIDA",
+          "nombre": "CONDOMINIO MIRADOR ACTIVA",
+          "direccion": "LLANQUIHUE 6290",
+          "inmobiliaria": "ACTIVA GRUPO INMOBILIARIO",
+          "grupo": null,
+          "link": "https://www.activa.cl/proyecto-mirador-activa/"
+        },
+        {
+          "id": 6651,
+          "tpo": "DEPARTAMENTO",
+          "comuna": "LA FLORIDA",
+          "nombre": "EDIFICIO MILLALONGO 72",
+          "direccion": "MILLALONGO 72",
+          "inmobiliaria": "SSILVA GESTION INMOBILIARIA",
+          "grupo": null,
+          "link": "https://www.ssilva.cl/millalongo72/"
+        },
+        {
+          "id": 6781,
+          "tpo": "DEPARTAMENTO",
+          "comuna": "LA FLORIDA",
+          "nombre": "EDIFICIO VICUÑA MACKENNA 6896",
+          "direccion": "VICUÑA MACKENNA PONIENTE 6896",
+          "inmobiliaria": "INMOBILIARIA NORTE VERDE",
+          "grupo": null,
+          "link": "https://norte-verde.cl/secciones_internas/edificio-vicuna-mackenna-6896/"
+        },
+        {
+          "id": 6895,
+          "tpo": "DEPARTAMENTO",
+          "comuna": "LA FLORIDA",
+          "nombre": "VIVE BARCELONA",
+          "direccion": "BARCELONA 150",
+          "inmobiliaria": "BRICSA",
+          "grupo": null,
+          "link": "https://www.bricsa.cl/edificio-barcelona/"
+        },
+        {
+          "id": 6932,
+          "tpo": "DEPARTAMENTO",
+          "comuna": "LA FLORIDA",
+          "nombre": "EDIFICIO LOS LILENES",
+          "direccion": "VICUÑA MACKENNA 6988",
+          "inmobiliaria": "INMOBILIARIA INGEVEC",
+          "grupo": null,
+          "link": "https://ingevecinmobiliaria.cl/proyecto-loslilenes"
+        },
+        {
+          "id": 6377,
+          "tpo": "DEPARTAMENTO",
+          "comuna": "LA FLORIDA",
+          "nombre": "Edificio Mirador Casona",
+          "direccion": "Av. Vicuña Mackenna 7197",
+          "inmobiliaria": "Inmobiliaria Exxacon",
+          "grupo": "NUEVO",
+          "link": "https://exxacon.cl/projects/mirador-casona/"
+        }
+      ],
+      "visits": [
+        {
+          "id_respuesta": 1060,
+          "project_id": 5818,
+          "project_name": "EDIFICIO CONEXIÓN INDEPENDENCIA",
+          "comuna": "INDEPENDENCIA",
+          "inmobiliaria": "INMOBILIARIA LARRAIN PRIETO",
+          "grupo": null,
+          "is_activa": false,
+          "vendedor": "Elva Barahona",
+          "vendedor_raw": "Elva Barahona",
+          "encuestador": "claudia Valdés Yáñez",
+          "fecha_visita": "2026-07-18",
+          "p6_ofrece_piloto": "Si",
+          "p7_acompana_piloto": "Si",
+          "tipo_renta": "Renta larga / tradicional",
+          "aspectos_destacados": [
+            "1.- Areas verdes",
+            "10.- Bicicleteros",
+            "12.- Estacionamientos de visita"
+          ],
+          "elementos_diferenciadores": [
+            "7.- Vías de acceso"
+          ],
+          "scores": {
+            "sala_ventas": 72.2,
+            "protocolo_atencion": 100,
+            "indagacion_necesidades": 87.5,
+            "conocimiento_vendedor": 87.5,
+            "cierre_seguimiento": 42.5,
+            "satisfaccion_general": 83.3
+          },
+          "tactico": {
+            "cotizacion": 50,
+            "proximo_paso": 0,
+            "descuentos": 100,
+            "financiamiento_espontaneo": 100
+          },
+          "composite": 80.3,
+          "seguimiento_disponible": true
+        },
+        {
+          "id_respuesta": 1061,
+          "project_id": 6008,
+          "project_name": "EDIFICIO DAVID ARELLANO",
+          "comuna": "INDEPENDENCIA",
+          "inmobiliaria": "DICSA",
+          "grupo": null,
+          "is_activa": false,
+          "vendedor": "Andres Sanchez",
+          "vendedor_raw": "Andres Sanchez",
+          "encuestador": "claudia Valdés Yáñez",
+          "fecha_visita": "2026-07-18",
+          "p6_ofrece_piloto": "Si",
+          "p7_acompana_piloto": "Si",
+          "tipo_renta": null,
+          "aspectos_destacados": [],
+          "elementos_diferenciadores": [],
+          "scores": {
+            "sala_ventas": 70.4,
+            "protocolo_atencion": 100,
+            "indagacion_necesidades": 50,
+            "conocimiento_vendedor": 75,
+            "cierre_seguimiento": 100,
+            "satisfaccion_general": 83.3
+          },
+          "tactico": {
+            "cotizacion": 100,
+            "proximo_paso": 100,
+            "descuentos": 100,
+            "financiamiento_espontaneo": 0
+          },
+          "composite": 80.6,
+          "seguimiento_disponible": true
+        },
+        {
+          "id_respuesta": 1062,
+          "project_id": 4911,
+          "project_name": "EDIFICIO AVENIDA PERU PLAZA",
+          "comuna": "RECOLETA",
+          "inmobiliaria": "ABSAL INMOBILIARIA",
+          "grupo": null,
+          "is_activa": false,
+          "vendedor": "Agustina Ramirez Bustos",
+          "vendedor_raw": "Agustina Ramirez Bustos",
+          "encuestador": "claudia Valdés Yáñez",
+          "fecha_visita": "2026-07-19",
+          "p6_ofrece_piloto": "Si",
+          "p7_acompana_piloto": "Si",
+          "tipo_renta": null,
+          "aspectos_destacados": [
+            "1.- Areas verdes",
+            "3.- Quincho para asados",
+            "4.- Lavandería",
+            "6.- Sala multi uso",
+            "11.- Piscina"
+          ],
+          "elementos_diferenciadores": [],
+          "scores": {
+            "sala_ventas": 29.6,
+            "protocolo_atencion": 92.9,
+            "indagacion_necesidades": 25,
+            "conocimiento_vendedor": 70.8,
+            "cierre_seguimiento": 65,
+            "satisfaccion_general": 50
+          },
+          "tactico": {
+            "cotizacion": 100,
+            "proximo_paso": 100,
+            "descuentos": 100,
+            "financiamiento_espontaneo": 0
+          },
+          "composite": 58.2,
+          "seguimiento_disponible": true
+        },
+        {
+          "id_respuesta": 1063,
+          "project_id": 5859,
+          "project_name": "EDIFICIO SAN CRISTOBAL",
+          "comuna": "RECOLETA",
+          "inmobiliaria": "DICSA",
+          "grupo": null,
+          "is_activa": false,
+          "vendedor": "Juliana Marin Tamayo",
+          "vendedor_raw": "Juliana Marin Tamayo",
+          "encuestador": "claudia Valdés Yáñez",
+          "fecha_visita": "2026-07-19",
+          "p6_ofrece_piloto": "Si",
+          "p7_acompana_piloto": "Si",
+          "tipo_renta": null,
+          "aspectos_destacados": [],
+          "elementos_diferenciadores": [],
+          "scores": {
+            "sala_ventas": 53.7,
+            "protocolo_atencion": 100,
+            "indagacion_necesidades": 62.5,
+            "conocimiento_vendedor": 87.5,
+            "cierre_seguimiento": 92.5,
+            "satisfaccion_general": 83.3
+          },
+          "tactico": {
+            "cotizacion": 50,
+            "proximo_paso": 100,
+            "descuentos": 100,
+            "financiamiento_espontaneo": 100
+          },
+          "composite": 81.3,
+          "seguimiento_disponible": true
+        },
+        {
+          "id_respuesta": 1064,
+          "project_id": 6459,
+          "project_name": "EDIFICIO TERRAZAS VIVACETA",
+          "comuna": "INDEPENDENCIA",
+          "inmobiliaria": "DICSA",
+          "grupo": null,
+          "is_activa": false,
+          "vendedor": "Ariana Sanchez",
+          "vendedor_raw": "Ariana Sanchez",
+          "encuestador": "Claudia Vera Moran",
+          "fecha_visita": "2026-07-20",
+          "p6_ofrece_piloto": "Si",
+          "p7_acompana_piloto": "Si",
+          "tipo_renta": "Renta larga / tradicional",
+          "aspectos_destacados": [
+            "2.- Gimnasio",
+            "3.- Quincho para asados",
+            "12.- Estacionamientos de visita"
+          ],
+          "elementos_diferenciadores": [],
+          "scores": {
+            "sala_ventas": 81.5,
+            "protocolo_atencion": 100,
+            "indagacion_necesidades": 87.5,
+            "conocimiento_vendedor": 87.5,
+            "cierre_seguimiento": 37.5,
+            "satisfaccion_general": 83.3
+          },
+          "tactico": {
+            "cotizacion": 50,
+            "proximo_paso": 0,
+            "descuentos": 100,
+            "financiamiento_espontaneo": 100
+          },
+          "composite": 81,
+          "seguimiento_disponible": true
+        },
+        {
+          "id_respuesta": 1065,
+          "project_id": 6011,
+          "project_name": "JARDINES DE ALVARADO",
+          "comuna": "INDEPENDENCIA",
+          "inmobiliaria": "INMOBILIARIA MAESTRA",
+          "grupo": null,
+          "is_activa": false,
+          "vendedor": "Neudys Chirinos",
+          "vendedor_raw": "Neudys Chirinos",
+          "encuestador": "Claudia Vera Moran",
+          "fecha_visita": "2026-07-20",
+          "p6_ofrece_piloto": "Si",
+          "p7_acompana_piloto": "Si",
+          "tipo_renta": "Renta larga / tradicional",
+          "aspectos_destacados": [
+            "1.- Areas verdes",
+            "4.- Lavandería",
+            "8.- Número de estacionamientos"
+          ],
+          "elementos_diferenciadores": [
+            "1.- Areas verdes"
+          ],
+          "scores": {
+            "sala_ventas": 55.6,
+            "protocolo_atencion": 92.9,
+            "indagacion_necesidades": 87.5,
+            "conocimiento_vendedor": 70.8,
+            "cierre_seguimiento": 12.5,
+            "satisfaccion_general": 50
+          },
+          "tactico": {
+            "cotizacion": 50,
+            "proximo_paso": 0,
+            "descuentos": 100,
+            "financiamiento_espontaneo": 100
+          },
+          "composite": 63.6,
+          "seguimiento_disponible": true
+        },
+        {
+          "id_respuesta": 1066,
+          "project_id": 6417,
+          "project_name": "EDIFICIO PLAY",
+          "comuna": "INDEPENDENCIA",
+          "inmobiliaria": "INMOBILIARIA ECHEVERRIA IZQUIERDO",
+          "grupo": null,
+          "is_activa": false,
+          "vendedor": "Maricel Moreno",
+          "vendedor_raw": "Maricel Moreno",
+          "encuestador": "Claudia Vera Moran",
+          "fecha_visita": "2026-07-20",
+          "p6_ofrece_piloto": "Si",
+          "p7_acompana_piloto": "Si",
+          "tipo_renta": "Renta larga / tradicional",
+          "aspectos_destacados": [
+            "2.- Gimnasio",
+            "5.- Cowork",
+            "6.- Sala multi uso",
+            "12.- Estacionamientos de visita"
+          ],
+          "elementos_diferenciadores": [],
+          "scores": {
+            "sala_ventas": 70.4,
+            "protocolo_atencion": 100,
+            "indagacion_necesidades": 75,
+            "conocimiento_vendedor": 66.7,
+            "cierre_seguimiento": 47.5,
+            "satisfaccion_general": 66.7
+          },
+          "tactico": {
+            "cotizacion": 50,
+            "proximo_paso": 0,
+            "descuentos": 100,
+            "financiamiento_espontaneo": 0
+          },
+          "composite": 72.3,
+          "seguimiento_disponible": true
+        },
+        {
+          "id_respuesta": 1067,
+          "project_id": 6481,
+          "project_name": "ECO VALDES I",
+          "comuna": "LA FLORIDA",
+          "inmobiliaria": "INMOBILIARIA FUNDAMENTA",
+          "grupo": null,
+          "is_activa": false,
+          "vendedor": "Barbara Armijo",
+          "vendedor_raw": "Barbara Armijo",
+          "encuestador": "Claudia Vera Moran",
+          "fecha_visita": "2026-07-20",
+          "p6_ofrece_piloto": "Si",
+          "p7_acompana_piloto": "Si",
+          "tipo_renta": "Renta larga / tradicional",
+          "aspectos_destacados": [
+            "2.- Gimnasio",
+            "3.- Quincho para asados",
+            "5.- Cowork"
+          ],
+          "elementos_diferenciadores": [],
+          "scores": {
+            "sala_ventas": 81.5,
+            "protocolo_atencion": 100,
+            "indagacion_necesidades": 100,
+            "conocimiento_vendedor": 91.7,
+            "cierre_seguimiento": 92.5,
+            "satisfaccion_general": 83.3
+          },
+          "tactico": {
+            "cotizacion": 50,
+            "proximo_paso": 100,
+            "descuentos": 100,
+            "financiamiento_espontaneo": 100
+          },
+          "composite": 91.9,
+          "seguimiento_disponible": true
+        },
+        {
+          "id_respuesta": 1068,
+          "project_id": 6380,
+          "project_name": "ACTIVA WM815",
+          "comuna": "LA FLORIDA",
+          "inmobiliaria": "ACTIVA GRUPO INMOBILIARIO",
+          "grupo": null,
+          "is_activa": true,
+          "vendedor": "Yetzi Gomez",
+          "vendedor_raw": "Yetzi Gomez",
+          "encuestador": "Claudia Vera Moran",
+          "fecha_visita": "2026-07-20",
+          "p6_ofrece_piloto": "Si",
+          "p7_acompana_piloto": "Si",
+          "tipo_renta": "Renta corta",
+          "aspectos_destacados": [
+            "2.- Gimnasio",
+            "3.- Quincho para asados",
+            "4.- Lavandería",
+            "5.- Cowork",
+            "9.- Amplia conserjería",
+            "10.- Bicicleteros"
+          ],
+          "elementos_diferenciadores": [
+            "2.- Gimnasio"
+          ],
+          "scores": {
+            "sala_ventas": 96.3,
+            "protocolo_atencion": 100,
+            "indagacion_necesidades": 100,
+            "conocimiento_vendedor": 100,
+            "cierre_seguimiento": 100,
+            "satisfaccion_general": 100
+          },
+          "tactico": {
+            "cotizacion": 100,
+            "proximo_paso": 100,
+            "descuentos": 100,
+            "financiamiento_espontaneo": 100
+          },
+          "composite": 99.4,
+          "seguimiento_disponible": true
+        },
+        {
+          "id_respuesta": 1069,
+          "project_id": 6517,
+          "project_name": "CONCEPTO WALKER TOWN",
+          "comuna": "LA FLORIDA",
+          "inmobiliaria": "IMAGINA INMOBILIARIA",
+          "grupo": null,
+          "is_activa": false,
+          "vendedor": "Gisele Ferlissi",
+          "vendedor_raw": "Gisele Ferlissi",
+          "encuestador": "Claudia Vera Moran",
+          "fecha_visita": "2026-07-20",
+          "p6_ofrece_piloto": "Si",
+          "p7_acompana_piloto": "Si",
+          "tipo_renta": "Renta larga / tradicional",
+          "aspectos_destacados": [
+            "1.- Areas verdes",
+            "2.- Gimnasio",
+            "11.- Piscina"
+          ],
+          "elementos_diferenciadores": [],
+          "scores": {
+            "sala_ventas": 72.2,
+            "protocolo_atencion": 100,
+            "indagacion_necesidades": 75,
+            "conocimiento_vendedor": 75,
+            "cierre_seguimiento": 75,
+            "satisfaccion_general": 50
+          },
+          "tactico": {
+            "cotizacion": 100,
+            "proximo_paso": 50,
+            "descuentos": 100,
+            "financiamiento_espontaneo": 0
+          },
+          "composite": 75.8,
+          "seguimiento_disponible": true
+        },
+        {
+          "id_respuesta": 1070,
+          "project_id": 6086,
+          "project_name": "ACTIVA PLAZA CHACABUCO",
+          "comuna": "INDEPENDENCIA",
+          "inmobiliaria": "ACTIVA GRUPO INMOBILIARIO",
+          "grupo": null,
+          "is_activa": true,
+          "vendedor": "Camila Tapia",
+          "vendedor_raw": "Camila Tapia",
+          "encuestador": "claudia Valdés Yáñez",
+          "fecha_visita": "2026-07-20",
+          "p6_ofrece_piloto": "Si",
+          "p7_acompana_piloto": "Si",
+          "tipo_renta": "Renta corta",
+          "aspectos_destacados": [
+            "1.- Areas verdes",
+            "2.- Gimnasio",
+            "3.- Quincho para asados",
+            "5.- Cowork",
+            "6.- Sala multi uso",
+            "11.- Piscina",
+            "12.- Estacionamientos de visita"
+          ],
+          "elementos_diferenciadores": [
+            "7.- Vías de acceso",
+            "12.- Estacionamientos de visita",
+            "1.- Areas verdes",
+            "2.- Gimnasio"
+          ],
+          "scores": {
+            "sala_ventas": 87,
+            "protocolo_atencion": 100,
+            "indagacion_necesidades": 100,
+            "conocimiento_vendedor": 100,
+            "cierre_seguimiento": 95,
+            "satisfaccion_general": 100
+          },
+          "tactico": {
+            "cotizacion": 100,
+            "proximo_paso": 100,
+            "descuentos": 100,
+            "financiamiento_espontaneo": 100
+          },
+          "composite": 97.3,
+          "seguimiento_disponible": true
+        },
+        {
+          "id_respuesta": 1071,
+          "project_id": 6077,
+          "project_name": "EDIFICIO CONQUISTA EINSTEIN",
+          "comuna": "RECOLETA",
+          "inmobiliaria": "INMOBILIARIA CONQUISTA",
+          "grupo": null,
+          "is_activa": false,
+          "vendedor": "Cristian Repenning",
+          "vendedor_raw": "Cristian Repenning",
+          "encuestador": "claudia Valdés Yáñez",
+          "fecha_visita": "2026-07-20",
+          "p6_ofrece_piloto": "Si",
+          "p7_acompana_piloto": "Si",
+          "tipo_renta": "Renta corta",
+          "aspectos_destacados": [
+            "4.- Lavandería",
+            "5.- Cowork",
+            "6.- Sala multi uso",
+            "9.- Amplia conserjería",
+            "10.- Bicicleteros"
+          ],
+          "elementos_diferenciadores": [
+            "7.- Vías de acceso"
+          ],
+          "scores": {
+            "sala_ventas": 66.7,
+            "protocolo_atencion": 100,
+            "indagacion_necesidades": 100,
+            "conocimiento_vendedor": 100,
+            "cierre_seguimiento": 100,
+            "satisfaccion_general": 100
+          },
+          "tactico": {
+            "cotizacion": 100,
+            "proximo_paso": 100,
+            "descuentos": 100,
+            "financiamiento_espontaneo": 100
+          },
+          "composite": 95,
+          "seguimiento_disponible": true
+        },
+        {
+          "id_respuesta": 1072,
+          "project_id": 4421,
+          "project_name": "EDIFICIO PARQUE HIPODROMO",
+          "comuna": "INDEPENDENCIA",
+          "inmobiliaria": "INMOBILIARIA DESARROLLO URBANO",
+          "grupo": null,
+          "is_activa": false,
+          "vendedor": "Juliana Marin Tamayo",
+          "vendedor_raw": "Juliana Marin",
+          "encuestador": "claudia Valdés Yáñez",
+          "fecha_visita": "2026-07-20",
+          "p6_ofrece_piloto": "Si",
+          "p7_acompana_piloto": "Existe responsable en Piloto",
+          "tipo_renta": "Renta corta",
+          "aspectos_destacados": [
+            "6.- Sala multi uso",
+            "7.- Vías de acceso",
+            "8.- Número de estacionamientos"
+          ],
+          "elementos_diferenciadores": [],
+          "scores": {
+            "sala_ventas": 63,
+            "protocolo_atencion": 100,
+            "indagacion_necesidades": 100,
+            "conocimiento_vendedor": 70.8,
+            "cierre_seguimiento": 95,
+            "satisfaccion_general": 100
+          },
+          "tactico": {
+            "cotizacion": 100,
+            "proximo_paso": 100,
+            "descuentos": 100,
+            "financiamiento_espontaneo": 100
+          },
+          "composite": 87.9,
+          "seguimiento_disponible": true
+        },
+        {
+          "id_respuesta": 1073,
+          "project_id": 6123,
+          "project_name": "CONDOMINIO MIRADOR ACTIVA",
+          "comuna": "LA FLORIDA",
+          "inmobiliaria": "ACTIVA GRUPO INMOBILIARIO",
+          "grupo": null,
+          "is_activa": true,
+          "vendedor": "Grecia Tamariz",
+          "vendedor_raw": "Grecia Tamariz",
+          "encuestador": "Lissette Riquelme",
+          "fecha_visita": "2026-07-23",
+          "p6_ofrece_piloto": "Si",
+          "p7_acompana_piloto": "Si",
+          "tipo_renta": "Renta larga / tradicional",
+          "aspectos_destacados": [
+            "1.- Areas verdes",
+            "2.- Gimnasio",
+            "3.- Quincho para asados",
+            "4.- Lavandería",
+            "5.- Cowork",
+            "6.- Sala multi uso",
+            "9.- Amplia conserjería",
+            "10.- Bicicleteros",
+            "11.- Piscina"
+          ],
+          "elementos_diferenciadores": [
+            "7.- Vías de acceso",
+            "1.- Areas verdes"
+          ],
+          "scores": {
+            "sala_ventas": 63,
+            "protocolo_atencion": 100,
+            "indagacion_necesidades": 87.5,
+            "conocimiento_vendedor": 91.7,
+            "cierre_seguimiento": 100,
+            "satisfaccion_general": 100
+          },
+          "tactico": {
+            "cotizacion": 100,
+            "proximo_paso": 100,
+            "descuentos": 100,
+            "financiamiento_espontaneo": 100
+          },
+          "composite": 90.9,
+          "seguimiento_disponible": true
+        },
+        {
+          "id_respuesta": 1074,
+          "project_id": 6651,
+          "project_name": "EDIFICIO MILLALONGO 72",
+          "comuna": "LA FLORIDA",
+          "inmobiliaria": "SSILVA GESTION INMOBILIARIA",
+          "grupo": null,
+          "is_activa": false,
+          "vendedor": "Paulina Figueroa",
+          "vendedor_raw": "Paulina Figueroa",
+          "encuestador": "Lissette Riquelme",
+          "fecha_visita": "2026-07-23",
+          "p6_ofrece_piloto": "Si",
+          "p7_acompana_piloto": "Si",
+          "tipo_renta": "Renta larga / tradicional",
+          "aspectos_destacados": [
+            "1.- Areas verdes",
+            "2.- Gimnasio",
+            "3.- Quincho para asados",
+            "6.- Sala multi uso",
+            "11.- Piscina"
+          ],
+          "elementos_diferenciadores": [],
+          "scores": {
+            "sala_ventas": 87,
+            "protocolo_atencion": 100,
+            "indagacion_necesidades": 62.5,
+            "conocimiento_vendedor": 83.3,
+            "cierre_seguimiento": 40,
+            "satisfaccion_general": 66.7
+          },
+          "tactico": {
+            "cotizacion": 100,
+            "proximo_paso": 50,
+            "descuentos": 100,
+            "financiamiento_espontaneo": 100
+          },
+          "composite": 75.1,
+          "seguimiento_disponible": true
+        },
+        {
+          "id_respuesta": 1075,
+          "project_id": 6781,
+          "project_name": "EDIFICIO VICUÑA MACKENNA 6896",
+          "comuna": "LA FLORIDA",
+          "inmobiliaria": "INMOBILIARIA NORTE VERDE",
+          "grupo": null,
+          "is_activa": false,
+          "vendedor": "Jocelyn Godoy",
+          "vendedor_raw": "Jocelyn Godoy",
+          "encuestador": "Lissette Riquelme",
+          "fecha_visita": "2026-07-23",
+          "p6_ofrece_piloto": "Si",
+          "p7_acompana_piloto": "Si",
+          "tipo_renta": "Renta larga / tradicional",
+          "aspectos_destacados": [
+            "2.- Gimnasio",
+            "3.- Quincho para asados",
+            "4.- Lavandería",
+            "5.- Cowork",
+            "6.- Sala multi uso",
+            "7.- Vías de acceso"
+          ],
+          "elementos_diferenciadores": [
+            "7.- Vías de acceso"
+          ],
+          "scores": {
+            "sala_ventas": 72.2,
+            "protocolo_atencion": 100,
+            "indagacion_necesidades": 87.5,
+            "conocimiento_vendedor": 87.5,
+            "cierre_seguimiento": 92.5,
+            "satisfaccion_general": 100
+          },
+          "tactico": {
+            "cotizacion": 50,
+            "proximo_paso": 100,
+            "descuentos": 100,
+            "financiamiento_espontaneo": 100
+          },
+          "composite": 90.3,
+          "seguimiento_disponible": true
+        },
+        {
+          "id_respuesta": 1078,
+          "project_id": 6895,
+          "project_name": "VIVE BARCELONA",
+          "comuna": "LA FLORIDA",
+          "inmobiliaria": "BRICSA",
+          "grupo": null,
+          "is_activa": false,
+          "vendedor": "Carola Uribe",
+          "vendedor_raw": "Carola Uribe",
+          "encuestador": "Lissette Riquelme",
+          "fecha_visita": "2026-07-25",
+          "p6_ofrece_piloto": "Si",
+          "p7_acompana_piloto": "Si",
+          "tipo_renta": "Renta larga / tradicional",
+          "aspectos_destacados": [
+            "1.- Areas verdes",
+            "2.- Gimnasio",
+            "3.- Quincho para asados",
+            "6.- Sala multi uso",
+            "7.- Vías de acceso",
+            "10.- Bicicleteros",
+            "11.- Piscina"
+          ],
+          "elementos_diferenciadores": [
+            "7.- Vías de acceso",
+            "11.- Piscina",
+            "1.- Areas verdes",
+            "2.- Gimnasio",
+            "3.- Quincho para asados",
+            "4.- Lavandería"
+          ],
+          "scores": {
+            "sala_ventas": 74.1,
+            "protocolo_atencion": 100,
+            "indagacion_necesidades": 100,
+            "conocimiento_vendedor": 95.8,
+            "cierre_seguimiento": 92.5,
+            "satisfaccion_general": 100
+          },
+          "tactico": {
+            "cotizacion": 50,
+            "proximo_paso": 100,
+            "descuentos": 100,
+            "financiamiento_espontaneo": 100
+          },
+          "composite": 94.2,
+          "seguimiento_disponible": true
+        },
+        {
+          "id_respuesta": 1079,
+          "project_id": 6724,
+          "project_name": "EDIFICIO PARQUE PLATINO",
+          "comuna": "LA FLORIDA",
+          "inmobiliaria": "PANGEA GESTION INMOBILIARIA",
+          "grupo": null,
+          "is_activa": false,
+          "vendedor": "Verónica Trejo",
+          "vendedor_raw": "Verónica Trejo",
+          "encuestador": "Lissette Riquelme",
+          "fecha_visita": "2026-07-25",
+          "p6_ofrece_piloto": "Si",
+          "p7_acompana_piloto": "Si",
+          "tipo_renta": "Renta larga / tradicional",
+          "aspectos_destacados": [
+            "1.- Areas verdes",
+            "6.- Sala multi uso",
+            "7.- Vías de acceso"
+          ],
+          "elementos_diferenciadores": [
+            "10.- Bicicleteros",
+            "1.- Areas verdes",
+            "2.- Gimnasio"
+          ],
+          "scores": {
+            "sala_ventas": 55.6,
+            "protocolo_atencion": 100,
+            "indagacion_necesidades": 75,
+            "conocimiento_vendedor": 91.7,
+            "cierre_seguimiento": 92.5,
+            "satisfaccion_general": 100
+          },
+          "tactico": {
+            "cotizacion": 50,
+            "proximo_paso": 100,
+            "descuentos": 100,
+            "financiamiento_espontaneo": 100
+          },
+          "composite": 86.8,
+          "seguimiento_disponible": true
+        },
+        {
+          "id_respuesta": 1093,
+          "project_id": 6009,
+          "project_name": "EDIFICIO INDI",
+          "comuna": "INDEPENDENCIA",
+          "inmobiliaria": "LEBEN",
+          "grupo": "NUEVO",
+          "is_activa": false,
+          "vendedor": "Marcia Jaramillo",
+          "vendedor_raw": "Marcia Jaramillo",
+          "encuestador": "Claudia Vera Moran",
+          "fecha_visita": "2026-07-29",
+          "p6_ofrece_piloto": "Si",
+          "p7_acompana_piloto": "Si",
+          "tipo_renta": "Renta corta",
+          "aspectos_destacados": [
+            "7.- Vías de acceso",
+            "10.- Bicicleteros",
+            "12.- Estacionamientos de visita"
+          ],
+          "elementos_diferenciadores": [
+            "7.- Vías de acceso"
+          ],
+          "scores": {
+            "sala_ventas": 38.9,
+            "protocolo_atencion": 100,
+            "indagacion_necesidades": 87.5,
+            "conocimiento_vendedor": 91.7,
+            "cierre_seguimiento": 92.5,
+            "satisfaccion_general": 83.3
+          },
+          "tactico": {
+            "cotizacion": 50,
+            "proximo_paso": 100,
+            "descuentos": 100,
+            "financiamiento_espontaneo": 100
+          },
+          "composite": 83.7,
+          "seguimiento_disponible": true
+        },
+        {
+          "id_respuesta": 1103,
+          "project_id": 6377,
+          "project_name": "Edificio Mirador Casona",
+          "comuna": "LA FLORIDA",
+          "inmobiliaria": "Inmobiliaria Exxacon",
+          "grupo": "NUEVO",
+          "is_activa": false,
+          "vendedor": "Rodrigo Molina",
+          "vendedor_raw": "Rodrigo molina",
+          "encuestador": "Lissette Riquelme",
+          "fecha_visita": "2026-07-31",
+          "p6_ofrece_piloto": "Si",
+          "p7_acompana_piloto": "Si",
+          "tipo_renta": "Renta corta",
+          "aspectos_destacados": [
+            "1.- Areas verdes",
+            "2.- Gimnasio",
+            "3.- Quincho para asados",
+            "4.- Lavandería",
+            "5.- Cowork",
+            "6.- Sala multi uso",
+            "7.- Vías de acceso",
+            "9.- Amplia conserjería",
+            "10.- Bicicleteros",
+            "11.- Piscina"
+          ],
+          "elementos_diferenciadores": [
+            "7.- Vías de acceso",
+            "9.- Amplia conserjería"
+          ],
+          "scores": {
+            "sala_ventas": 74.1,
+            "protocolo_atencion": 100,
+            "indagacion_necesidades": 87.5,
+            "conocimiento_vendedor": 95.8,
+            "cierre_seguimiento": 87.5,
+            "satisfaccion_general": 100
+          },
+          "tactico": {
+            "cotizacion": 50,
+            "proximo_paso": 100,
+            "descuentos": 100,
+            "financiamiento_espontaneo": 100
+          },
+          "composite": 91.5,
+          "seguimiento_disponible": true
+        },
+        {
+          "id_respuesta": 1104,
+          "project_id": 6767,
+          "project_name": "Edificio Walker Martínez 880",
+          "comuna": "LA FLORIDA",
+          "inmobiliaria": "Inmobiliaria Santolaya",
+          "grupo": "NUEVO",
+          "is_activa": false,
+          "vendedor": "Elizabeth Toloza",
+          "vendedor_raw": "Elizabeth Toloza",
+          "encuestador": "Lissette riquelme",
+          "fecha_visita": "2026-07-31",
+          "p6_ofrece_piloto": "No",
+          "p7_acompana_piloto": "No",
+          "tipo_renta": "Renta corta",
+          "aspectos_destacados": [
+            "5.- Cowork",
+            "6.- Sala multi uso",
+            "7.- Vías de acceso",
+            "8.- Número de estacionamientos",
+            "10.- Bicicleteros"
+          ],
+          "elementos_diferenciadores": [
+            "7.- Vías de acceso"
+          ],
+          "scores": {
+            "sala_ventas": 70.4,
+            "protocolo_atencion": 100,
+            "indagacion_necesidades": 100,
+            "conocimiento_vendedor": 100,
+            "cierre_seguimiento": 95,
+            "satisfaccion_general": 100
+          },
+          "tactico": {
+            "cotizacion": 100,
+            "proximo_paso": 100,
+            "descuentos": 100,
+            "financiamiento_espontaneo": 100
+          },
+          "composite": 94.8,
+          "seguimiento_disponible": true
+        },
+        {
+          "id_respuesta": 1118,
+          "project_id": 6827,
+          "project_name": "EDIFICIO CUMBRE",
+          "comuna": "RECOLETA",
+          "inmobiliaria": "INMOBILIARIA CREAR",
+          "grupo": null,
+          "is_activa": false,
+          "vendedor": "Mitchele Vidal",
+          "vendedor_raw": "Mitchele Vidal",
+          "encuestador": "Cristian Valenzuela",
+          "fecha_visita": "2026-08-05",
+          "p6_ofrece_piloto": "No aplica",
+          "p7_acompana_piloto": "No",
+          "tipo_renta": "Renta larga / tradicional",
+          "aspectos_destacados": [
+            "1.- Areas verdes",
+            "2.- Gimnasio",
+            "3.- Quincho para asados",
+            "5.- Cowork",
+            "6.- Sala multi uso",
+            "7.- Vías de acceso",
+            "9.- Amplia conserjería",
+            "10.- Bicicleteros"
+          ],
+          "elementos_diferenciadores": [],
+          "scores": {
+            "sala_ventas": 70.4,
+            "protocolo_atencion": 100,
+            "indagacion_necesidades": 62.5,
+            "conocimiento_vendedor": 87.5,
+            "cierre_seguimiento": 100,
+            "satisfaccion_general": 83.3
+          },
+          "tactico": {
+            "cotizacion": 100,
+            "proximo_paso": 100,
+            "descuentos": 100,
+            "financiamiento_espontaneo": 100
+          },
+          "composite": 84.9,
+          "seguimiento_disponible": false
+        },
+        {
+          "id_respuesta": 1122,
+          "project_id": 6122,
+          "project_name": "ACTIVA DOMINICA",
+          "comuna": "RECOLETA",
+          "inmobiliaria": "ACTIVA GRUPO INMOBILIARIO",
+          "grupo": null,
+          "is_activa": true,
+          "vendedor": "Camila Tapia",
+          "vendedor_raw": "Camila Tapia",
+          "encuestador": "Cristian Valenzuela",
+          "fecha_visita": "2026-08-07",
+          "p6_ofrece_piloto": "Si",
+          "p7_acompana_piloto": "Si",
+          "tipo_renta": "Renta larga / tradicional",
+          "aspectos_destacados": [
+            "1.- Areas verdes",
+            "2.- Gimnasio",
+            "3.- Quincho para asados",
+            "4.- Lavandería",
+            "5.- Cowork",
+            "6.- Sala multi uso",
+            "7.- Vías de acceso",
+            "8.- Número de estacionamientos",
+            "9.- Amplia conserjería",
+            "10.- Bicicleteros",
+            "11.- Piscina",
+            "12.- Estacionamientos de visita"
+          ],
+          "elementos_diferenciadores": [
+            "6.- Sala multi uso",
+            "7.- Vías de acceso",
+            "8.- Número de estacionamientos",
+            "9.- Amplia conserjería",
+            "10.- Bicicleteros",
+            "11.- Piscina",
+            "12.- Estacionamientos de visita",
+            "1.- Areas verdes",
+            "2.- Gimnasio",
+            "3.- Quincho para asados",
+            "4.- Lavandería",
+            "5.- Cowork"
+          ],
+          "scores": {
+            "sala_ventas": 88.9,
+            "protocolo_atencion": 100,
+            "indagacion_necesidades": 87.5,
+            "conocimiento_vendedor": 100,
+            "cierre_seguimiento": 38.2,
+            "satisfaccion_general": 100
+          },
+          "tactico": {
+            "cotizacion": 50,
+            "proximo_paso": 0,
+            "descuentos": 100,
+            "financiamiento_espontaneo": 100
+          },
+          "composite": 87.2,
+          "seguimiento_disponible": false
+        },
+        {
+          "id_respuesta": 1123,
+          "project_id": 6649,
+          "project_name": "ACTIVA HIPODROMO PLAZA",
+          "comuna": "INDEPENDENCIA",
+          "inmobiliaria": "ACTIVA GRUPO INMOBILIARIO",
+          "grupo": null,
+          "is_activa": true,
+          "vendedor": "Maria Soledad Villa",
+          "vendedor_raw": "Maria Soledad Villa",
+          "encuestador": "Manuel Montanares",
+          "fecha_visita": "2026-08-06",
+          "p6_ofrece_piloto": "Si",
+          "p7_acompana_piloto": "Si",
+          "tipo_renta": "Renta larga / tradicional",
+          "aspectos_destacados": [
+            "1.- Areas verdes",
+            "3.- Quincho para asados",
+            "4.- Lavandería",
+            "5.- Cowork",
+            "6.- Sala multi uso",
+            "10.- Bicicleteros",
+            "11.- Piscina"
+          ],
+          "elementos_diferenciadores": [
+            "11.- Piscina",
+            "3.- Quincho para asados",
+            "5.- Cowork"
+          ],
+          "scores": {
+            "sala_ventas": 75.9,
+            "protocolo_atencion": 100,
+            "indagacion_necesidades": 87.5,
+            "conocimiento_vendedor": 95.8,
+            "cierre_seguimiento": 100,
+            "satisfaccion_general": 100
+          },
+          "tactico": {
+            "cotizacion": 100,
+            "proximo_paso": 100,
+            "descuentos": 100,
+            "financiamiento_espontaneo": 100
+          },
+          "composite": 93.7,
+          "seguimiento_disponible": false
+        },
+        {
+          "id_respuesta": 1124,
+          "project_id": 6859,
+          "project_name": "EDIFICIO HIPODROMO 1613",
+          "comuna": "INDEPENDENCIA",
+          "inmobiliaria": "INMOBILIARIA COPAHUE",
+          "grupo": null,
+          "is_activa": false,
+          "vendedor": "Sandra Quezada",
+          "vendedor_raw": "Sandra Quezada",
+          "encuestador": "Manuel Montanares",
+          "fecha_visita": "2026-06-05",
+          "p6_ofrece_piloto": "Si",
+          "p7_acompana_piloto": "Si",
+          "tipo_renta": null,
+          "aspectos_destacados": [
+            "1.- Areas verdes",
+            "2.- Gimnasio",
+            "3.- Quincho para asados",
+            "4.- Lavandería",
+            "6.- Sala multi uso",
+            "7.- Vías de acceso",
+            "10.- Bicicleteros",
+            "11.- Piscina"
+          ],
+          "elementos_diferenciadores": [],
+          "scores": {
+            "sala_ventas": 55.6,
+            "protocolo_atencion": 85.7,
+            "indagacion_necesidades": 12.5,
+            "conocimiento_vendedor": 87.5,
+            "cierre_seguimiento": 32.4,
+            "satisfaccion_general": 66.7
+          },
+          "tactico": {
+            "cotizacion": 50,
+            "proximo_paso": 50,
+            "descuentos": 100,
+            "financiamiento_espontaneo": 0
+          },
+          "composite": 59.7,
+          "seguimiento_disponible": false
+        }
+      ],
+      "flags": [
+        "Proyecto 6459 (EDIFICIO TERRAZAS VIVACETA): hora de salida (1:05) es anterior a la de llegada (12:45) por más de 3h — probable error de tipeo.",
+        "Proyecto 6827 (EDIFICIO CUMBRE): sin registro de seguimiento (P26) en la hoja \"Encuesta Seguimiento\".",
+        "Proyecto 6122 (ACTIVA DOMINICA): sin registro de seguimiento (P26) en la hoja \"Encuesta Seguimiento\".",
+        "Proyecto 6649 (ACTIVA HIPODROMO PLAZA): sin registro de seguimiento (P26) en la hoja \"Encuesta Seguimiento\".",
+        "Proyecto 6859 (EDIFICIO HIPODROMO 1613): fecha de visita \"05-06-2026\" está a 67 días de la fecha de referencia de la ola — revisar posible error de tipeo.",
+        "Proyecto 6859 (EDIFICIO HIPODROMO 1613): sin registro de seguimiento (P26) en la hoja \"Encuesta Seguimiento\"."
+      ],
+      "notFoundInMaster": [],
+      "notSurveyed": [
+        {
+          "id": 6151,
+          "tpo": "DEPARTAMENTO",
+          "comuna": "INDEPENDENCIA",
+          "nombre": "INDEPENDENCIA 2935",
+          "direccion": "INDEPENDENCIA 2935",
+          "inmobiliaria": "INMOBILIARIA NUCLEOS",
+          "grupo": null,
+          "link": "https://nucleos.cl/oportunidades/independencia-2935-1202/"
+        },
+        {
+          "id": 6652,
+          "tpo": "DEPARTAMENTO",
+          "comuna": "LA FLORIDA",
+          "nombre": "EDIFICIO VISTA SANTUARIO",
+          "direccion": "COLOMBIA 7642",
+          "inmobiliaria": "INMOBILIARIA VISTA SANTUARIO",
+          "grupo": null,
+          "link": "https://www.edificiovistasantuario.cl/"
+        },
+        {
+          "id": 6932,
+          "tpo": "DEPARTAMENTO",
+          "comuna": "LA FLORIDA",
+          "nombre": "EDIFICIO LOS LILENES",
+          "direccion": "VICUÑA MACKENNA 6988",
+          "inmobiliaria": "INMOBILIARIA INGEVEC",
+          "grupo": null,
+          "link": "https://ingevecinmobiliaria.cl/proyecto-loslilenes"
+        }
+      ],
+      "vendorMerges": [
+        {
+          "de": "Juliana Marin",
+          "a": "Juliana Marin Tamayo"
+        }
+      ]
+    }
+  ],
+  "weights": {
+    "sala_ventas": 15,
+    "protocolo_atencion": 20,
+    "indagacion_necesidades": 15,
+    "conocimiento_vendedor": 20,
+    "cierre_seguimiento": 15,
+    "satisfaccion_general": 15
+  },
+  "master": [
+    {
+      "id": 4911,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "RECOLETA",
+      "nombre": "EDIFICIO AVENIDA PERU PLAZA",
+      "direccion": "PERU PLAZA 1471",
+      "inmobiliaria": "ABSAL INMOBILIARIA",
+      "grupo": null,
+      "link": "https://absal.cl/proyectos/avenida-peru-plaza"
+    },
+    {
+      "id": 5859,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "RECOLETA",
+      "nombre": "EDIFICIO SAN CRISTOBAL",
+      "direccion": "SAN CRISTOBAL 543",
+      "inmobiliaria": "DICSA",
+      "grupo": null,
+      "link": "https://idicsa.cl/proyectos-inmobiliarios/?commune=recoleta&price=2527%3B15800"
+    },
+    {
+      "id": 6077,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "RECOLETA",
+      "nombre": "EDIFICIO CONQUISTA EINSTEIN",
+      "direccion": "EINSTEIN 568",
+      "inmobiliaria": "INMOBILIARIA CONQUISTA",
+      "grupo": null,
+      "link": "https://iconquista.cl/index.php/proyecto/?proyecto=52"
+    },
+    {
+      "id": 6122,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "RECOLETA",
+      "nombre": "ACTIVA DOMINICA",
+      "direccion": "PERU 1290",
+      "inmobiliaria": "ACTIVA GRUPO INMOBILIARIO",
+      "grupo": null,
+      "link": "https://www.activa.cl/edificio-activa-dominica/"
+    },
+    {
+      "id": 6827,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "RECOLETA",
+      "nombre": "EDIFICIO CUMBRE",
+      "direccion": "MAESTRA LIDIA TORRES 92",
+      "inmobiliaria": "INMOBILIARIA CREAR",
+      "grupo": null,
+      "link": "https://icrear.cl/edificio-cumbre/home"
+    },
+    {
+      "id": 4421,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "INDEPENDENCIA",
+      "nombre": "EDIFICIO PARQUE HIPODROMO",
+      "direccion": "INDEPENDENCIA 2264",
+      "inmobiliaria": "INMOBILIARIA DESARROLLO URBANO",
+      "grupo": null,
+      "link": "https://inmobiliaria.idicsa.cl/proyectos-inmobiliarios/independencia/edificio-parque-hipodromo/?gad_source=1&gad_campaignid=21702528385&gbraid=0AAAAABy9ZPpw7PSTQbXEgFSq6RFaQBvT5&gclid=CjwKCAjwmdLSBhANEiwAkREMNwFOxqF0Tj3gh9zFd6v0T40RFFRyqmQkGOgD91IqqWfjfIJvCuAtVBoCwhYQAvD_BwE"
+    },
+    {
+      "id": 5818,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "INDEPENDENCIA",
+      "nombre": "EDIFICIO CONEXIÓN INDEPENDENCIA",
+      "direccion": "CORONEL ALVARADO 2180",
+      "inmobiliaria": "INMOBILIARIA LARRAIN PRIETO",
+      "grupo": null,
+      "link": "https://larrainprieto.cl/proyectos/edificio-conexion-independencia/"
+    },
+    {
+      "id": 6008,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "INDEPENDENCIA",
+      "nombre": "EDIFICIO DAVID ARELLANO",
+      "direccion": "DAVID ARELLANO 1810",
+      "inmobiliaria": "DICSA",
+      "grupo": null,
+      "link": "https://inmobiliaria.idicsa.cl/proyectos-inmobiliarios/independencia/edificio-david-arellano/?gad_source=1&gad_campaignid=22245070938&gbraid=0AAAAABy9ZPrlPWE4mzeeWvkKkeWlBUawy&gclid=CjwKCAjwmdLSBhANEiwAkREMN5TTp4auntQ1yLIpXZ6vsw_s-EjiAPM4V1KDqsonh96dQJ-_v5MnVBoCkGcQAvD_BwE"
+    },
+    {
+      "id": 6011,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "INDEPENDENCIA",
+      "nombre": "JARDINES DE ALVARADO",
+      "direccion": "CORONEL ALVARADO 2505",
+      "inmobiliaria": "INMOBILIARIA MAESTRA",
+      "grupo": null,
+      "link": "https://www.maestra.cl/proyectos/jardines-de-alvarado/"
+    },
+    {
+      "id": 6086,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "INDEPENDENCIA",
+      "nombre": "ACTIVA PLAZA CHACABUCO",
+      "direccion": "HUANUCO 2290",
+      "inmobiliaria": "ACTIVA GRUPO INMOBILIARIO",
+      "grupo": null,
+      "link": "https://www.activa.cl/activa-plaza-chacabuco/"
+    },
+    {
+      "id": 6009,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "INDEPENDENCIA",
+      "nombre": "EDIFICIO INDI",
+      "direccion": "HIPODROMO 1816",
+      "inmobiliaria": "LEBEN",
+      "grupo": "NUEVO",
+      "link": "https://indi.ileben.cl/"
+    },
+    {
+      "id": 6151,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "INDEPENDENCIA",
+      "nombre": "INDEPENDENCIA 2935",
+      "direccion": "INDEPENDENCIA 2935",
+      "inmobiliaria": "INMOBILIARIA NUCLEOS",
+      "grupo": null,
+      "link": "https://nucleos.cl/oportunidades/independencia-2935-1202/"
+    },
+    {
+      "id": 6417,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "INDEPENDENCIA",
+      "nombre": "EDIFICIO PLAY",
+      "direccion": "ISIDORA ERRAZURIZ 2305",
+      "inmobiliaria": "INMOBILIARIA ECHEVERRIA IZQUIERDO",
+      "grupo": null,
+      "link": "https://eiii.cl/proyecto-play/?utm_source=google-ads&utm_medium=search&utm_campaign=play-search-ao&utm_term=responsivo&utm_content=1&gad_source=1&gad_campaignid=15623654096&gbraid=0AAAAADRiIC4yhcF_7sFyUrIM0ThavqLhJ&gclid=CjwKCAjwmdLSBhANEiwAkREMNxHmq29barXOjvepe1kQ_dEV6pobFdD6YMtwPaDTq0pUsDza_n50sxoCK48QAvD_BwE"
+    },
+    {
+      "id": 6459,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "INDEPENDENCIA",
+      "nombre": "EDIFICIO TERRAZAS VIVACETA",
+      "direccion": "FERMIN VIVACETA 2648",
+      "inmobiliaria": "DICSA",
+      "grupo": null,
+      "link": "https://idicsa.cl/proyectos-inmobiliarios/independencia/edificio-terrazas-vivaceta/?gad_source=1&gad_campaignid=22245070938&gbraid=0AAAAABy9ZPrlPWE4mzeeWvkKkeWlBUawy&gclid=CjwKCAjwmdLSBhANEiwAkREMNwKU5UwuaP1je7P8CgRmgCr1QBWJuB5w7T0eKS3AJz9FoGLieQzW2hoCCGgQAvD_BwE"
+    },
+    {
+      "id": 6649,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "INDEPENDENCIA",
+      "nombre": "ACTIVA HIPODROMO PLAZA",
+      "direccion": "DAVID ARELLANO 1954",
+      "inmobiliaria": "ACTIVA GRUPO INMOBILIARIO",
+      "grupo": null,
+      "link": "https://www.activa.cl/proyecto-activa-hipodromo-plaza/"
+    },
+    {
+      "id": 6859,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "INDEPENDENCIA",
+      "nombre": "EDIFICIO HIPODROMO 1613",
+      "direccion": "HIPODROMO 1613",
+      "inmobiliaria": "INMOBILIARIA COPAHUE",
+      "grupo": null,
+      "link": "https://copahue.cl/proyecto/edificio-hipodromo-1613"
+    },
+    {
+      "id": 6380,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "LA FLORIDA",
+      "nombre": "ACTIVA WM815",
+      "direccion": "WALKER MARTINEZ 815",
+      "inmobiliaria": "ACTIVA GRUPO INMOBILIARIO",
+      "grupo": null,
+      "link": "https://www.activa.cl/proyecto-activa-wm-815/"
+    },
+    {
+      "id": 6481,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "LA FLORIDA",
+      "nombre": "ECO VALDES I",
+      "direccion": "GERONIMO DE ALDERETE 396",
+      "inmobiliaria": "INMOBILIARIA FUNDAMENTA",
+      "grupo": null,
+      "link": "https://www.fundamenta.cl/proyectos-en-venta/departamento-en-la-florida/eco-valdes-i/"
+    },
+    {
+      "id": 6517,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "LA FLORIDA",
+      "nombre": "CONCEPTO WALKER TOWN",
+      "direccion": "WALKER MARTINEZ 725",
+      "inmobiliaria": "IMAGINA INMOBILIARIA",
+      "grupo": null,
+      "link": "https://www.imagina.cl/proyectos/walker-town/"
+    },
+    {
+      "id": 6767,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "LA FLORIDA",
+      "nombre": "Edificio Walker Martínez 880",
+      "direccion": "WALKER MARTINEZ 880",
+      "inmobiliaria": "Inmobiliaria Santolaya",
+      "grupo": "NUEVO",
+      "link": "https://santolaya.cl/proyecto/walkermartinez"
+    },
+    {
+      "id": 6652,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "LA FLORIDA",
+      "nombre": "EDIFICIO VISTA SANTUARIO",
+      "direccion": "COLOMBIA 7642",
+      "inmobiliaria": "INMOBILIARIA VISTA SANTUARIO",
+      "grupo": null,
+      "link": "https://www.edificiovistasantuario.cl/"
+    },
+    {
+      "id": 6724,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "LA FLORIDA",
+      "nombre": "EDIFICIO PARQUE PLATINO",
+      "direccion": "VICENTE VALDES 755",
+      "inmobiliaria": "PANGEA GESTION INMOBILIARIA",
+      "grupo": null,
+      "link": "https://www.edificioparqueplatino.cl/"
+    },
+    {
+      "id": 6123,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "LA FLORIDA",
+      "nombre": "CONDOMINIO MIRADOR ACTIVA",
+      "direccion": "LLANQUIHUE 6290",
+      "inmobiliaria": "ACTIVA GRUPO INMOBILIARIO",
+      "grupo": null,
+      "link": "https://www.activa.cl/proyecto-mirador-activa/"
+    },
+    {
+      "id": 6651,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "LA FLORIDA",
+      "nombre": "EDIFICIO MILLALONGO 72",
+      "direccion": "MILLALONGO 72",
+      "inmobiliaria": "SSILVA GESTION INMOBILIARIA",
+      "grupo": null,
+      "link": "https://www.ssilva.cl/millalongo72/"
+    },
+    {
+      "id": 6781,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "LA FLORIDA",
+      "nombre": "EDIFICIO VICUÑA MACKENNA 6896",
+      "direccion": "VICUÑA MACKENNA PONIENTE 6896",
+      "inmobiliaria": "INMOBILIARIA NORTE VERDE",
+      "grupo": null,
+      "link": "https://norte-verde.cl/secciones_internas/edificio-vicuna-mackenna-6896/"
+    },
+    {
+      "id": 6895,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "LA FLORIDA",
+      "nombre": "VIVE BARCELONA",
+      "direccion": "BARCELONA 150",
+      "inmobiliaria": "BRICSA",
+      "grupo": null,
+      "link": "https://www.bricsa.cl/edificio-barcelona/"
+    },
+    {
+      "id": 6932,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "LA FLORIDA",
+      "nombre": "EDIFICIO LOS LILENES",
+      "direccion": "VICUÑA MACKENNA 6988",
+      "inmobiliaria": "INMOBILIARIA INGEVEC",
+      "grupo": null,
+      "link": "https://ingevecinmobiliaria.cl/proyecto-loslilenes"
+    },
+    {
+      "id": 6377,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "LA FLORIDA",
+      "nombre": "Edificio Mirador Casona",
+      "direccion": "Av. Vicuña Mackenna 7197",
+      "inmobiliaria": "Inmobiliaria Exxacon",
+      "grupo": "NUEVO",
+      "link": "https://exxacon.cl/projects/mirador-casona/"
+    }
+  ]
+}
