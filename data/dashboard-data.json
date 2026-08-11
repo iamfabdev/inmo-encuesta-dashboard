@@ -1,0 +1,12 @@
+{
+  "waves": [],
+  "weights": {
+    "sala_ventas": 15,
+    "protocolo_atencion": 20,
+    "indagacion_necesidades": 15,
+    "conocimiento_vendedor": 20,
+    "cierre_seguimiento": 15,
+    "satisfaccion_general": 15
+  },
+  "master": []
+}

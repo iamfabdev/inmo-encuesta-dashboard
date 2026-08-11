@@ -3,11 +3,12 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>ACTIVA · Panel de Calidad de Servicio — Cliente Incógnito</title>
+<title>ACTIVA · Panel de Calidad de Servicio — Cliente Incógnito (Admin)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0&display=block" rel="stylesheet">
 <link rel="stylesheet" href="styles.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.5.0/chart.umd.min.js"></script>
 </head>
 <body>
@@ -20,41 +21,51 @@
     </div>
 
     <nav class="tab-nav">
-      <button class="tab-btn is-active" data-tab="resumen"><span class="tab-num">01</span>Resumen</button>
-      <button class="tab-btn" data-tab="activa"><span class="tab-num">02</span>Proyectos ACTIVA</button>
-      <button class="tab-btn" data-tab="evolucion"><span class="tab-num">03</span>Evolución</button>
-      <button class="tab-btn" data-tab="detalle"><span class="tab-num">04</span>Detalle</button>
+      <button class="tab-btn is-active" data-tab="cargar"><span class="tab-num">01</span>Cargar datos</button>
+      <button class="tab-btn" data-tab="resumen"><span class="tab-num">02</span>Resumen</button>
+      <button class="tab-btn" data-tab="activa"><span class="tab-num">03</span>Proyectos ACTIVA</button>
+      <button class="tab-btn" data-tab="evolucion"><span class="tab-num">04</span>Evolución</button>
+      <button class="tab-btn" data-tab="detalle"><span class="tab-num">05</span>Detalle</button>
+      <button class="tab-btn" data-tab="calidad"><span class="tab-num">06</span>Calidad de datos</button>
+      <button class="tab-btn" data-tab="config"><span class="tab-num">07</span>Configuración</button>
     </nav>
 
     <div class="sidebar-footer">
-      Datos actualizados por el equipo Terrabit/ACTIVA.
+      🔒 Herramienta local de administración — no es el sitio público.<br>
+      Datos procesados localmente en tu navegador. Nada se sube a un servidor.
     </div>
   </aside>
 
   <main class="main">
     <div class="page-header">
       <div>
-        <h1 id="page-title">Resumen</h1>
-        <div class="page-sub" id="page-sub">Índice de calidad de servicio ACTIVA vs. competencia — global o por cluster de competencia directa.</div>
+        <h1 id="page-title">Cargar datos</h1>
+        <div class="page-sub" id="page-sub">Arrastra la planilla de la nueva ola de evaluación para procesarla.</div>
       </div>
     </div>
 
-    <section class="tab-panel is-active" id="panel-resumen"></section>
+    <section class="tab-panel is-active" id="panel-cargar"></section>
+    <section class="tab-panel" id="panel-resumen"></section>
     <section class="tab-panel" id="panel-activa"></section>
     <section class="tab-panel" id="panel-evolucion"></section>
     <section class="tab-panel" id="panel-detalle"></section>
+    <section class="tab-panel" id="panel-calidad"></section>
+    <section class="tab-panel" id="panel-config"></section>
   </main>
 </div>
 
-<script>window.PRODUCTION_MODE = true;</script>
+<script>window.PRODUCTION_MODE = false;</script>
 <script src="app.js"></script>
 <script src="ui.js"></script>
 <script>
   const TITLES = {
+    cargar: ['Cargar datos', 'Arrastra la planilla de la nueva ola de evaluación para procesarla.'],
     resumen: ['Resumen', 'Índice de calidad de servicio ACTIVA vs. competencia — global o por cluster de competencia directa.'],
     activa: ['Proyectos ACTIVA', 'Desempeño de los proyectos propios de Inmobiliaria Activa, con opción de sumar proyectos de la competencia a la comparación.'],
     evolucion: ['Evolución', 'Tendencia del índice de calidad entre olas de medición.'],
     detalle: ['Detalle por proyecto', 'Todas las visitas, filtrables y ordenables por columna.'],
+    calidad: ['Calidad de datos', 'Alertas, fusiones de nombres y cobertura del universo de proyectos.'],
+    config: ['Configuración', 'Ponderadores del índice, maestro de proyectos y respaldo de datos.'],
   };
   document.querySelectorAll('.tab-btn').forEach((btn) => {
     btn.addEventListener('click', () => {

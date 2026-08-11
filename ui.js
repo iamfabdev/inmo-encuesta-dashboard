@@ -2,6 +2,10 @@
    UI — construida sobre APP (app.js). Vanilla JS, sin build step.
    ============================================================ */
 
+// true en index.html (sitio público, solo lectura desde data/dashboard-data.json),
+// false en admin.html (herramienta local, localStorage). Ver README.
+const PRODUCTION_MODE = window.PRODUCTION_MODE === true;
+
 const state = {
   waves: APP.loadWaves(),
   weights: APP.loadWeights(),
@@ -274,7 +278,7 @@ function buildClusters(wave) {
 
 function renderResumenTab() {
   const root = $('#panel-resumen');
-  if (!state.waves.length) { root.innerHTML = emptyState('Sube una encuesta en "Cargar datos" para ver el resumen.'); return; }
+  if (!state.waves.length) { root.innerHTML = emptyState(PRODUCTION_MODE ? 'Todavía no hay datos publicados.' : 'Sube una encuesta en "Cargar datos" para ver el resumen.'); return; }
   const wave = getWave(state.selectedWaveId) || lastWave();
   state.selectedWaveId = wave.id;
 
@@ -476,7 +480,7 @@ function kpiLabelHtml(iconKey, text, tooltip) {
 }
 function renderProyectosActivaTab() {
   const root = $('#panel-activa');
-  if (!state.waves.length) { root.innerHTML = emptyState('Sube una encuesta en "Cargar datos" para ver los proyectos ACTIVA y su competencia.'); return; }
+  if (!state.waves.length) { root.innerHTML = emptyState(PRODUCTION_MODE ? 'Todavía no hay datos publicados.' : 'Sube una encuesta en "Cargar datos" para ver los proyectos ACTIVA y su competencia.'); return; }
 
   const af = state.activaFilter;
 
@@ -781,7 +785,7 @@ function renderEvolucionTab() {
    ------------------------------------------------------------ */
 function renderDetalleTab() {
   const root = $('#panel-detalle');
-  if (!state.waves.length) { root.innerHTML = emptyState('Sube una encuesta para ver el detalle por proyecto.'); return; }
+  if (!state.waves.length) { root.innerHTML = emptyState(PRODUCTION_MODE ? 'Todavía no hay datos publicados.' : 'Sube una encuesta para ver el detalle por proyecto.'); return; }
   const comunas = [...new Set(state.waves.flatMap((w) => w.visits.map((v) => v.comuna)))].sort();
 
   root.innerHTML = `
@@ -1030,10 +1034,23 @@ function emptyState(msg) { return `<div class="empty-state">${msg}</div>`; }
    INIT
    ------------------------------------------------------------ */
 (async function init() {
-  await ensureMaster();
-  initTabs();
-  renderActiveTab();
-  const origRenderCargar = renderCargarTab;
-  renderCargarTab = function () { origRenderCargar(); bindWavesTableActions(); };
-  renderActiveTab();
+  if (PRODUCTION_MODE) {
+    try {
+      const res = await fetch('data/dashboard-data.json');
+      const data = await res.json();
+      state.waves = data.waves || [];
+      state.weights = { ...APP.DEFAULT_WEIGHTS, ...(data.weights || {}) };
+      state.master = data.master || null;
+    } catch (e) { /* deja state.waves vacío -> las pestañas muestran su empty-state normal */ }
+    state.activeTab = 'resumen';
+    initTabs();
+    renderActiveTab();
+  } else {
+    await ensureMaster();
+    initTabs();
+    renderActiveTab();
+    const origRenderCargar = renderCargarTab;
+    renderCargarTab = function () { origRenderCargar(); bindWavesTableActions(); };
+    renderActiveTab();
+  }
 })();

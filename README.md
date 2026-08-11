@@ -4,39 +4,75 @@ Sitio estático (sin backend) para cargar los resultados de cada ola del
 estudio de cliente incógnito, normalizarlos y visualizar la evolución del
 índice de calidad de servicio de ACTIVA vs. su competencia.
 
-Todo el procesamiento ocurre **en el navegador**: al arrastrar el Excel, se
-lee con SheetJS, se normaliza y se guarda en `localStorage` de ese
-navegador/dispositivo. No hay servidor ni base de datos — si necesitas ver
-el panel desde otro equipo, exporta el backup (`Configuración → Exportar
-todo`) y cárgalo ahí.
+El proyecto tiene **dos puntos de entrada** que comparten el mismo motor
+(`app.js`/`ui.js`/`styles.css`), pero con roles distintos:
 
-## Desplegar en Cloudflare Pages
+- **`admin.html`** — la herramienta completa (subir Excel, revisar calidad
+  de datos, ajustar ponderadores). Se usa **solo en local**, nunca la abre
+  el cliente final. Todo el procesamiento ocurre en el navegador con
+  SheetJS y se guarda en `localStorage` de ese equipo.
+- **`index.html`** — el dashboard público, de **solo lectura**. No tiene
+  "Cargar datos" ni "Calidad de datos" ni "Configuración" — solo lee
+  `data/dashboard-data.json`, un archivo estático que se genera desde
+  `admin.html` y se sube al repo. Esto es lo que se despliega en Cloudflare
+  Pages, detrás de un login (ver más abajo).
 
-**Opción A — arrastrar y soltar (más simple):**
-1. Entra a el dashboard de Cloudflare → Workers & Pages → Create → Pages → Upload assets.
-2. Arrastra esta carpeta completa (`index.html`, `styles.css`, `app.js`, `ui.js`, `data/`).
-3. Cloudflare te da una URL `*.pages.dev` al toque. Puedes conectar tu propio dominio después.
+## Flujo de trabajo (cada vez que hay datos nuevos)
 
-**Opción B — con Wrangler (si prefieres línea de comandos):**
-```bash
-npx wrangler pages deploy . --project-name activa-cliente-incognito
-```
+1. En tu equipo, levanta un servidor estático simple en esta carpeta (ej.
+   `python3 -m http.server 8080`) y abre `http://localhost:8080/admin.html`.
+2. Carga el Excel de la ola (y el maestro de proyectos, si cambió) como
+   siempre — ver "Cómo cargar una nueva ola" más abajo.
+3. Revisa **Calidad de datos** y ajusta ponderadores en **Configuración**
+   si hace falta.
+4. **Configuración → Exportar todo** — descarga `mystery_shopper_backup.json`.
+5. Reemplaza `data/dashboard-data.json` en el repo con ese archivo (mismo
+   contenido, solo renómbralo), y revisa el diff antes de commitear —
+   es tu control de calidad final antes de publicar.
+6. `git add data/dashboard-data.json && git commit -m "..." && git push`
+   a `main`.
+7. Cloudflare Pages detecta el push y despliega solo — no hay paso manual
+   de deploy. El versionado de los datos lo da git: cada commit de
+   `data/dashboard-data.json` es una versión, con historial y rollback
+   (`git revert`/`git checkout`) gratis.
 
-No requiere build step ni `npm install` — son archivos estáticos puros.
+## Setup único (antes del primer uso)
+
+1. **Repo + Cloudflare Pages**: si esta carpeta todavía no es un repo git,
+   `git init`, crea el repo remoto (GitHub/GitLab) y haz el primer push.
+   Luego, en el dashboard de Cloudflare → Workers & Pages → Create → Pages
+   → **Connect to Git** → elige el repo → framework preset "None", sin
+   build command, directorio de salida = esta carpeta → rama de
+   producción = `main`. Desde ahí, cada push a `main` dispara un deploy
+   automático — no hace falta `wrangler deploy` ni arrastrar archivos a
+   mano.
+2. **Acceso (usuario/contraseña)**: se usa **Cloudflare Access** (Zero
+   Trust), sin código nuevo. En el dashboard de Cloudflare → Zero Trust →
+   Access → Applications → Add an application → Self-hosted → apunta al
+   dominio `*.pages.dev` (o tu dominio propio) → política: permite la
+   lista de correos de tu equipo/cliente → método de login: **One-time
+   PIN** (la persona pone su correo, le llega un código, lo ingresa — no
+   hay contraseñas que administrar). `admin.html` queda detrás del mismo
+   login que el resto del sitio; solo tú y quien tenga acceso concedido
+   pueden abrirlo, y aunque lo abran no afecta el dato publicado (el sitio
+   público nunca lee `localStorage`, solo `data/dashboard-data.json`).
 
 ## Cómo cargar una nueva ola
 
-1. Ve a **Cargar datos**.
+1. En **`admin.html`**, ve a **Cargar datos**.
 2. Arrastra el Excel de la encuesta (`BBDD_Cliente_Incognito...xlsx`).
 3. Si hubo cambios en el universo de proyectos (nuevo competidor, proyecto
-   que ya no vende), arrastra también el maestro de proyectos actualizado.
-   Si no subes uno, se reutiliza el último guardado (o el de referencia
-   incluido en `data/master.json`).
+   que ya no vende, cambio de cluster/Grupo), arrastra también el maestro
+   de proyectos actualizado. Si no subes uno, se reutiliza el último
+   guardado (o el de referencia incluido en `data/master.json`).
 4. Ponle nombre a la ola y confirma la fecha de referencia.
 5. Click en **Procesar archivo** → revisa el preview (alertas, cobertura) →
    **Guardar esta ola**.
 
 Con 2 o más olas guardadas, la pestaña **Evolución** se activa sola.
+Recuerda seguir el "Flujo de trabajo" de arriba (Exportar todo → reemplazar
+`data/dashboard-data.json` → commit → push) para que el dashboard público
+se actualice.
 
 ## Estructura esperada del Excel
 
@@ -92,8 +128,16 @@ consistente en el tiempo.
 
 ## Datos y privacidad
 
-- Todo vive en `localStorage` del navegador donde se use el panel.
-- **Exportar todo** genera un `.json` de respaldo con olas, ponderadores y
-  maestro — úsalo para mover el panel a otro equipo o como backup periódico.
-- **Borrar todos los datos** limpia el `localStorage` por completo (pide
-  confirmación).
+- En `admin.html`, todo vive en `localStorage` del navegador/equipo donde se
+  procesan los Excel — nada se sube a un servidor desde ahí.
+- **Exportar todo** (en `admin.html → Configuración`) genera el mismo
+  `.json` que consume `index.html` en producción: `{ waves, weights,
+  master }`. Es también el formato de backup — sirve para mover el panel
+  admin a otro equipo, además de ser el archivo que se publica.
+- **Importar backup** (en `admin.html → Configuración`) lee ese mismo
+  formato de vuelta.
+- **Borrar todos los datos** limpia el `localStorage` de `admin.html` por
+  completo (pide confirmación) — no afecta `index.html` en producción, que
+  nunca toca `localStorage`.
+- El dashboard público (`index.html`) es de solo lectura: no persiste nada,
+  no acepta cargas, solo hace `fetch('data/dashboard-data.json')` al abrir.
