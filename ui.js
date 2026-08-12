@@ -398,8 +398,8 @@ function renderBlocksChart(activa, comp) {
     data: {
       labels,
       datasets: [
-        { label: 'ACTIVA', data: keys.map((k) => blockAvg(activa, k)), backgroundColor: '#B8862B' },
-        { label: 'Competencia', data: keys.map((k) => blockAvg(comp, k)), backgroundColor: '#5B6472' },
+        { label: 'ACTIVA', data: keys.map((k) => blockAvg(activa, k)), backgroundColor: '#6DB023' },
+        { label: 'Competencia', data: keys.map((k) => blockAvg(comp, k)), backgroundColor: '#4E5862' },
       ],
     },
     options: chartBaseOptions({ y: { max: 100 } }),
@@ -416,8 +416,8 @@ function renderClusterChart(wave, clusters) {
     data: {
       labels,
       datasets: [
-        { label: 'ACTIVA', data: activaData, backgroundColor: '#B8862B' },
-        { label: 'Competencia directa', data: compData, backgroundColor: '#5B6472' },
+        { label: 'ACTIVA', data: activaData, backgroundColor: '#6DB023' },
+        { label: 'Competencia directa', data: compData, backgroundColor: '#4E5862' },
       ],
     },
     options: chartBaseOptions({ y: { max: 100 } }),
@@ -438,7 +438,7 @@ function renderRankingChart(visits) {
       labels: sorted.map((v) => `${v.project_name} (${v.comuna[0]}${v.comuna.slice(1).toLowerCase()})`),
       datasets: [{
         data: sorted.map((v) => v.composite),
-        backgroundColor: sorted.map((v) => (v.is_activa ? '#B8862B' : '#8B95A1')),
+        backgroundColor: sorted.map((v) => (v.is_activa ? '#6DB023' : '#A5ACB4')),
       }],
     },
     options: chartBaseOptions({ x: { max: 100 } }, true),

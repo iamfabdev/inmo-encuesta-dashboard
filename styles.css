@@ -1,29 +1,29 @@
 /* ============================================================
    Token system
-   Paleta "informe de terreno": papel frío + sello de bronce.
-   Evita el default cream+terracota; usa un blueprint discreto.
+   Paleta InmoTrack.cl: verde marca (lime → verde profundo) + slate.
    ============================================================ */
 :root {
-  --ink: #171B21;
-  --ink-soft: #2A2F38;
-  --paper: #EFF1EC;
+  --ink: #2A323B;
+  --ink-soft: #424B56;
+  --paper: #F4F5F6;
   --card: #FFFFFF;
-  --line: #DBDDD5;
-  --line-soft: #E7E8E2;
-  --text: #1B1F26;
-  --text-soft: #5B6472;
-  --text-faint: #8A8F98;
-  --brass: #1F6F5C;
-  --brass-soft: #B8862B22;
-  --slate: #5B6472;
-  --teal: #1F6F5C;
-  --danger: #A5432F;
-  --danger-soft: #A5432F1A;
+  --line: #E4E7EA;
+  --line-soft: #EEF0F2;
+  --text: #2A323B;
+  --text-soft: #4E5862;
+  --text-faint: #A5ACB4;
+  --brass: #6DB023;
+  --brass-soft: #6DB02322;
+  --slate: #4E5862;
+  --teal: #3E7D14;
+  --warning: #F5A623;
+  --danger: #D0433B;
+  --danger-soft: #D0433B1A;
   --radius: 10px;
   --radius-sm: 6px;
-  --font-display: 'Fraunces', Georgia, serif;
-  --font-body: 'IBM Plex Sans', -apple-system, sans-serif;
-  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+  --font-display: Arial, Helvetica, sans-serif;
+  --font-body: Arial, Helvetica, sans-serif;
+  --font-mono: Arial, Helvetica, sans-serif;
 }
 
 * { box-sizing: border-box; }
@@ -58,7 +58,15 @@ select, input { font-family: var(--font-body); }
   font-family: var(--font-display); font-weight: 700; color: var(--brass);
   font-size: 15px; letter-spacing: 0.5px;
 }
-.brand-title { font-family: var(--font-display); font-size: 17px; margin-top: 10px; color: #fff; }
+.brand-logo {
+  background: #fff;
+  border-radius: var(--radius-sm);
+  padding: 8px 12px;
+  display: inline-flex;
+  align-self: flex-start;
+}
+.brand-logo img { display: block; height: 34px; width: auto; }
+.brand-title { font-family: var(--font-display); font-size: 15px; margin-top: 12px; color: #fff; }
 .brand-sub { font-size: 11.5px; color: #9BA1AC; letter-spacing: 0.4px; text-transform: uppercase; }
 
 .tab-nav { display: flex; flex-direction: column; gap: 2px; margin-top: 8px; }
@@ -329,7 +337,7 @@ select, input { font-family: var(--font-body); }
 .bar-row-val { font-family: var(--font-mono); text-align: right; }
 .track { height: 10px; border-radius: 999px; background: var(--line-soft); overflow: hidden; }
 .fill { height: 100%; border-radius: 999px; background: var(--brass); transition: width .3s ease; }
-.fill.warn { background: #C9A227; }
+.fill.warn { background: var(--warning); }
 .fill.bad { background: var(--danger); }
 
 .tactical-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
@@ -345,7 +353,7 @@ select, input { font-family: var(--font-body); }
 .tag { display: inline-block; padding: 3px 9px; border-radius: 999px; font-size: 11px; border: 1px solid transparent; }
 .tag--alta { color: var(--danger); background: var(--danger-soft); border-color: var(--danger); }
 .tag--media { color: #8A6414; background: var(--brass-soft); border-color: var(--brass); }
-.tag--baja { color: var(--teal); background: #1F6F5C1A; border-color: var(--teal); }
+.tag--baja { color: var(--teal); background: #3E7D141A; border-color: var(--teal); }
 
 .ai-config-textarea { width: 100%; min-height: 120px; border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 10px 12px; font-family: var(--font-body); font-size: 13px; resize: vertical; margin: 12px 0; }
 
@@ -354,4 +362,3 @@ select, input { font-family: var(--font-body); }
   .sidebar { flex-direction: row; overflow-x: auto; align-items: center; }
   .kpi-row { grid-template-columns: 1fr 1fr; }
 }
-1F6F5C

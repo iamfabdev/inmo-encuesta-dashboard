@@ -29,9 +29,8 @@ const COL = {
   P10: [57, 58, 59, 60],
   P11: 61, P12: 62, P13: 63, P14: 64, P15: 65,
   P16: [66, 67, 68],
-  P17: 69, P18: 70, P19: 71, P20: 72, P21: 73, P22: 74, P23: 75, P24: 76, P25: 77,
+  P17: 69, P18: 70, P19: 71, P20: 72, P21: 73, P22: 74, P23: 75, P24: 76, P25: 77, P26: 78,
 };
-const SEG_COL = { PROYECTO_ID: 12, ITEM1: 13, ITEM2: 14, ITEM3: 15 };
 
 const DEFAULT_WEIGHTS = {
   sala_ventas: 15,
@@ -57,7 +56,7 @@ const BLOCK_DESCRIPTIONS = {
   protocolo_atencion: '% de conductas de atención cumplidas por el vendedor durante la visita: saludo, trato, manejo de tiempos, etc. (P3).',
   indagacion_necesidades: '% de preguntas de indagación realizadas sobre presupuesto, plazos, tipo de producto y financiamiento (P5 y P16).',
   conocimiento_vendedor: 'Conocimiento del vendedor sobre el proyecto y la competencia, y su disposición a resolver dudas (P10).',
-  cierre_seguimiento: 'Combina si facilita la compra, deja próximo paso, entrega cotización y hace seguimiento a 7 días (P21, P23-P25 y encuesta de seguimiento).',
+  cierre_seguimiento: 'Combina si facilita la compra, deja próximo paso, entrega cotización y hace seguimiento a 7 días (P21, P23-P26).',
   satisfaccion_general: 'Nota 1-7 de satisfacción del cliente incógnito con la experiencia de compra, convertida a escala 0-100 (P22).',
 };
 
@@ -231,7 +230,7 @@ function round1(n) {
   return Math.round(n * 10) / 10;
 }
 
-function computeVisitScores(row, seguimientoItems) {
+function computeVisitScores(row) {
   const sala_ventas = scale17(COL.P2.map((c) => row[c]));
   const protocolo_atencion = pct01(COL.P3.map((c) => yn01(row[c])));
   const indagacionItems = [
@@ -246,11 +245,12 @@ function computeVisitScores(row, seguimientoItems) {
   const p24 = yn01(row[COL.P24]) * 100;
   const p25raw = cleanStr(row[COL.P25]);
   const p25 = p25raw.startsWith('1') ? 100 : p25raw.startsWith('2') ? 50 : 0;
+  const p26answer = normYesNo(row[COL.P26]);
 
   let cierre_seguimiento, seguimientoDisponible;
-  if (seguimientoItems) {
-    const segPct = pct01(seguimientoItems.map(yn01));
-    cierre_seguimiento = round1(0.25 * p21 + 0.2 * p23 + 0.25 * p24 + 0.15 * p25 + 0.15 * segPct);
+  if (p26answer !== null) {
+    const p26 = p26answer === 'Si' ? 100 : 0;
+    cierre_seguimiento = round1(0.25 * p21 + 0.2 * p23 + 0.25 * p24 + 0.15 * p25 + 0.15 * p26);
     seguimientoDisponible = true;
   } else {
     cierre_seguimiento = round1((0.25 * p21 + 0.2 * p23 + 0.25 * p24 + 0.15 * p25) / 0.85);
@@ -357,7 +357,6 @@ async function parseBBDDFile(file, master, weights, refDate) {
   const wb = XLSX.read(buf, { type: 'array', cellDates: false });
 
   const mainSheet = pickSheet(wb, (n) => /cliente/i.test(n) && /incog/i.test(n)) || wb.Sheets[wb.SheetNames[0]];
-  const segSheet = pickSheet(wb, (n) => /seguimiento/i.test(n));
   if (!mainSheet) throw new Error('No se encontró una hoja principal en el archivo.');
 
   const mainRows = sheetToRows(mainSheet);
@@ -369,19 +368,6 @@ async function parseBBDDFile(file, master, weights, refDate) {
     );
   }
   const dataRows = mainRows.slice(headerIdx + 1).filter((r) => r && r[COL.ID] !== null && r[COL.ID] !== '');
-
-  let segByProject = {};
-  if (segSheet) {
-    const segRows = sheetToRows(segSheet);
-    const segHeaderIdx = findHeaderRowIdx(segRows, 0, 'ID');
-    if (segHeaderIdx !== -1) {
-      segRows.slice(segHeaderIdx + 1).forEach((r) => {
-        if (!r || r[SEG_COL.PROYECTO_ID] === null) return;
-        const pid = parseInt(r[SEG_COL.PROYECTO_ID], 10);
-        if (!isNaN(pid)) segByProject[pid] = [r[SEG_COL.ITEM1], r[SEG_COL.ITEM2], r[SEG_COL.ITEM3]];
-      });
-    }
-  }
 
   const masterById = {};
   master.forEach((p) => (masterById[p.id] = p));
@@ -415,9 +401,9 @@ async function parseBBDDFile(file, master, weights, refDate) {
       flags.push(`Proyecto ${pid} (${meta.nombre}): hora de salida (${cleanStr(row[COL.HORA_SALIDA])}) es anterior a la de llegada (${cleanStr(row[COL.HORA_LLEGADA])}) por más de 3h — probable error de tipeo.`);
     }
 
-    const { scores, tactico, seguimientoDisponible } = computeVisitScores(row, segByProject[pid] || null);
+    const { scores, tactico, seguimientoDisponible } = computeVisitScores(row);
     if (!seguimientoDisponible) {
-      flags.push(`Proyecto ${pid} (${meta.nombre}): sin registro de seguimiento (P26) en la hoja "Encuesta Seguimiento".`);
+      flags.push(`Respuesta ${row[COL.ID]} — Proyecto ${pid} (${meta.nombre}): P26 (seguimiento a 7 días) sin responder.`);
     }
 
     visits.push({
@@ -516,7 +502,7 @@ function recomputeWaveComposites(wave, weights) {
 }
 
 Object.assign(APP, {
-  COL, SEG_COL, DEFAULT_WEIGHTS, BLOCK_LABELS, BLOCK_DESCRIPTIONS, TACTICAL_LABELS, TACTICAL_DESCRIPTIONS,
+  COL, DEFAULT_WEIGHTS, BLOCK_LABELS, BLOCK_DESCRIPTIONS, TACTICAL_LABELS, TACTICAL_DESCRIPTIONS,
   normYesNo, normP6, normP7, normRentaTipo, parseMultiselect, mergeVendorNames,
   parseFechaVisita, parseHora,
   computeVisitScores, compositeScore, computeFindings,
