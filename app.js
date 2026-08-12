@@ -56,7 +56,7 @@ const BLOCK_DESCRIPTIONS = {
   protocolo_atencion: '% de conductas de atención cumplidas por el vendedor durante la visita: saludo, trato, manejo de tiempos, etc. (P3).',
   indagacion_necesidades: '% de preguntas de indagación realizadas sobre presupuesto, plazos, tipo de producto y financiamiento (P5 y P16).',
   conocimiento_vendedor: 'Conocimiento del vendedor sobre el proyecto y la competencia, y su disposición a resolver dudas (P10).',
-  cierre_seguimiento: 'Combina si facilita la compra, deja próximo paso, entrega cotización y hace seguimiento a 7 días (P21, P23-P26).',
+  cierre_seguimiento: 'Promedio ponderado: facilita la compra 25% (P21), deja próximo paso 20% (P23), describe siguientes pasos 20% (P24), entrega cotización 15% (P25) y hace seguimiento a 7 días 20% (P26).',
   satisfaccion_general: 'Nota 1-7 de satisfacción del cliente incógnito con la experiencia de compra, convertida a escala 0-100 (P22).',
 };
 
@@ -245,17 +245,10 @@ function computeVisitScores(row) {
   const p24 = yn01(row[COL.P24]) * 100;
   const p25raw = cleanStr(row[COL.P25]);
   const p25 = p25raw.startsWith('1') ? 100 : p25raw.startsWith('2') ? 50 : 0;
-  const p26answer = normYesNo(row[COL.P26]);
+  const seguimientoRealizado = normYesNo(row[COL.P26]) === 'Si';
+  const p26 = seguimientoRealizado ? 100 : 0;
 
-  let cierre_seguimiento, seguimientoDisponible;
-  if (p26answer !== null) {
-    const p26 = p26answer === 'Si' ? 100 : 0;
-    cierre_seguimiento = round1(0.25 * p21 + 0.2 * p23 + 0.25 * p24 + 0.15 * p25 + 0.15 * p26);
-    seguimientoDisponible = true;
-  } else {
-    cierre_seguimiento = round1((0.25 * p21 + 0.2 * p23 + 0.25 * p24 + 0.15 * p25) / 0.85);
-    seguimientoDisponible = false;
-  }
+  const cierre_seguimiento = round1(0.25 * p21 + 0.2 * p23 + 0.2 * p24 + 0.15 * p25 + 0.2 * p26);
   const satisfaccion_general = scale17([row[COL.P22]]);
 
   // Indicadores tácticos — columnas P14/P18 no se usan en ningún bloque
@@ -269,7 +262,7 @@ function computeVisitScores(row) {
   return {
     scores: { sala_ventas, protocolo_atencion, indagacion_necesidades, conocimiento_vendedor, cierre_seguimiento, satisfaccion_general },
     tactico: { cotizacion: p25, proximo_paso: proximoPasoTactico, descuentos: p18, financiamiento_espontaneo: p14 },
-    seguimientoDisponible,
+    seguimientoRealizado,
   };
 }
 
@@ -308,8 +301,8 @@ const FINDING_RULES = [
     accion: 'Coaching en cierre consultivo.',
   },
   {
-    check: (v) => v.seguimiento_disponible === false,
-    hallazgo: 'Sin seguimiento registrado a 7 días',
+    check: (v) => v.seguimiento_realizado === false,
+    hallazgo: 'No hizo seguimiento a 7 días',
     severidad: 'Media',
     accion: 'Automatizar recordatorio de seguimiento en CRM.',
   },
@@ -401,10 +394,7 @@ async function parseBBDDFile(file, master, weights, refDate) {
       flags.push(`Proyecto ${pid} (${meta.nombre}): hora de salida (${cleanStr(row[COL.HORA_SALIDA])}) es anterior a la de llegada (${cleanStr(row[COL.HORA_LLEGADA])}) por más de 3h — probable error de tipeo.`);
     }
 
-    const { scores, tactico, seguimientoDisponible } = computeVisitScores(row);
-    if (!seguimientoDisponible) {
-      flags.push(`Respuesta ${row[COL.ID]} — Proyecto ${pid} (${meta.nombre}): P26 (seguimiento a 7 días) sin responder.`);
-    }
+    const { scores, tactico, seguimientoRealizado } = computeVisitScores(row);
 
     visits.push({
       id_respuesta: row[COL.ID],
@@ -426,7 +416,7 @@ async function parseBBDDFile(file, master, weights, refDate) {
       scores,
       tactico,
       composite: compositeScore(scores, weights),
-      seguimiento_disponible: seguimientoDisponible,
+      seguimiento_realizado: seguimientoRealizado,
     });
   }
 

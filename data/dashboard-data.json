@@ -1,10 +1,10 @@
 {
   "waves": [
     {
-      "id": "w_gv32fnrcmsp6ienx",
-      "label": "MS-001",
-      "refDate": "2026-08-11",
-      "uploadedAt": "2026-08-11T21:35:06.429Z",
+      "id": "w_y9jpk5s7msqotfw8",
+      "label": "Ola 1",
+      "refDate": "2026-08-12",
+      "uploadedAt": "2026-08-12T22:55:20.504Z",
       "masterUsed": [
         {
           "id": 4911,
@@ -14,7 +14,7 @@
           "direccion": "PERU PLAZA 1471",
           "inmobiliaria": "ABSAL INMOBILIARIA",
           "grupo": "1",
-          "link": null
+          "link": "https://absal.cl/proyectos/avenida-peru-plaza"
         },
         {
           "id": 5859,
@@ -24,7 +24,7 @@
           "direccion": "SAN CRISTOBAL 543",
           "inmobiliaria": "DICSA",
           "grupo": "1",
-          "link": null
+          "link": "https://idicsa.cl/proyectos-inmobiliarios/?commune=recoleta&price=2527%3B15800"
         },
         {
           "id": 6077,
@@ -34,7 +34,7 @@
           "direccion": "EINSTEIN 568",
           "inmobiliaria": "INMOBILIARIA CONQUISTA",
           "grupo": "1",
-          "link": null
+          "link": "https://iconquista.cl/index.php/proyecto/?proyecto=52"
         },
         {
           "id": 6122,
@@ -44,7 +44,7 @@
           "direccion": "PERU 1290",
           "inmobiliaria": "ACTIVA GRUPO INMOBILIARIO",
           "grupo": "1",
-          "link": null
+          "link": "https://www.activa.cl/edificio-activa-dominica/"
         },
         {
           "id": 6827,
@@ -54,7 +54,7 @@
           "direccion": "MAESTRA LIDIA TORRES 92",
           "inmobiliaria": "INMOBILIARIA CREAR",
           "grupo": "1",
-          "link": null
+          "link": "https://icrear.cl/edificio-cumbre/home"
         },
         {
           "id": 4421,
@@ -64,7 +64,7 @@
           "direccion": "INDEPENDENCIA 2264",
           "inmobiliaria": "INMOBILIARIA DESARROLLO URBANO",
           "grupo": "2",
-          "link": null
+          "link": "https://inmobiliaria.idicsa.cl/proyectos-inmobiliarios/independencia/edificio-parque-hipodromo/?gad_source=1&gad_campaignid=21702528385&gbraid=0AAAAABy9ZPpw7PSTQbXEgFSq6RFaQBvT5&gclid=CjwKCAjwmdLSBhANEiwAkREMNwFOxqF0Tj3gh9zFd6v0T40RFFRyqmQkGOgD91IqqWfjfIJvCuAtVBoCwhYQAvD_BwE"
         },
         {
           "id": 5818,
@@ -74,7 +74,7 @@
           "direccion": "CORONEL ALVARADO 2180",
           "inmobiliaria": "INMOBILIARIA LARRAIN PRIETO",
           "grupo": "2",
-          "link": null
+          "link": "https://larrainprieto.cl/proyectos/edificio-conexion-independencia/"
         },
         {
           "id": 6008,
@@ -84,7 +84,7 @@
           "direccion": "DAVID ARELLANO 1810",
           "inmobiliaria": "DICSA",
           "grupo": "2",
-          "link": null
+          "link": "https://inmobiliaria.idicsa.cl/proyectos-inmobiliarios/independencia/edificio-david-arellano/?gad_source=1&gad_campaignid=22245070938&gbraid=0AAAAABy9ZPrlPWE4mzeeWvkKkeWlBUawy&gclid=CjwKCAjwmdLSBhANEiwAkREMN5TTp4auntQ1yLIpXZ6vsw_s-EjiAPM4V1KDqsonh96dQJ-_v5MnVBoCkGcQAvD_BwE"
         },
         {
           "id": 6011,
@@ -94,7 +94,7 @@
           "direccion": "CORONEL ALVARADO 2505",
           "inmobiliaria": "INMOBILIARIA MAESTRA",
           "grupo": "2",
-          "link": null
+          "link": "https://www.maestra.cl/proyectos/jardines-de-alvarado/"
         },
         {
           "id": 6086,
@@ -104,7 +104,7 @@
           "direccion": "HUANUCO 2290",
           "inmobiliaria": "ACTIVA GRUPO INMOBILIARIO",
           "grupo": "2",
-          "link": null
+          "link": "https://www.activa.cl/activa-plaza-chacabuco/"
         },
         {
           "id": 6009,
@@ -114,7 +114,17 @@
           "direccion": "HIPODROMO 1816",
           "inmobiliaria": "LEBEN",
           "grupo": "3",
-          "link": null
+          "link": "https://indi.ileben.cl/"
+        },
+        {
+          "id": 6151,
+          "tpo": "DEPARTAMENTO",
+          "comuna": "INDEPENDENCIA",
+          "nombre": "INDEPENDENCIA 2935",
+          "direccion": "INDEPENDENCIA 2935",
+          "inmobiliaria": "INMOBILIARIA NUCLEOS",
+          "grupo": "3",
+          "link": "https://nucleos.cl/oportunidades/independencia-2935-1202/"
         },
         {
           "id": 6417,
@@ -124,7 +134,7 @@
           "direccion": "ISIDORA ERRAZURIZ 2305",
           "inmobiliaria": "INMOBILIARIA ECHEVERRIA IZQUIERDO",
           "grupo": "3",
-          "link": null
+          "link": "https://eiii.cl/proyecto-play/?utm_source=google-ads&utm_medium=search&utm_campaign=play-search-ao&utm_term=responsivo&utm_content=1&gad_source=1&gad_campaignid=15623654096&gbraid=0AAAAADRiIC4yhcF_7sFyUrIM0ThavqLhJ&gclid=CjwKCAjwmdLSBhANEiwAkREMNxHmq29barXOjvepe1kQ_dEV6pobFdD6YMtwPaDTq0pUsDza_n50sxoCK48QAvD_BwE"
         },
         {
           "id": 6459,
@@ -134,7 +144,7 @@
           "direccion": "FERMIN VIVACETA 2648",
           "inmobiliaria": "DICSA",
           "grupo": "3",
-          "link": null
+          "link": "https://idicsa.cl/proyectos-inmobiliarios/independencia/edificio-terrazas-vivaceta/?gad_source=1&gad_campaignid=22245070938&gbraid=0AAAAABy9ZPrlPWE4mzeeWvkKkeWlBUawy&gclid=CjwKCAjwmdLSBhANEiwAkREMNwKU5UwuaP1je7P8CgRmgCr1QBWJuB5w7T0eKS3AJz9FoGLieQzW2hoCCGgQAvD_BwE"
         },
         {
           "id": 6649,
@@ -144,7 +154,7 @@
           "direccion": "DAVID ARELLANO 1954",
           "inmobiliaria": "ACTIVA GRUPO INMOBILIARIO",
           "grupo": "3",
-          "link": null
+          "link": "https://www.activa.cl/proyecto-activa-hipodromo-plaza/"
         },
         {
           "id": 6859,
@@ -154,7 +164,7 @@
           "direccion": "HIPODROMO 1613",
           "inmobiliaria": "INMOBILIARIA COPAHUE",
           "grupo": "3",
-          "link": null
+          "link": "https://copahue.cl/proyecto/edificio-hipodromo-1613"
         },
         {
           "id": 6380,
@@ -164,7 +174,7 @@
           "direccion": "WALKER MARTINEZ 815",
           "inmobiliaria": "ACTIVA GRUPO INMOBILIARIO",
           "grupo": "4",
-          "link": null
+          "link": "https://www.activa.cl/proyecto-activa-wm-815/"
         },
         {
           "id": 6481,
@@ -174,7 +184,7 @@
           "direccion": "GERONIMO DE ALDERETE 396",
           "inmobiliaria": "INMOBILIARIA FUNDAMENTA",
           "grupo": "4",
-          "link": null
+          "link": "https://www.fundamenta.cl/proyectos-en-venta/departamento-en-la-florida/eco-valdes-i/"
         },
         {
           "id": 6517,
@@ -184,7 +194,7 @@
           "direccion": "WALKER MARTINEZ 725",
           "inmobiliaria": "IMAGINA INMOBILIARIA",
           "grupo": "4",
-          "link": null
+          "link": "https://www.imagina.cl/proyectos/walker-town/"
         },
         {
           "id": 6767,
@@ -194,7 +204,17 @@
           "direccion": "WALKER MARTINEZ 880",
           "inmobiliaria": "Inmobiliaria Santolaya",
           "grupo": "4",
-          "link": null
+          "link": "https://santolaya.cl/proyecto/walkermartinez"
+        },
+        {
+          "id": 6652,
+          "tpo": "DEPARTAMENTO",
+          "comuna": "LA FLORIDA",
+          "nombre": "EDIFICIO VISTA SANTUARIO",
+          "direccion": "COLOMBIA 7642",
+          "inmobiliaria": "INMOBILIARIA VISTA SANTUARIO",
+          "grupo": "4",
+          "link": "https://www.edificiovistasantuario.cl/"
         },
         {
           "id": 6724,
@@ -204,7 +224,7 @@
           "direccion": "VICENTE VALDES 755",
           "inmobiliaria": "PANGEA GESTION INMOBILIARIA",
           "grupo": "4",
-          "link": null
+          "link": "https://www.edificioparqueplatino.cl/"
         },
         {
           "id": 6123,
@@ -214,7 +234,7 @@
           "direccion": "LLANQUIHUE 6290",
           "inmobiliaria": "ACTIVA GRUPO INMOBILIARIO",
           "grupo": "5",
-          "link": null
+          "link": "https://www.activa.cl/proyecto-mirador-activa/"
         },
         {
           "id": 6651,
@@ -224,7 +244,7 @@
           "direccion": "MILLALONGO 72",
           "inmobiliaria": "SSILVA GESTION INMOBILIARIA",
           "grupo": "5",
-          "link": null
+          "link": "https://www.ssilva.cl/millalongo72/"
         },
         {
           "id": 6781,
@@ -234,7 +254,7 @@
           "direccion": "VICUÑA MACKENNA PONIENTE 6896",
           "inmobiliaria": "INMOBILIARIA NORTE VERDE",
           "grupo": "5",
-          "link": null
+          "link": "https://norte-verde.cl/secciones_internas/edificio-vicuna-mackenna-6896/"
         },
         {
           "id": 6895,
@@ -244,7 +264,17 @@
           "direccion": "BARCELONA 150",
           "inmobiliaria": "BRICSA",
           "grupo": "5",
-          "link": null
+          "link": "https://www.bricsa.cl/edificio-barcelona/"
+        },
+        {
+          "id": 6932,
+          "tpo": "DEPARTAMENTO",
+          "comuna": "LA FLORIDA",
+          "nombre": "EDIFICIO LOS LILENES",
+          "direccion": "VICUÑA MACKENNA 6988",
+          "inmobiliaria": "INMOBILIARIA INGEVEC",
+          "grupo": "5",
+          "link": "https://ingevecinmobiliaria.cl/proyecto-loslilenes"
         },
         {
           "id": 6377,
@@ -254,7 +284,7 @@
           "direccion": "Av. Vicuña Mackenna 7197",
           "inmobiliaria": "Inmobiliaria Exxacon",
           "grupo": "5",
-          "link": null
+          "link": "https://exxacon.cl/projects/mirador-casona/"
         }
       ],
       "visits": [
@@ -286,7 +316,7 @@
             "protocolo_atencion": 100,
             "indagacion_necesidades": 87.5,
             "conocimiento_vendedor": 87.5,
-            "cierre_seguimiento": 42.5,
+            "cierre_seguimiento": 32.5,
             "satisfaccion_general": 83.3
           },
           "tactico": {
@@ -295,8 +325,8 @@
             "descuentos": 100,
             "financiamiento_espontaneo": 100
           },
-          "composite": 80.3,
-          "seguimiento_disponible": true
+          "composite": 78.8,
+          "seguimiento_realizado": false
         },
         {
           "id_respuesta": 1061,
@@ -330,7 +360,7 @@
             "financiamiento_espontaneo": 0
           },
           "composite": 80.6,
-          "seguimiento_disponible": true
+          "seguimiento_realizado": true
         },
         {
           "id_respuesta": 1062,
@@ -360,7 +390,7 @@
             "protocolo_atencion": 92.9,
             "indagacion_necesidades": 25,
             "conocimiento_vendedor": 70.8,
-            "cierre_seguimiento": 65,
+            "cierre_seguimiento": 55,
             "satisfaccion_general": 50
           },
           "tactico": {
@@ -369,8 +399,8 @@
             "descuentos": 100,
             "financiamiento_espontaneo": 0
           },
-          "composite": 58.2,
-          "seguimiento_disponible": true
+          "composite": 56.7,
+          "seguimiento_realizado": false
         },
         {
           "id_respuesta": 1063,
@@ -404,7 +434,7 @@
             "financiamiento_espontaneo": 100
           },
           "composite": 81.3,
-          "seguimiento_disponible": true
+          "seguimiento_realizado": true
         },
         {
           "id_respuesta": 1064,
@@ -432,7 +462,7 @@
             "protocolo_atencion": 100,
             "indagacion_necesidades": 87.5,
             "conocimiento_vendedor": 87.5,
-            "cierre_seguimiento": 37.5,
+            "cierre_seguimiento": 32.5,
             "satisfaccion_general": 83.3
           },
           "tactico": {
@@ -441,8 +471,8 @@
             "descuentos": 100,
             "financiamiento_espontaneo": 100
           },
-          "composite": 81,
-          "seguimiento_disponible": true
+          "composite": 80.2,
+          "seguimiento_realizado": false
         },
         {
           "id_respuesta": 1065,
@@ -472,7 +502,7 @@
             "protocolo_atencion": 92.9,
             "indagacion_necesidades": 87.5,
             "conocimiento_vendedor": 70.8,
-            "cierre_seguimiento": 12.5,
+            "cierre_seguimiento": 7.5,
             "satisfaccion_general": 50
           },
           "tactico": {
@@ -481,8 +511,8 @@
             "descuentos": 100,
             "financiamiento_espontaneo": 100
           },
-          "composite": 63.6,
-          "seguimiento_disponible": true
+          "composite": 62.8,
+          "seguimiento_realizado": false
         },
         {
           "id_respuesta": 1066,
@@ -511,7 +541,7 @@
             "protocolo_atencion": 100,
             "indagacion_necesidades": 75,
             "conocimiento_vendedor": 66.7,
-            "cierre_seguimiento": 47.5,
+            "cierre_seguimiento": 52.5,
             "satisfaccion_general": 66.7
           },
           "tactico": {
@@ -520,8 +550,8 @@
             "descuentos": 100,
             "financiamiento_espontaneo": 0
           },
-          "composite": 72.3,
-          "seguimiento_disponible": true
+          "composite": 73,
+          "seguimiento_realizado": true
         },
         {
           "id_respuesta": 1067,
@@ -559,7 +589,7 @@
             "financiamiento_espontaneo": 100
           },
           "composite": 91.9,
-          "seguimiento_disponible": true
+          "seguimiento_realizado": true
         },
         {
           "id_respuesta": 1068,
@@ -602,7 +632,7 @@
             "financiamiento_espontaneo": 100
           },
           "composite": 99.4,
-          "seguimiento_disponible": true
+          "seguimiento_realizado": true
         },
         {
           "id_respuesta": 1069,
@@ -630,7 +660,7 @@
             "protocolo_atencion": 100,
             "indagacion_necesidades": 75,
             "conocimiento_vendedor": 75,
-            "cierre_seguimiento": 75,
+            "cierre_seguimiento": 80,
             "satisfaccion_general": 50
           },
           "tactico": {
@@ -639,8 +669,8 @@
             "descuentos": 100,
             "financiamiento_espontaneo": 0
           },
-          "composite": 75.8,
-          "seguimiento_disponible": true
+          "composite": 76.6,
+          "seguimiento_realizado": true
         },
         {
           "id_respuesta": 1070,
@@ -677,7 +707,7 @@
             "protocolo_atencion": 100,
             "indagacion_necesidades": 100,
             "conocimiento_vendedor": 100,
-            "cierre_seguimiento": 95,
+            "cierre_seguimiento": 100,
             "satisfaccion_general": 100
           },
           "tactico": {
@@ -686,8 +716,8 @@
             "descuentos": 100,
             "financiamiento_espontaneo": 100
           },
-          "composite": 97.3,
-          "seguimiento_disponible": true
+          "composite": 98.1,
+          "seguimiento_realizado": true
         },
         {
           "id_respuesta": 1071,
@@ -729,7 +759,7 @@
             "financiamiento_espontaneo": 100
           },
           "composite": 95,
-          "seguimiento_disponible": true
+          "seguimiento_realizado": true
         },
         {
           "id_respuesta": 1072,
@@ -757,7 +787,7 @@
             "protocolo_atencion": 100,
             "indagacion_necesidades": 100,
             "conocimiento_vendedor": 70.8,
-            "cierre_seguimiento": 95,
+            "cierre_seguimiento": 100,
             "satisfaccion_general": 100
           },
           "tactico": {
@@ -766,8 +796,8 @@
             "descuentos": 100,
             "financiamiento_espontaneo": 100
           },
-          "composite": 87.9,
-          "seguimiento_disponible": true
+          "composite": 88.6,
+          "seguimiento_realizado": true
         },
         {
           "id_respuesta": 1073,
@@ -814,7 +844,7 @@
             "financiamiento_espontaneo": 100
           },
           "composite": 90.9,
-          "seguimiento_disponible": true
+          "seguimiento_realizado": true
         },
         {
           "id_respuesta": 1074,
@@ -844,7 +874,7 @@
             "protocolo_atencion": 100,
             "indagacion_necesidades": 62.5,
             "conocimiento_vendedor": 83.3,
-            "cierre_seguimiento": 40,
+            "cierre_seguimiento": 35,
             "satisfaccion_general": 66.7
           },
           "tactico": {
@@ -853,8 +883,8 @@
             "descuentos": 100,
             "financiamiento_espontaneo": 100
           },
-          "composite": 75.1,
-          "seguimiento_disponible": true
+          "composite": 74.3,
+          "seguimiento_realizado": false
         },
         {
           "id_respuesta": 1075,
@@ -897,7 +927,7 @@
             "financiamiento_espontaneo": 100
           },
           "composite": 90.3,
-          "seguimiento_disponible": true
+          "seguimiento_realizado": true
         },
         {
           "id_respuesta": 1078,
@@ -946,7 +976,7 @@
             "financiamiento_espontaneo": 100
           },
           "composite": 94.2,
-          "seguimiento_disponible": true
+          "seguimiento_realizado": true
         },
         {
           "id_respuesta": 1079,
@@ -988,7 +1018,7 @@
             "financiamiento_espontaneo": 100
           },
           "composite": 86.8,
-          "seguimiento_disponible": true
+          "seguimiento_realizado": true
         },
         {
           "id_respuesta": 1093,
@@ -1028,7 +1058,7 @@
             "financiamiento_espontaneo": 100
           },
           "composite": 83.7,
-          "seguimiento_disponible": true
+          "seguimiento_realizado": true
         },
         {
           "id_respuesta": 1103,
@@ -1066,7 +1096,7 @@
             "protocolo_atencion": 100,
             "indagacion_necesidades": 87.5,
             "conocimiento_vendedor": 95.8,
-            "cierre_seguimiento": 87.5,
+            "cierre_seguimiento": 92.5,
             "satisfaccion_general": 100
           },
           "tactico": {
@@ -1075,8 +1105,8 @@
             "descuentos": 100,
             "financiamiento_espontaneo": 100
           },
-          "composite": 91.5,
-          "seguimiento_disponible": true
+          "composite": 92.3,
+          "seguimiento_realizado": true
         },
         {
           "id_respuesta": 1104,
@@ -1108,7 +1138,7 @@
             "protocolo_atencion": 100,
             "indagacion_necesidades": 100,
             "conocimiento_vendedor": 100,
-            "cierre_seguimiento": 95,
+            "cierre_seguimiento": 100,
             "satisfaccion_general": 100
           },
           "tactico": {
@@ -1117,8 +1147,8 @@
             "descuentos": 100,
             "financiamiento_espontaneo": 100
           },
-          "composite": 94.8,
-          "seguimiento_disponible": true
+          "composite": 95.6,
+          "seguimiento_realizado": true
         },
         {
           "id_respuesta": 1118,
@@ -1131,7 +1161,7 @@
           "vendedor": "Mitchele Vidal",
           "vendedor_raw": "Mitchele Vidal",
           "encuestador": "Cristian Valenzuela",
-          "fecha_visita": "2026-08-05",
+          "fecha_visita": "46239",
           "p6_ofrece_piloto": "No aplica",
           "p7_acompana_piloto": "No",
           "tipo_renta": "Renta larga / tradicional",
@@ -1161,7 +1191,7 @@
             "financiamiento_espontaneo": 100
           },
           "composite": 84.9,
-          "seguimiento_disponible": false
+          "seguimiento_realizado": true
         },
         {
           "id_respuesta": 1122,
@@ -1211,7 +1241,7 @@
             "protocolo_atencion": 100,
             "indagacion_necesidades": 87.5,
             "conocimiento_vendedor": 100,
-            "cierre_seguimiento": 38.2,
+            "cierre_seguimiento": 52.5,
             "satisfaccion_general": 100
           },
           "tactico": {
@@ -1220,8 +1250,8 @@
             "descuentos": 100,
             "financiamiento_espontaneo": 100
           },
-          "composite": 87.2,
-          "seguimiento_disponible": false
+          "composite": 89.3,
+          "seguimiento_realizado": true
         },
         {
           "id_respuesta": 1123,
@@ -1267,7 +1297,7 @@
             "financiamiento_espontaneo": 100
           },
           "composite": 93.7,
-          "seguimiento_disponible": false
+          "seguimiento_realizado": true
         },
         {
           "id_respuesta": 1124,
@@ -1280,7 +1310,7 @@
           "vendedor": "Sandra Quezada",
           "vendedor_raw": "Sandra Quezada",
           "encuestador": "Manuel Montanares",
-          "fecha_visita": "2026-06-05",
+          "fecha_visita": "46239",
           "p6_ofrece_piloto": "Si",
           "p7_acompana_piloto": "Si",
           "tipo_renta": null,
@@ -1300,7 +1330,7 @@
             "protocolo_atencion": 85.7,
             "indagacion_necesidades": 12.5,
             "conocimiento_vendedor": 87.5,
-            "cierre_seguimiento": 32.4,
+            "cierre_seguimiento": 47.5,
             "satisfaccion_general": 66.7
           },
           "tactico": {
@@ -1309,20 +1339,44 @@
             "descuentos": 100,
             "financiamiento_espontaneo": 0
           },
-          "composite": 59.7,
-          "seguimiento_disponible": false
+          "composite": 62,
+          "seguimiento_realizado": true
         }
       ],
-      "flags": [
-        "Proyecto 6459 (EDIFICIO TERRAZAS VIVACETA): hora de salida (1:05) es anterior a la de llegada (12:45) por más de 3h — probable error de tipeo.",
-        "Proyecto 6827 (EDIFICIO CUMBRE): sin registro de seguimiento (P26) en la hoja \"Encuesta Seguimiento\".",
-        "Proyecto 6122 (ACTIVA DOMINICA): sin registro de seguimiento (P26) en la hoja \"Encuesta Seguimiento\".",
-        "Proyecto 6649 (ACTIVA HIPODROMO PLAZA): sin registro de seguimiento (P26) en la hoja \"Encuesta Seguimiento\".",
-        "Proyecto 6859 (EDIFICIO HIPODROMO 1613): fecha de visita \"05-06-2026\" está a 67 días de la fecha de referencia de la ola — revisar posible error de tipeo.",
-        "Proyecto 6859 (EDIFICIO HIPODROMO 1613): sin registro de seguimiento (P26) en la hoja \"Encuesta Seguimiento\"."
-      ],
+      "flags": [],
       "notFoundInMaster": [],
-      "notSurveyed": [],
+      "notSurveyed": [
+        {
+          "id": 6151,
+          "tpo": "DEPARTAMENTO",
+          "comuna": "INDEPENDENCIA",
+          "nombre": "INDEPENDENCIA 2935",
+          "direccion": "INDEPENDENCIA 2935",
+          "inmobiliaria": "INMOBILIARIA NUCLEOS",
+          "grupo": "3",
+          "link": "https://nucleos.cl/oportunidades/independencia-2935-1202/"
+        },
+        {
+          "id": 6652,
+          "tpo": "DEPARTAMENTO",
+          "comuna": "LA FLORIDA",
+          "nombre": "EDIFICIO VISTA SANTUARIO",
+          "direccion": "COLOMBIA 7642",
+          "inmobiliaria": "INMOBILIARIA VISTA SANTUARIO",
+          "grupo": "4",
+          "link": "https://www.edificiovistasantuario.cl/"
+        },
+        {
+          "id": 6932,
+          "tpo": "DEPARTAMENTO",
+          "comuna": "LA FLORIDA",
+          "nombre": "EDIFICIO LOS LILENES",
+          "direccion": "VICUÑA MACKENNA 6988",
+          "inmobiliaria": "INMOBILIARIA INGEVEC",
+          "grupo": "5",
+          "link": "https://ingevecinmobiliaria.cl/proyecto-loslilenes"
+        }
+      ],
       "vendorMerges": [
         {
           "de": "Juliana Marin",
@@ -1348,7 +1402,7 @@
       "direccion": "PERU PLAZA 1471",
       "inmobiliaria": "ABSAL INMOBILIARIA",
       "grupo": "1",
-      "link": null
+      "link": "https://absal.cl/proyectos/avenida-peru-plaza"
     },
     {
       "id": 5859,
@@ -1358,7 +1412,7 @@
       "direccion": "SAN CRISTOBAL 543",
       "inmobiliaria": "DICSA",
       "grupo": "1",
-      "link": null
+      "link": "https://idicsa.cl/proyectos-inmobiliarios/?commune=recoleta&price=2527%3B15800"
     },
     {
       "id": 6077,
@@ -1368,7 +1422,7 @@
       "direccion": "EINSTEIN 568",
       "inmobiliaria": "INMOBILIARIA CONQUISTA",
       "grupo": "1",
-      "link": null
+      "link": "https://iconquista.cl/index.php/proyecto/?proyecto=52"
     },
     {
       "id": 6122,
@@ -1378,7 +1432,7 @@
       "direccion": "PERU 1290",
       "inmobiliaria": "ACTIVA GRUPO INMOBILIARIO",
       "grupo": "1",
-      "link": null
+      "link": "https://www.activa.cl/edificio-activa-dominica/"
     },
     {
       "id": 6827,
@@ -1388,7 +1442,7 @@
       "direccion": "MAESTRA LIDIA TORRES 92",
       "inmobiliaria": "INMOBILIARIA CREAR",
       "grupo": "1",
-      "link": null
+      "link": "https://icrear.cl/edificio-cumbre/home"
     },
     {
       "id": 4421,
@@ -1398,7 +1452,7 @@
       "direccion": "INDEPENDENCIA 2264",
       "inmobiliaria": "INMOBILIARIA DESARROLLO URBANO",
       "grupo": "2",
-      "link": null
+      "link": "https://inmobiliaria.idicsa.cl/proyectos-inmobiliarios/independencia/edificio-parque-hipodromo/?gad_source=1&gad_campaignid=21702528385&gbraid=0AAAAABy9ZPpw7PSTQbXEgFSq6RFaQBvT5&gclid=CjwKCAjwmdLSBhANEiwAkREMNwFOxqF0Tj3gh9zFd6v0T40RFFRyqmQkGOgD91IqqWfjfIJvCuAtVBoCwhYQAvD_BwE"
     },
     {
       "id": 5818,
@@ -1408,7 +1462,7 @@
       "direccion": "CORONEL ALVARADO 2180",
       "inmobiliaria": "INMOBILIARIA LARRAIN PRIETO",
       "grupo": "2",
-      "link": null
+      "link": "https://larrainprieto.cl/proyectos/edificio-conexion-independencia/"
     },
     {
       "id": 6008,
@@ -1418,7 +1472,7 @@
       "direccion": "DAVID ARELLANO 1810",
       "inmobiliaria": "DICSA",
       "grupo": "2",
-      "link": null
+      "link": "https://inmobiliaria.idicsa.cl/proyectos-inmobiliarios/independencia/edificio-david-arellano/?gad_source=1&gad_campaignid=22245070938&gbraid=0AAAAABy9ZPrlPWE4mzeeWvkKkeWlBUawy&gclid=CjwKCAjwmdLSBhANEiwAkREMN5TTp4auntQ1yLIpXZ6vsw_s-EjiAPM4V1KDqsonh96dQJ-_v5MnVBoCkGcQAvD_BwE"
     },
     {
       "id": 6011,
@@ -1428,7 +1482,7 @@
       "direccion": "CORONEL ALVARADO 2505",
       "inmobiliaria": "INMOBILIARIA MAESTRA",
       "grupo": "2",
-      "link": null
+      "link": "https://www.maestra.cl/proyectos/jardines-de-alvarado/"
     },
     {
       "id": 6086,
@@ -1438,7 +1492,7 @@
       "direccion": "HUANUCO 2290",
       "inmobiliaria": "ACTIVA GRUPO INMOBILIARIO",
       "grupo": "2",
-      "link": null
+      "link": "https://www.activa.cl/activa-plaza-chacabuco/"
     },
     {
       "id": 6009,
@@ -1448,7 +1502,17 @@
       "direccion": "HIPODROMO 1816",
       "inmobiliaria": "LEBEN",
       "grupo": "3",
-      "link": null
+      "link": "https://indi.ileben.cl/"
+    },
+    {
+      "id": 6151,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "INDEPENDENCIA",
+      "nombre": "INDEPENDENCIA 2935",
+      "direccion": "INDEPENDENCIA 2935",
+      "inmobiliaria": "INMOBILIARIA NUCLEOS",
+      "grupo": "3",
+      "link": "https://nucleos.cl/oportunidades/independencia-2935-1202/"
     },
     {
       "id": 6417,
@@ -1458,7 +1522,7 @@
       "direccion": "ISIDORA ERRAZURIZ 2305",
       "inmobiliaria": "INMOBILIARIA ECHEVERRIA IZQUIERDO",
       "grupo": "3",
-      "link": null
+      "link": "https://eiii.cl/proyecto-play/?utm_source=google-ads&utm_medium=search&utm_campaign=play-search-ao&utm_term=responsivo&utm_content=1&gad_source=1&gad_campaignid=15623654096&gbraid=0AAAAADRiIC4yhcF_7sFyUrIM0ThavqLhJ&gclid=CjwKCAjwmdLSBhANEiwAkREMNxHmq29barXOjvepe1kQ_dEV6pobFdD6YMtwPaDTq0pUsDza_n50sxoCK48QAvD_BwE"
     },
     {
       "id": 6459,
@@ -1468,7 +1532,7 @@
       "direccion": "FERMIN VIVACETA 2648",
       "inmobiliaria": "DICSA",
       "grupo": "3",
-      "link": null
+      "link": "https://idicsa.cl/proyectos-inmobiliarios/independencia/edificio-terrazas-vivaceta/?gad_source=1&gad_campaignid=22245070938&gbraid=0AAAAABy9ZPrlPWE4mzeeWvkKkeWlBUawy&gclid=CjwKCAjwmdLSBhANEiwAkREMNwKU5UwuaP1je7P8CgRmgCr1QBWJuB5w7T0eKS3AJz9FoGLieQzW2hoCCGgQAvD_BwE"
     },
     {
       "id": 6649,
@@ -1478,7 +1542,7 @@
       "direccion": "DAVID ARELLANO 1954",
       "inmobiliaria": "ACTIVA GRUPO INMOBILIARIO",
       "grupo": "3",
-      "link": null
+      "link": "https://www.activa.cl/proyecto-activa-hipodromo-plaza/"
     },
     {
       "id": 6859,
@@ -1488,7 +1552,7 @@
       "direccion": "HIPODROMO 1613",
       "inmobiliaria": "INMOBILIARIA COPAHUE",
       "grupo": "3",
-      "link": null
+      "link": "https://copahue.cl/proyecto/edificio-hipodromo-1613"
     },
     {
       "id": 6380,
@@ -1498,7 +1562,7 @@
       "direccion": "WALKER MARTINEZ 815",
       "inmobiliaria": "ACTIVA GRUPO INMOBILIARIO",
       "grupo": "4",
-      "link": null
+      "link": "https://www.activa.cl/proyecto-activa-wm-815/"
     },
     {
       "id": 6481,
@@ -1508,7 +1572,7 @@
       "direccion": "GERONIMO DE ALDERETE 396",
       "inmobiliaria": "INMOBILIARIA FUNDAMENTA",
       "grupo": "4",
-      "link": null
+      "link": "https://www.fundamenta.cl/proyectos-en-venta/departamento-en-la-florida/eco-valdes-i/"
     },
     {
       "id": 6517,
@@ -1518,7 +1582,7 @@
       "direccion": "WALKER MARTINEZ 725",
       "inmobiliaria": "IMAGINA INMOBILIARIA",
       "grupo": "4",
-      "link": null
+      "link": "https://www.imagina.cl/proyectos/walker-town/"
     },
     {
       "id": 6767,
@@ -1528,7 +1592,17 @@
       "direccion": "WALKER MARTINEZ 880",
       "inmobiliaria": "Inmobiliaria Santolaya",
       "grupo": "4",
-      "link": null
+      "link": "https://santolaya.cl/proyecto/walkermartinez"
+    },
+    {
+      "id": 6652,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "LA FLORIDA",
+      "nombre": "EDIFICIO VISTA SANTUARIO",
+      "direccion": "COLOMBIA 7642",
+      "inmobiliaria": "INMOBILIARIA VISTA SANTUARIO",
+      "grupo": "4",
+      "link": "https://www.edificiovistasantuario.cl/"
     },
     {
       "id": 6724,
@@ -1538,7 +1612,7 @@
       "direccion": "VICENTE VALDES 755",
       "inmobiliaria": "PANGEA GESTION INMOBILIARIA",
       "grupo": "4",
-      "link": null
+      "link": "https://www.edificioparqueplatino.cl/"
     },
     {
       "id": 6123,
@@ -1548,7 +1622,7 @@
       "direccion": "LLANQUIHUE 6290",
       "inmobiliaria": "ACTIVA GRUPO INMOBILIARIO",
       "grupo": "5",
-      "link": null
+      "link": "https://www.activa.cl/proyecto-mirador-activa/"
     },
     {
       "id": 6651,
@@ -1558,7 +1632,7 @@
       "direccion": "MILLALONGO 72",
       "inmobiliaria": "SSILVA GESTION INMOBILIARIA",
       "grupo": "5",
-      "link": null
+      "link": "https://www.ssilva.cl/millalongo72/"
     },
     {
       "id": 6781,
@@ -1568,7 +1642,7 @@
       "direccion": "VICUÑA MACKENNA PONIENTE 6896",
       "inmobiliaria": "INMOBILIARIA NORTE VERDE",
       "grupo": "5",
-      "link": null
+      "link": "https://norte-verde.cl/secciones_internas/edificio-vicuna-mackenna-6896/"
     },
     {
       "id": 6895,
@@ -1578,7 +1652,17 @@
       "direccion": "BARCELONA 150",
       "inmobiliaria": "BRICSA",
       "grupo": "5",
-      "link": null
+      "link": "https://www.bricsa.cl/edificio-barcelona/"
+    },
+    {
+      "id": 6932,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "LA FLORIDA",
+      "nombre": "EDIFICIO LOS LILENES",
+      "direccion": "VICUÑA MACKENNA 6988",
+      "inmobiliaria": "INMOBILIARIA INGEVEC",
+      "grupo": "5",
+      "link": "https://ingevecinmobiliaria.cl/proyecto-loslilenes"
     },
     {
       "id": 6377,
@@ -1588,7 +1672,7 @@
       "direccion": "Av. Vicuña Mackenna 7197",
       "inmobiliaria": "Inmobiliaria Exxacon",
       "grupo": "5",
-      "link": null
+      "link": "https://exxacon.cl/projects/mirador-casona/"
     }
   ]
 }

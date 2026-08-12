@@ -302,7 +302,7 @@ function renderResumenTab() {
     : wave.notSurveyed.filter((p) => p.grupo === state.resumenCluster).length;
   const surveyedProjectCount = new Set(scopedVisits.map((v) => v.project_id)).size;
   const coverage = clusterMaster.length ? Math.round((surveyedProjectCount / clusterMaster.length) * 100) : 0;
-  const segPct = scopedVisits.length ? Math.round((scopedVisits.filter((v) => v.seguimiento_disponible).length / scopedVisits.length) * 100) : 0;
+  const segPct = scopedVisits.length ? Math.round((scopedVisits.filter((v) => v.seguimiento_realizado).length / scopedVisits.length) * 100) : 0;
 
   root.innerHTML = `
     <div class="wave-selector">
@@ -343,9 +343,9 @@ function renderResumenTab() {
         <div class="kpi-sub">${surveyedProjectCount} de ${surveyedProjectCount + notSurveyedInScope} proyectos</div>
       </div>
       <div class="kpi-card">
-        ${kpiLabelHtml('seguimiento', 'Seguimiento registrado', '% de visitas con seguimiento a 7 días (P26) registrado, dentro de la selección actual.')}
+        ${kpiLabelHtml('seguimiento', 'Seguimiento a 7 días', '% de visitas donde el vendedor efectivamente hizo seguimiento a 7 días (P26 = Sí), dentro de la selección actual.')}
         <div class="kpi-value">${segPct}%</div>
-        <div class="kpi-sub">visitas con P26 completo</div>
+        <div class="kpi-sub">visitas con seguimiento (P26)</div>
       </div>
     </div>
 
@@ -554,7 +554,7 @@ function renderProyectosActivaTab() {
     { label: 'Ofrece visita al piloto', n: sel.filter((v) => v.p6_ofrece_piloto === 'Si').length, pct: pctOf(sel.filter((v) => v.p6_ofrece_piloto === 'Si').length) },
     { label: 'Promete cotización', n: sel.filter((v) => v.tactico && v.tactico.cotizacion >= 50).length, pct: pctOf(sel.filter((v) => v.tactico && v.tactico.cotizacion >= 50).length) },
     { label: 'Deja próximo paso', n: sel.filter((v) => v.tactico && v.tactico.proximo_paso >= 50).length, pct: pctOf(sel.filter((v) => v.tactico && v.tactico.proximo_paso >= 50).length) },
-    { label: 'Seguimiento en plazo', n: sel.filter((v) => v.seguimiento_disponible).length, pct: pctOf(sel.filter((v) => v.seguimiento_disponible).length) },
+    { label: 'Seguimiento en plazo', n: sel.filter((v) => v.seguimiento_realizado).length, pct: pctOf(sel.filter((v) => v.seguimiento_realizado).length) },
   ];
 
   // ranking por proyecto (dentro de la selección actual)
@@ -778,7 +778,7 @@ function renderDetalleTable() {
     { key: 'conocimiento_vendedor', label: 'Conocim.' },
     { key: 'cierre_seguimiento', label: 'Cierre/seg.' },
     { key: 'satisfaccion_general', label: 'Satisf.' },
-    { key: 'seguimiento_disponible', label: 'Seg. reg.' },
+    { key: 'seguimiento_realizado', label: 'Seg. 7d' },
   ];
   const val = (r, k) => (k === 'composite' ? r.composite : k in r.scores ? r.scores[k] : r[k]);
   const { col, dir } = state.detailSort;
@@ -804,7 +804,7 @@ function renderDetalleTable() {
       <td class="num">${fmt1(r.scores.conocimiento_vendedor)}</td>
       <td class="num">${fmt1(r.scores.cierre_seguimiento)}</td>
       <td class="num">${fmt1(r.scores.satisfaccion_general)}</td>
-      <td>${r.seguimiento_disponible ? '✓' : '—'}</td>
+      <td>${r.seguimiento_realizado ? '✓' : '—'}</td>
     </tr>`).join('');
 
   $('#detalle-table').innerHTML = `
