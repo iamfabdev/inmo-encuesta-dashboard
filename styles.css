@@ -258,6 +258,15 @@ select, input { font-family: var(--font-body); }
   transform: translateY(-12px);
 }
 
+/* El último elemento de cada fila de KPIs/indicadores queda pegado al borde
+   derecho — anclamos su tooltip por la derecha para que crezca hacia la
+   izquierda en vez de salirse del viewport. */
+.kpi-row .kpi-card:last-child .tooltip::after,
+.tactical-grid .metric-box:last-child .tooltip::after {
+  left: auto;
+  right: 0;
+}
+
 .chart-card { background: var(--card); border: 1px solid var(--line-soft); border-radius: var(--radius); padding: 18px 20px; margin-bottom: 18px; }
 .chart-card h3 { font-size: 13.5px; margin-bottom: 14px; color: var(--text-soft); font-family: var(--font-body); font-weight: 600; text-transform: uppercase; letter-spacing: 0.3px; }
 .chart-card canvas { max-height: 340px; }
@@ -330,7 +339,7 @@ select, input { font-family: var(--font-body); }
 .ai-summary .tag-ai { font-size: 9.5px; background: var(--brass); color: #fff; padding: 2px 8px; border-radius: 999px; text-transform: uppercase; letter-spacing: 0.3px; font-weight: 600; }
 .ai-summary p { margin: 0; color: var(--text-soft); font-size: 13px; line-height: 1.6; white-space: pre-wrap; }
 
-.kpi-row--activa { grid-template-columns: repeat(7, 1fr); }
+.kpi-row--activa { grid-template-columns: repeat(8, 1fr); }
 @media (max-width: 1300px) { .kpi-row--activa { grid-template-columns: repeat(4, 1fr); } }
 @media (max-width: 760px) { .kpi-row--activa { grid-template-columns: repeat(2, 1fr); } }
 

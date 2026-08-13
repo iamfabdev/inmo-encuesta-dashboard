@@ -111,14 +111,15 @@ Cualquier regla nueva que surja se agrega a las funciones `norm*` en
 
 ## Índice de calidad compuesto
 
-Se calcula por visita, combinando 6 bloques normalizados a escala 0–100:
+Se calcula por visita, combinando 7 bloques normalizados a escala 0–100:
 
 - **Sala de ventas** — promedio de 9 ítems (escala 1–7) de P2.
 - **Protocolo de atención** — % de "Sí" en los 14 ítems de P3.
-- **Indagación de necesidades** — % de "Sí" combinando P5 (5 ítems) y P16 (3 ítems).
+- **Indagación de necesidades** — % de "Sí" en los 5 ítems de P5.
 - **Conocimiento del vendedor** — promedio de 4 ítems (escala 1–7) de P10.
 - **Cierre y seguimiento** — combinación ponderada de P21, P23, P24, P25 y P26 (seguimiento a 7 días).
 - **Satisfacción general** — nota 1–7 de P22.
+- **Financiamiento** — % de "Sí" combinando P14, P15, P16 (3 ítems) y P17.
 
 Los ponderadores de cada bloque son configurables en **Configuración**
 (vienen con valores por defecto). Al cambiarlos, se recalculan los índices

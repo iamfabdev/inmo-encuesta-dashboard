@@ -34,11 +34,12 @@ const COL = {
 
 const DEFAULT_WEIGHTS = {
   sala_ventas: 15,
-  protocolo_atencion: 20,
-  indagacion_necesidades: 15,
-  conocimiento_vendedor: 20,
+  protocolo_atencion: 15,
+  indagacion_necesidades: 10,
+  conocimiento_vendedor: 15,
   cierre_seguimiento: 15,
   satisfaccion_general: 15,
+  financiamiento: 15,
 };
 
 const BLOCK_LABELS = {
@@ -48,16 +49,18 @@ const BLOCK_LABELS = {
   conocimiento_vendedor: 'Conocimiento del vendedor',
   cierre_seguimiento: 'Cierre y seguimiento',
   satisfaccion_general: 'Satisfacción general',
+  financiamiento: 'Financiamiento',
 };
 
 /* Descripciones cortas de cada bloque, para tooltips en la UI. */
 const BLOCK_DESCRIPTIONS = {
   sala_ventas: 'Infraestructura y presentación del espacio de ventas: comodidad, iluminación, orden, material del proyecto (P2).',
   protocolo_atencion: '% de conductas de atención cumplidas por el vendedor durante la visita: saludo, trato, manejo de tiempos, etc. (P3).',
-  indagacion_necesidades: '% de preguntas de indagación realizadas sobre presupuesto, plazos, tipo de producto y financiamiento (P5 y P16).',
+  indagacion_necesidades: '% de preguntas de indagación realizadas sobre presupuesto, plazos y tipo de producto (P5).',
   conocimiento_vendedor: 'Conocimiento del vendedor sobre el proyecto y la competencia, y su disposición a resolver dudas (P10).',
   cierre_seguimiento: 'Promedio ponderado: facilita la compra 25% (P21), deja próximo paso 20% (P23), describe siguientes pasos 20% (P24), entrega cotización 15% (P25) y hace seguimiento a 7 días 20% (P26).',
   satisfaccion_general: 'Nota 1-7 de satisfacción del cliente incógnito con la experiencia de compra, convertida a escala 0-100 (P22).',
+  financiamiento: '% de "Sí" combinando: informa financiamiento espontáneamente (P14), informa facilidades de pago del pie (P15), indaga posibilidades de financiamiento (P16.1), pregunta por preaprobación bancaria (P16.2), ofrece alternativas de bancos en convenio (P16.3) y describe alguna campaña de financiamiento del pie (P17).',
 };
 
 /* Indicadores tácticos individuales — mapeo confirmado contra la
@@ -235,7 +238,6 @@ function computeVisitScores(row) {
   const protocolo_atencion = pct01(COL.P3.map((c) => yn01(row[c])));
   const indagacionItems = [
     yn01(row[COL.P5_1]), yn01(row[COL.P5_2]), yn01(row[COL.P5_3]), yn01(row[COL.P5_4]), yn01(row[COL.P5_5]),
-    ...COL.P16.map((c) => yn01(row[c])),
   ];
   const indagacion_necesidades = pct01(indagacionItems);
   const conocimiento_vendedor = scale17(COL.P10.map((c) => row[c]));
@@ -251,16 +253,24 @@ function computeVisitScores(row) {
   const cierre_seguimiento = round1(0.25 * p21 + 0.2 * p23 + 0.2 * p24 + 0.15 * p25 + 0.2 * p26);
   const satisfaccion_general = scale17([row[COL.P22]]);
 
-  // Indicadores tácticos — columnas P14/P18 no se usan en ningún bloque
-  // del índice, se leen solo para este grid (ver comentario en TACTICAL_LABELS).
+  // P14 alimenta el bloque "Financiamiento" y además se expone solo como
+  // indicador táctico (ver TACTICAL_LABELS). P18 solo se usa como táctico.
   const p14raw = cleanStr(row[COL.P14]);
   const p14 = p14raw ? (p14raw.startsWith('1') ? 100 : 0) : null;
   const p18raw = cleanStr(row[COL.P18]);
   const p18 = p18raw ? (p18raw.startsWith('1') ? 0 : 100) : null;
   const proximoPasoTactico = (p23 + p24) / 2;
 
+  const financiamientoItems = [
+    p14 === null ? null : p14 / 100,
+    yn01(row[COL.P15]),
+    ...COL.P16.map((c) => yn01(row[c])),
+    yn01(row[COL.P17]),
+  ];
+  const financiamiento = pct01(financiamientoItems);
+
   return {
-    scores: { sala_ventas, protocolo_atencion, indagacion_necesidades, conocimiento_vendedor, cierre_seguimiento, satisfaccion_general },
+    scores: { sala_ventas, protocolo_atencion, indagacion_necesidades, conocimiento_vendedor, cierre_seguimiento, satisfaccion_general, financiamiento },
     tactico: { cotizacion: p25, proximo_paso: proximoPasoTactico, descuentos: p18, financiamiento_espontaneo: p14 },
     seguimientoRealizado,
   };

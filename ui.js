@@ -470,6 +470,7 @@ const KPI_ICONS = {
   conocimiento_vendedor: 'school',
   cierre_seguimiento: 'task_alt',
   satisfaccion_general: 'sentiment_satisfied',
+  financiamiento: 'payments',
   indice_activa: 'apartment',
   indice_competencia: 'store',
   brecha: 'compare_arrows',
@@ -622,7 +623,7 @@ function renderProyectosActivaTab() {
 
     <div class="kpi-row kpi-row--activa">
       <div class="kpi-card kpi-card--activa">
-        ${kpiLabelHtml('score_global', 'Score global', 'Promedio ponderado de los 6 bloques del cuestionario, según los ponderadores definidos en Configuración.')}
+        ${kpiLabelHtml('score_global', 'Score global', 'Promedio ponderado de los 7 bloques del cuestionario, según los ponderadores definidos en Configuración.')}
         <div class="kpi-value">${fmt1(scoreGlobal)}</div><div class="kpi-sub">/100</div>
       </div>
       ${blockScores.map((b) => `
@@ -778,6 +779,7 @@ function renderDetalleTable() {
     { key: 'conocimiento_vendedor', label: 'Conocim.' },
     { key: 'cierre_seguimiento', label: 'Cierre/seg.' },
     { key: 'satisfaccion_general', label: 'Satisf.' },
+    { key: 'financiamiento', label: 'Financ.' },
     { key: 'seguimiento_realizado', label: 'Seg. 7d' },
   ];
   const val = (r, k) => (k === 'composite' ? r.composite : k in r.scores ? r.scores[k] : r[k]);
@@ -804,6 +806,7 @@ function renderDetalleTable() {
       <td class="num">${fmt1(r.scores.conocimiento_vendedor)}</td>
       <td class="num">${fmt1(r.scores.cierre_seguimiento)}</td>
       <td class="num">${fmt1(r.scores.satisfaccion_general)}</td>
+      <td class="num">${fmt1(r.scores.financiamiento)}</td>
       <td>${r.seguimiento_realizado ? '✓' : '—'}</td>
     </tr>`).join('');
 
