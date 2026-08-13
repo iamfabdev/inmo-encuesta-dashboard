@@ -1,10 +1,10 @@
 {
   "waves": [
     {
-      "id": "w_y9jpk5s7msqotfw8",
+      "id": "w_6gz3fxhjmsrotug9",
       "label": "Ola 1",
-      "refDate": "2026-08-12",
-      "uploadedAt": "2026-08-12T22:55:20.504Z",
+      "refDate": "2026-08-13",
+      "uploadedAt": "2026-08-13T15:43:25.545Z",
       "masterUsed": [
         {
           "id": 4911,
@@ -314,9 +314,10 @@
           "scores": {
             "sala_ventas": 72.2,
             "protocolo_atencion": 100,
-            "indagacion_necesidades": 87.5,
+            "indagacion_necesidades": 80,
+            "financiamiento": 83.3,
             "conocimiento_vendedor": 87.5,
-            "cierre_seguimiento": 32.5,
+            "cierre_seguimiento": 50,
             "satisfaccion_general": 83.3
           },
           "tactico": {
@@ -325,7 +326,7 @@
             "descuentos": 100,
             "financiamiento_espontaneo": 100
           },
-          "composite": 78.8,
+          "composite": 80.7,
           "seguimiento_realizado": false
         },
         {
@@ -348,7 +349,8 @@
           "scores": {
             "sala_ventas": 70.4,
             "protocolo_atencion": 100,
-            "indagacion_necesidades": 50,
+            "indagacion_necesidades": 40,
+            "financiamiento": 33.3,
             "conocimiento_vendedor": 75,
             "cierre_seguimiento": 100,
             "satisfaccion_general": 83.3
@@ -359,7 +361,7 @@
             "descuentos": 100,
             "financiamiento_espontaneo": 0
           },
-          "composite": 80.6,
+          "composite": 73.1,
           "seguimiento_realizado": true
         },
         {
@@ -388,9 +390,10 @@
           "scores": {
             "sala_ventas": 29.6,
             "protocolo_atencion": 92.9,
-            "indagacion_necesidades": 25,
+            "indagacion_necesidades": 40,
+            "financiamiento": 0,
             "conocimiento_vendedor": 70.8,
-            "cierre_seguimiento": 55,
+            "cierre_seguimiento": 40,
             "satisfaccion_general": 50
           },
           "tactico": {
@@ -399,7 +402,7 @@
             "descuentos": 100,
             "financiamiento_espontaneo": 0
           },
-          "composite": 56.7,
+          "composite": 49.3,
           "seguimiento_realizado": false
         },
         {
@@ -422,9 +425,10 @@
           "scores": {
             "sala_ventas": 53.7,
             "protocolo_atencion": 100,
-            "indagacion_necesidades": 62.5,
+            "indagacion_necesidades": 40,
+            "financiamiento": 100,
             "conocimiento_vendedor": 87.5,
-            "cierre_seguimiento": 92.5,
+            "cierre_seguimiento": 95,
             "satisfaccion_general": 83.3
           },
           "tactico": {
@@ -433,7 +437,7 @@
             "descuentos": 100,
             "financiamiento_espontaneo": 100
           },
-          "composite": 81.3,
+          "composite": 81.1,
           "seguimiento_realizado": true
         },
         {
@@ -460,9 +464,10 @@
           "scores": {
             "sala_ventas": 81.5,
             "protocolo_atencion": 100,
-            "indagacion_necesidades": 87.5,
+            "indagacion_necesidades": 80,
+            "financiamiento": 83.3,
             "conocimiento_vendedor": 87.5,
-            "cierre_seguimiento": 32.5,
+            "cierre_seguimiento": 35,
             "satisfaccion_general": 83.3
           },
           "tactico": {
@@ -471,7 +476,7 @@
             "descuentos": 100,
             "financiamiento_espontaneo": 100
           },
-          "composite": 80.2,
+          "composite": 80,
           "seguimiento_realizado": false
         },
         {
@@ -500,9 +505,10 @@
           "scores": {
             "sala_ventas": 55.6,
             "protocolo_atencion": 92.9,
-            "indagacion_necesidades": 87.5,
+            "indagacion_necesidades": 80,
+            "financiamiento": 83.3,
             "conocimiento_vendedor": 70.8,
-            "cierre_seguimiento": 7.5,
+            "cierre_seguimiento": 5,
             "satisfaccion_general": 50
           },
           "tactico": {
@@ -511,7 +517,7 @@
             "descuentos": 100,
             "financiamiento_espontaneo": 100
           },
-          "composite": 62.8,
+          "composite": 64.2,
           "seguimiento_realizado": false
         },
         {
@@ -539,9 +545,10 @@
           "scores": {
             "sala_ventas": 70.4,
             "protocolo_atencion": 100,
-            "indagacion_necesidades": 75,
+            "indagacion_necesidades": 80,
+            "financiamiento": 33.3,
             "conocimiento_vendedor": 66.7,
-            "cierre_seguimiento": 52.5,
+            "cierre_seguimiento": 65,
             "satisfaccion_general": 66.7
           },
           "tactico": {
@@ -550,7 +557,7 @@
             "descuentos": 100,
             "financiamiento_espontaneo": 0
           },
-          "composite": 73,
+          "composite": 70.1,
           "seguimiento_realizado": true
         },
         {
@@ -578,8 +585,9 @@
             "sala_ventas": 81.5,
             "protocolo_atencion": 100,
             "indagacion_necesidades": 100,
+            "financiamiento": 100,
             "conocimiento_vendedor": 91.7,
-            "cierre_seguimiento": 92.5,
+            "cierre_seguimiento": 80,
             "satisfaccion_general": 83.3
           },
           "tactico": {
@@ -588,7 +596,7 @@
             "descuentos": 100,
             "financiamiento_espontaneo": 100
           },
-          "composite": 91.9,
+          "composite": 91.4,
           "seguimiento_realizado": true
         },
         {
@@ -621,6 +629,7 @@
             "sala_ventas": 96.3,
             "protocolo_atencion": 100,
             "indagacion_necesidades": 100,
+            "financiamiento": 83.3,
             "conocimiento_vendedor": 100,
             "cierre_seguimiento": 100,
             "satisfaccion_general": 100
@@ -631,7 +640,7 @@
             "descuentos": 100,
             "financiamiento_espontaneo": 100
           },
-          "composite": 99.4,
+          "composite": 97.3,
           "seguimiento_realizado": true
         },
         {
@@ -658,9 +667,10 @@
           "scores": {
             "sala_ventas": 72.2,
             "protocolo_atencion": 100,
-            "indagacion_necesidades": 75,
+            "indagacion_necesidades": 80,
+            "financiamiento": 33.3,
             "conocimiento_vendedor": 75,
-            "cierre_seguimiento": 80,
+            "cierre_seguimiento": 70,
             "satisfaccion_general": 50
           },
           "tactico": {
@@ -669,7 +679,7 @@
             "descuentos": 100,
             "financiamiento_espontaneo": 0
           },
-          "composite": 76.6,
+          "composite": 70.3,
           "seguimiento_realizado": true
         },
         {
@@ -706,6 +716,7 @@
             "sala_ventas": 87,
             "protocolo_atencion": 100,
             "indagacion_necesidades": 100,
+            "financiamiento": 100,
             "conocimiento_vendedor": 100,
             "cierre_seguimiento": 100,
             "satisfaccion_general": 100
@@ -716,7 +727,7 @@
             "descuentos": 100,
             "financiamiento_espontaneo": 100
           },
-          "composite": 98.1,
+          "composite": 98.3,
           "seguimiento_realizado": true
         },
         {
@@ -748,6 +759,7 @@
             "sala_ventas": 66.7,
             "protocolo_atencion": 100,
             "indagacion_necesidades": 100,
+            "financiamiento": 100,
             "conocimiento_vendedor": 100,
             "cierre_seguimiento": 100,
             "satisfaccion_general": 100
@@ -758,7 +770,7 @@
             "descuentos": 100,
             "financiamiento_espontaneo": 100
           },
-          "composite": 95,
+          "composite": 95.7,
           "seguimiento_realizado": true
         },
         {
@@ -786,6 +798,7 @@
             "sala_ventas": 63,
             "protocolo_atencion": 100,
             "indagacion_necesidades": 100,
+            "financiamiento": 100,
             "conocimiento_vendedor": 70.8,
             "cierre_seguimiento": 100,
             "satisfaccion_general": 100
@@ -796,7 +809,7 @@
             "descuentos": 100,
             "financiamiento_espontaneo": 100
           },
-          "composite": 88.6,
+          "composite": 90.1,
           "seguimiento_realizado": true
         },
         {
@@ -832,7 +845,8 @@
           "scores": {
             "sala_ventas": 63,
             "protocolo_atencion": 100,
-            "indagacion_necesidades": 87.5,
+            "indagacion_necesidades": 100,
+            "financiamiento": 83.3,
             "conocimiento_vendedor": 91.7,
             "cierre_seguimiento": 100,
             "satisfaccion_general": 100
@@ -843,7 +857,7 @@
             "descuentos": 100,
             "financiamiento_espontaneo": 100
           },
-          "composite": 90.9,
+          "composite": 91.6,
           "seguimiento_realizado": true
         },
         {
@@ -872,9 +886,10 @@
           "scores": {
             "sala_ventas": 87,
             "protocolo_atencion": 100,
-            "indagacion_necesidades": 62.5,
+            "indagacion_necesidades": 60,
+            "financiamiento": 50,
             "conocimiento_vendedor": 83.3,
-            "cierre_seguimiento": 35,
+            "cierre_seguimiento": 40,
             "satisfaccion_general": 66.7
           },
           "tactico": {
@@ -883,7 +898,7 @@
             "descuentos": 100,
             "financiamiento_espontaneo": 100
           },
-          "composite": 74.3,
+          "composite": 71.5,
           "seguimiento_realizado": false
         },
         {
@@ -915,9 +930,10 @@
           "scores": {
             "sala_ventas": 72.2,
             "protocolo_atencion": 100,
-            "indagacion_necesidades": 87.5,
+            "indagacion_necesidades": 100,
+            "financiamiento": 83.3,
             "conocimiento_vendedor": 87.5,
-            "cierre_seguimiento": 92.5,
+            "cierre_seguimiento": 95,
             "satisfaccion_general": 100
           },
           "tactico": {
@@ -926,7 +942,7 @@
             "descuentos": 100,
             "financiamiento_espontaneo": 100
           },
-          "composite": 90.3,
+          "composite": 91.4,
           "seguimiento_realizado": true
         },
         {
@@ -965,8 +981,9 @@
             "sala_ventas": 74.1,
             "protocolo_atencion": 100,
             "indagacion_necesidades": 100,
+            "financiamiento": 100,
             "conocimiento_vendedor": 95.8,
-            "cierre_seguimiento": 92.5,
+            "cierre_seguimiento": 95,
             "satisfaccion_general": 100
           },
           "tactico": {
@@ -975,7 +992,7 @@
             "descuentos": 100,
             "financiamiento_espontaneo": 100
           },
-          "composite": 94.2,
+          "composite": 95.2,
           "seguimiento_realizado": true
         },
         {
@@ -1006,9 +1023,10 @@
           "scores": {
             "sala_ventas": 55.6,
             "protocolo_atencion": 100,
-            "indagacion_necesidades": 75,
+            "indagacion_necesidades": 80,
+            "financiamiento": 83.3,
             "conocimiento_vendedor": 91.7,
-            "cierre_seguimiento": 92.5,
+            "cierre_seguimiento": 95,
             "satisfaccion_general": 100
           },
           "tactico": {
@@ -1017,7 +1035,7 @@
             "descuentos": 100,
             "financiamiento_espontaneo": 100
           },
-          "composite": 86.8,
+          "composite": 87.3,
           "seguimiento_realizado": true
         },
         {
@@ -1046,9 +1064,10 @@
           "scores": {
             "sala_ventas": 38.9,
             "protocolo_atencion": 100,
-            "indagacion_necesidades": 87.5,
+            "indagacion_necesidades": 80,
+            "financiamiento": 83.3,
             "conocimiento_vendedor": 91.7,
-            "cierre_seguimiento": 92.5,
+            "cierre_seguimiento": 95,
             "satisfaccion_general": 83.3
           },
           "tactico": {
@@ -1057,7 +1076,7 @@
             "descuentos": 100,
             "financiamiento_espontaneo": 100
           },
-          "composite": 83.7,
+          "composite": 83,
           "seguimiento_realizado": true
         },
         {
@@ -1094,9 +1113,10 @@
           "scores": {
             "sala_ventas": 74.1,
             "protocolo_atencion": 100,
-            "indagacion_necesidades": 87.5,
+            "indagacion_necesidades": 80,
+            "financiamiento": 100,
             "conocimiento_vendedor": 95.8,
-            "cierre_seguimiento": 92.5,
+            "cierre_seguimiento": 95,
             "satisfaccion_general": 100
           },
           "tactico": {
@@ -1105,7 +1125,7 @@
             "descuentos": 100,
             "financiamiento_espontaneo": 100
           },
-          "composite": 92.3,
+          "composite": 92.6,
           "seguimiento_realizado": true
         },
         {
@@ -1137,6 +1157,7 @@
             "sala_ventas": 70.4,
             "protocolo_atencion": 100,
             "indagacion_necesidades": 100,
+            "financiamiento": 100,
             "conocimiento_vendedor": 100,
             "cierre_seguimiento": 100,
             "satisfaccion_general": 100
@@ -1147,7 +1168,7 @@
             "descuentos": 100,
             "financiamiento_espontaneo": 100
           },
-          "composite": 95.6,
+          "composite": 96.1,
           "seguimiento_realizado": true
         },
         {
@@ -1179,7 +1200,8 @@
           "scores": {
             "sala_ventas": 70.4,
             "protocolo_atencion": 100,
-            "indagacion_necesidades": 62.5,
+            "indagacion_necesidades": 60,
+            "financiamiento": 83.3,
             "conocimiento_vendedor": 87.5,
             "cierre_seguimiento": 100,
             "satisfaccion_general": 83.3
@@ -1190,7 +1212,7 @@
             "descuentos": 100,
             "financiamiento_espontaneo": 100
           },
-          "composite": 84.9,
+          "composite": 84.4,
           "seguimiento_realizado": true
         },
         {
@@ -1239,9 +1261,10 @@
           "scores": {
             "sala_ventas": 88.9,
             "protocolo_atencion": 100,
-            "indagacion_necesidades": 87.5,
+            "indagacion_necesidades": 100,
+            "financiamiento": 83.3,
             "conocimiento_vendedor": 100,
-            "cierre_seguimiento": 52.5,
+            "cierre_seguimiento": 65,
             "satisfaccion_general": 100
           },
           "tactico": {
@@ -1250,7 +1273,7 @@
             "descuentos": 100,
             "financiamiento_espontaneo": 100
           },
-          "composite": 89.3,
+          "composite": 91.8,
           "seguimiento_realizado": true
         },
         {
@@ -1285,7 +1308,8 @@
           "scores": {
             "sala_ventas": 75.9,
             "protocolo_atencion": 100,
-            "indagacion_necesidades": 87.5,
+            "indagacion_necesidades": 80,
+            "financiamiento": 83.3,
             "conocimiento_vendedor": 95.8,
             "cierre_seguimiento": 100,
             "satisfaccion_general": 100
@@ -1296,7 +1320,7 @@
             "descuentos": 100,
             "financiamiento_espontaneo": 100
           },
-          "composite": 93.7,
+          "composite": 91.3,
           "seguimiento_realizado": true
         },
         {
@@ -1328,9 +1352,10 @@
           "scores": {
             "sala_ventas": 55.6,
             "protocolo_atencion": 85.7,
-            "indagacion_necesidades": 12.5,
+            "indagacion_necesidades": 20,
+            "financiamiento": 0,
             "conocimiento_vendedor": 87.5,
-            "cierre_seguimiento": 47.5,
+            "cierre_seguimiento": 35,
             "satisfaccion_general": 66.7
           },
           "tactico": {
@@ -1339,7 +1364,7 @@
             "descuentos": 100,
             "financiamiento_espontaneo": 0
           },
-          "composite": 62,
+          "composite": 53.2,
           "seguimiento_realizado": true
         }
       ],
@@ -1389,6 +1414,7 @@
     "sala_ventas": 15,
     "protocolo_atencion": 20,
     "indagacion_necesidades": 15,
+    "financiamiento": 15,
     "conocimiento_vendedor": 20,
     "cierre_seguimiento": 15,
     "satisfaccion_general": 15

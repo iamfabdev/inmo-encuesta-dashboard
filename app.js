@@ -36,20 +36,20 @@ const DEFAULT_WEIGHTS = {
   sala_ventas: 15,
   protocolo_atencion: 15,
   indagacion_necesidades: 10,
+  financiamiento: 15,
   conocimiento_vendedor: 15,
   cierre_seguimiento: 15,
   satisfaccion_general: 15,
-  financiamiento: 15,
 };
 
 const BLOCK_LABELS = {
   sala_ventas: 'Sala de ventas',
   protocolo_atencion: 'Protocolo de atención',
   indagacion_necesidades: 'Indagación de necesidades',
+  financiamiento: 'Financiamiento',
   conocimiento_vendedor: 'Conocimiento del vendedor',
   cierre_seguimiento: 'Cierre y seguimiento',
   satisfaccion_general: 'Satisfacción general',
-  financiamiento: 'Financiamiento',
 };
 
 /* Descripciones cortas de cada bloque, para tooltips en la UI. */
@@ -57,10 +57,10 @@ const BLOCK_DESCRIPTIONS = {
   sala_ventas: 'Infraestructura y presentación del espacio de ventas: comodidad, iluminación, orden, material del proyecto (P2).',
   protocolo_atencion: '% de conductas de atención cumplidas por el vendedor durante la visita: saludo, trato, manejo de tiempos, etc. (P3).',
   indagacion_necesidades: '% de preguntas de indagación realizadas sobre presupuesto, plazos y tipo de producto (P5).',
-  conocimiento_vendedor: 'Conocimiento del vendedor sobre el proyecto y la competencia, y su disposición a resolver dudas (P10).',
-  cierre_seguimiento: 'Promedio ponderado: facilita la compra 25% (P21), deja próximo paso 20% (P23), describe siguientes pasos 20% (P24), entrega cotización 15% (P25) y hace seguimiento a 7 días 20% (P26).',
-  satisfaccion_general: 'Nota 1-7 de satisfacción del cliente incógnito con la experiencia de compra, convertida a escala 0-100 (P22).',
   financiamiento: '% de "Sí" combinando: informa financiamiento espontáneamente (P14), informa facilidades de pago del pie (P15), indaga posibilidades de financiamiento (P16.1), pregunta por preaprobación bancaria (P16.2), ofrece alternativas de bancos en convenio (P16.3) y describe alguna campaña de financiamiento del pie (P17).',
+  conocimiento_vendedor: 'Conocimiento del vendedor sobre el proyecto y la competencia, y su disposición a resolver dudas (P10).',
+  cierre_seguimiento: 'Promedio ponderado: facilita la compra 15% (P21), esfuerzo de cierre/resumen positivo 15% (P19), identifica objeciones del cliente 15% (P20), deja próximo paso 15% (P23), describe siguientes pasos 15% (P24), entrega cotización 10% (P25) y hace seguimiento a 7 días 15% (P26).',
+  satisfaccion_general: 'Nota 1-7 de satisfacción del cliente incógnito con la experiencia de compra, convertida a escala 0-100 (P22).',
 };
 
 /* Indicadores tácticos individuales — mapeo confirmado contra la
@@ -242,6 +242,8 @@ function computeVisitScores(row) {
   const indagacion_necesidades = pct01(indagacionItems);
   const conocimiento_vendedor = scale17(COL.P10.map((c) => row[c]));
 
+  const p19 = cleanStr(row[COL.P19]).startsWith('1') ? 100 : 0;
+  const p20 = cleanStr(row[COL.P20]).startsWith('1') ? 100 : 0;
   const p21 = yn01(row[COL.P21]) * 100;
   const p23 = cleanStr(row[COL.P23]).startsWith('1') ? 100 : 0;
   const p24 = yn01(row[COL.P24]) * 100;
@@ -250,7 +252,7 @@ function computeVisitScores(row) {
   const seguimientoRealizado = normYesNo(row[COL.P26]) === 'Si';
   const p26 = seguimientoRealizado ? 100 : 0;
 
-  const cierre_seguimiento = round1(0.25 * p21 + 0.2 * p23 + 0.2 * p24 + 0.15 * p25 + 0.2 * p26);
+  const cierre_seguimiento = round1(0.15 * p21 + 0.15 * p19 + 0.15 * p20 + 0.15 * p23 + 0.15 * p24 + 0.1 * p25 + 0.15 * p26);
   const satisfaccion_general = scale17([row[COL.P22]]);
 
   // P14 alimenta el bloque "Financiamiento" y además se expone solo como
@@ -270,7 +272,7 @@ function computeVisitScores(row) {
   const financiamiento = pct01(financiamientoItems);
 
   return {
-    scores: { sala_ventas, protocolo_atencion, indagacion_necesidades, conocimiento_vendedor, cierre_seguimiento, satisfaccion_general, financiamiento },
+    scores: { sala_ventas, protocolo_atencion, indagacion_necesidades, financiamiento, conocimiento_vendedor, cierre_seguimiento, satisfaccion_general },
     tactico: { cotizacion: p25, proximo_paso: proximoPasoTactico, descuentos: p18, financiamiento_espontaneo: p14 },
     seguimientoRealizado,
   };

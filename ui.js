@@ -467,10 +467,10 @@ const KPI_ICONS = {
   sala_ventas: 'storefront',
   protocolo_atencion: 'support_agent',
   indagacion_necesidades: 'psychology',
+  financiamiento: 'payments',
   conocimiento_vendedor: 'school',
   cierre_seguimiento: 'task_alt',
   satisfaccion_general: 'sentiment_satisfied',
-  financiamiento: 'payments',
   indice_activa: 'apartment',
   indice_competencia: 'store',
   brecha: 'compare_arrows',
@@ -776,10 +776,10 @@ function renderDetalleTable() {
     { key: 'sala_ventas', label: 'Sala vtas.' },
     { key: 'protocolo_atencion', label: 'Protocolo' },
     { key: 'indagacion_necesidades', label: 'Indagación' },
+    { key: 'financiamiento', label: 'Financ.' },
     { key: 'conocimiento_vendedor', label: 'Conocim.' },
     { key: 'cierre_seguimiento', label: 'Cierre/seg.' },
     { key: 'satisfaccion_general', label: 'Satisf.' },
-    { key: 'financiamiento', label: 'Financ.' },
     { key: 'seguimiento_realizado', label: 'Seg. 7d' },
   ];
   const val = (r, k) => (k === 'composite' ? r.composite : k in r.scores ? r.scores[k] : r[k]);
@@ -803,10 +803,10 @@ function renderDetalleTable() {
       <td class="num">${fmt1(r.scores.sala_ventas)}</td>
       <td class="num">${fmt1(r.scores.protocolo_atencion)}</td>
       <td class="num">${fmt1(r.scores.indagacion_necesidades)}</td>
+      <td class="num">${fmt1(r.scores.financiamiento)}</td>
       <td class="num">${fmt1(r.scores.conocimiento_vendedor)}</td>
       <td class="num">${fmt1(r.scores.cierre_seguimiento)}</td>
       <td class="num">${fmt1(r.scores.satisfaccion_general)}</td>
-      <td class="num">${fmt1(r.scores.financiamiento)}</td>
       <td>${r.seguimiento_realizado ? '✓' : '—'}</td>
     </tr>`).join('');
 
