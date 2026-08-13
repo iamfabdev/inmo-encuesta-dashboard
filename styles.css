@@ -60,12 +60,14 @@ select, input { font-family: var(--font-body); }
 }
 .brand-logo {
   background: #fff;
+  border: 1px solid var(--line-soft);
   border-radius: var(--radius-sm);
-  padding: 8px 12px;
+  padding: 8px 14px;
   display: inline-flex;
   align-self: flex-start;
+  flex-shrink: 0;
 }
-.brand-logo img { display: block; height: 34px; width: auto; }
+.brand-logo img { display: block; height: 50px; width: auto; }
 .brand-title { font-family: var(--font-display); font-size: 15px; margin-top: 12px; color: #fff; }
 .brand-sub { font-size: 11.5px; color: #9BA1AC; letter-spacing: 0.4px; text-transform: uppercase; }
 
@@ -83,8 +85,8 @@ select, input { font-family: var(--font-body); }
 
 .sidebar-footer { margin-top: auto; font-size: 11px; color: #737985; line-height: 1.6; }
 
-.main { padding: 28px 36px 60px; max-width: 1280px; }
-.page-header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 24px; }
+.main { padding: 28px 36px 60px; width: 100%; }
+.page-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 24px; }
 .page-header h1 { font-size: 24px; }
 .page-header .page-sub { color: var(--text-soft); font-size: 13px; }
 
