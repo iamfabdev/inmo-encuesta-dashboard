@@ -1,10 +1,10 @@
 {
   "waves": [
     {
-      "id": "w_6gz3fxhjmsrotug9",
+      "id": "w_63waxqrcmszeyip9",
       "label": "Ola 1",
-      "refDate": "2026-08-13",
-      "uploadedAt": "2026-08-13T15:43:25.545Z",
+      "refDate": "2026-08-18",
+      "uploadedAt": "2026-08-19T01:29:16.845Z",
       "masterUsed": [
         {
           "id": 4911,
@@ -1365,6 +1365,54 @@
             "financiamiento_espontaneo": 0
           },
           "composite": 53.2,
+          "seguimiento_realizado": true
+        },
+        {
+          "id_respuesta": 1125,
+          "project_id": 6380,
+          "project_name": "ACTIVA WM815",
+          "comuna": "LA FLORIDA",
+          "inmobiliaria": "ACTIVA GRUPO INMOBILIARIO",
+          "grupo": "4",
+          "is_activa": true,
+          "vendedor": "Adriana De Aguas",
+          "vendedor_raw": "Adriana de Aguas",
+          "encuestador": "claudia Valdés Yáñez",
+          "fecha_visita": "46250",
+          "p6_ofrece_piloto": "Si",
+          "p7_acompana_piloto": "Si",
+          "tipo_renta": null,
+          "aspectos_destacados": [
+            "1.- Areas verdes",
+            "3.- Quincho para asados",
+            "6.- Sala multi uso",
+            "7.- Vías de acceso",
+            "9.- Amplia conserjería",
+            "10.- Bicicleteros",
+            "12.- Estacionamientos de visita"
+          ],
+          "elementos_diferenciadores": [
+            "6.- Sala multi uso",
+            "7.- Vías de acceso",
+            "1.- Areas verdes",
+            "5.- Cowork"
+          ],
+          "scores": {
+            "sala_ventas": 83.3,
+            "protocolo_atencion": 100,
+            "indagacion_necesidades": 80,
+            "financiamiento": 83.3,
+            "conocimiento_vendedor": 100,
+            "cierre_seguimiento": 100,
+            "satisfaccion_general": 100
+          },
+          "tactico": {
+            "cotizacion": 100,
+            "proximo_paso": 100,
+            "descuentos": 100,
+            "financiamiento_espontaneo": 100
+          },
+          "composite": 93,
           "seguimiento_realizado": true
         }
       ],

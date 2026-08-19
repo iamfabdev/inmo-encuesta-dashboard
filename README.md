@@ -111,20 +111,59 @@ Cualquier regla nueva que surja se agrega a las funciones `norm*` en
 
 ## Índice de calidad compuesto
 
-Se calcula por visita, combinando 7 bloques normalizados a escala 0–100:
+Se calcula por visita (`computeVisitScores` en `app.js`), combinando 7
+bloques normalizados a escala 0–100. Dos formas de cálculo se repiten en
+casi todos los bloques:
 
-- **Sala de ventas** — promedio de 9 ítems (escala 1–7) de P2.
-- **Protocolo de atención** — % de "Sí" en los 14 ítems de P3.
-- **Indagación de necesidades** — % de "Sí" en los 5 ítems de P5.
-- **Financiamiento** — % de "Sí" combinando P14, P15, P16 (3 ítems) y P17.
-- **Conocimiento del vendedor** — promedio de 4 ítems (escala 1–7) de P10.
-- **Cierre y seguimiento** — combinación ponderada de P21, P19, P20, P23, P24, P25 y P26 (seguimiento a 7 días).
-- **Satisfacción general** — nota 1–7 de P22.
+- **Escala 1–7 → 0–100** (`scale17`): promedia los ítems respondidos (escala
+  1 a 7) y los reescala con `((promedio − 1) / 6) × 100`.
+- **% de "Sí"** (`pct01` + `yn01`): sobre los ítems Sí/No del bloque, calcula
+  qué % contestó "Sí". En blanco o cualquier valor que no sea exactamente
+  "Sí" cuenta como "No" (no se excluye del denominador), salvo que se diga
+  lo contrario.
 
-Los ponderadores de cada bloque son configurables en **Configuración**
-(vienen con valores por defecto). Al cambiarlos, se recalculan los índices
-de **todas** las olas guardadas, para que la comparación siga siendo
-consistente en el tiempo.
+| # | Bloque | Cómo se calcula | Preguntas |
+|---|---|---|---|
+| 1 | **Sala de ventas** | Escala 1–7 → 0–100, promedio de 9 ítems. | P2 |
+| 2 | **Protocolo de atención** | % de "Sí", 14 ítems. | P3 |
+| 3 | **Indagación de necesidades** | % de "Sí", 5 ítems (presupuesto, plazo, tipo de producto, uso/inversión). | P5.1–P5.5 |
+| 4 | **Financiamiento** | % de "Sí", 6 ítems: informa financiamiento espontáneamente, informa facilidades de pago del pie, indaga posibilidades de financiamiento, pregunta por preaprobación bancaria, ofrece alternativas de bancos en convenio, describe campaña de financiamiento del pie. | P14, P15, P16.1–P16.3, P17 |
+| 5 | **Conocimiento del vendedor** | Escala 1–7 → 0–100, promedio de 4 ítems. | P10 |
+| 6 | **Cierre y seguimiento** | Promedio ponderado (no es un simple % de "Sí") — ver detalle abajo. | P19, P20, P21, P23, P24, P25, P26 |
+| 7 | **Satisfacción general** | Escala 1–7 → 0–100, un solo ítem. | P22 |
+
+**Detalle del bloque "Cierre y seguimiento"** — es el único que combina
+preguntas con distinto peso y distinta codificación (no todas son Sí/No):
+
+| Pregunta | Qué mide | Codificación | Peso |
+|---|---|---|---|
+| P21 | ¿La atención facilita la compra? | Sí=100 / No=0 | 15% |
+| P19 | Esfuerzo de cierre (resume aspectos positivos/claros) | Opción 1=100 / resto=0 | 15% |
+| P20 | Identifica objeciones/obstáculos del cliente | Opción 1=100 / resto=0 | 15% |
+| P23 | ¿Deja identificado el próximo paso? | Opción 1=100 / resto=0 | 15% |
+| P24 | ¿Describe los siguientes pasos? | Sí=100 / No=0 | 15% |
+| P25 | ¿Entrega la cotización? | Entrega en el momento=100 / la envía por mail=50 / no entrega=0 | 10% |
+| P26 | ¿Hace seguimiento a los 7 días? | Sí=100 / No=0 | 15% |
+
+Los **ponderadores de cada bloque** (tabla de abajo) son configurables en
+**Configuración**, con estos valores por defecto:
+
+| Bloque | Peso por defecto |
+|---|---|
+| Sala de ventas | 15% |
+| Protocolo de atención | 15% |
+| Indagación de necesidades | 10% |
+| Financiamiento | 15% |
+| Conocimiento del vendedor | 15% |
+| Cierre y seguimiento | 15% |
+| Satisfacción general | 15% |
+
+El **índice compuesto** de cada visita es el promedio ponderado de los 7
+bloques según esta tabla (`compositeScore` en `app.js`); si a una visita le
+falta algún bloque, ese peso se excluye y se renormaliza sobre los bloques
+disponibles, en vez de contar como 0. Al cambiar los ponderadores en
+**Configuración**, se recalculan los índices de **todas** las olas
+guardadas, para que la comparación siga siendo consistente en el tiempo.
 
 ## Datos y privacidad
 
