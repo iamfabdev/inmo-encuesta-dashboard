@@ -319,22 +319,57 @@ const FINDING_RULES = [
     accion: 'Automatizar recordatorio de seguimiento en CRM.',
   },
   {
-    check: (v) => v.scores.indagacion_necesidades !== null && v.scores.indagacion_necesidades < 60,
-    hallazgo: 'Baja indagación de necesidades',
-    severidad: 'Media',
-    accion: 'Reforzar guion de indagación de necesidades.',
-  },
-  {
     check: (v) => v.tactico && v.tactico.financiamiento_espontaneo === 0,
     hallazgo: 'No ofreció financiamiento espontáneamente',
     severidad: 'Baja',
     accion: 'Entrenar argumentario de financiamiento.',
   },
 ];
+
+/* Regla general de umbral: cualquiera de las 7 dimensiones del índice
+   (ver docs/METODOLOGIA.md) que quede por debajo de este puntaje en una
+   visita genera un hallazgo propio, con severidad según qué tan lejos
+   quedó del estándar. Reemplaza al antiguo caso puntual de "Baja
+   indagación de necesidades" (umbral 60, inconsistente) y agrega
+   cobertura a las dimensiones que antes no tenían ninguna regla, como
+   Sala de ventas. */
+const FINDING_SCORE_THRESHOLD = 80;
+
+const BLOCK_FINDING_ACTIONS = {
+  sala_ventas: 'Revisar infraestructura y presentación de la sala de ventas (orden, limpieza, material del proyecto, maqueta).',
+  protocolo_atencion: 'Reforzar protocolo de atención: saludo, trato, manejo de tiempos.',
+  indagacion_necesidades: 'Reforzar guion de indagación de necesidades.',
+  financiamiento: 'Reforzar argumentario de financiamiento: espontaneidad, facilidades de pie, preaprobación y convenios.',
+  conocimiento_vendedor: 'Capacitar al vendedor en conocimiento de producto propio y de la competencia.',
+  cierre_seguimiento: 'Coaching en técnica de cierre y seguimiento post-visita.',
+  satisfaccion_general: 'Revisar con el equipo del proyecto la experiencia global de compra reportada por el cliente incógnito.',
+};
+
+function severityForScore(score) {
+  if (score < 50) return 'Alta';
+  if (score < 65) return 'Media';
+  return 'Baja';
+}
+
+function computeBlockThresholdFindings(visit) {
+  const findings = [];
+  for (const key of Object.keys(BLOCK_LABELS)) {
+    const score = visit.scores[key];
+    if (score === null || score === undefined || score >= FINDING_SCORE_THRESHOLD) continue;
+    findings.push({
+      hallazgo: `${BLOCK_LABELS[key]} bajo el estándar (${score}/100)`,
+      severidad: severityForScore(score),
+      accion: BLOCK_FINDING_ACTIONS[key],
+    });
+  }
+  return findings;
+}
+
 function computeFindings(visit) {
-  return FINDING_RULES
-    .filter((r) => r.check(visit))
-    .map((r) => ({ hallazgo: r.hallazgo, severidad: r.severidad, accion: r.accion }));
+  return [
+    ...FINDING_RULES.filter((r) => r.check(visit)).map((r) => ({ hallazgo: r.hallazgo, severidad: r.severidad, accion: r.accion })),
+    ...computeBlockThresholdFindings(visit),
+  ];
 }
 
 /* ------------------------------------------------------------
