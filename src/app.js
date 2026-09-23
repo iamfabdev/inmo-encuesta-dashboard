@@ -1,11 +1,16 @@
 /* ============================================================
-   ACTIVA · Panel de Calidad de Servicio (Cliente Incógnito)
+   Panel de Calidad de Servicio (Cliente Incógnito)
    Motor de carga, normalización y scoring — 100% cliente,
-   sin backend. Pensado para desplegarse como sitio estático
-   (Cloudflare Pages).
+   sin backend. Pensado para desplegarse como sitio estático,
+   un build por cliente (ver build.mjs y tenants/).
    ============================================================ */
 
 const APP = {};
+
+// Config del cliente (tenants/<slug>/tenant.json), inyectada por el build
+// como tenant.js antes de este archivo.
+const TENANT = window.TENANT;
+const OWN_LABEL = TENANT.shortName;
 
 /* ------------------------------------------------------------
    1. MAPEO DE COLUMNAS DE LA PLANTILLA
@@ -99,7 +104,7 @@ const TACTICAL_DESCRIPTIONS = {
   descuentos: 'P18 — "Al preguntar si la inmobiliaria hace algún descuento y/o promociones, ¿qué responde el vendedor?": 1) No hacen descuentos, 2) Solo cuando hay unidades en promoción, 3) Depende de la oferta del comprador, 4) Está considerado un descuento en la cotización.',
   financiamiento_espontaneo: 'P14 — "¿El vendedor le informa de manera espontánea las posibilidades de financiamiento existentes?": 1) Espontáneamente, 2) Solo cuando se lo preguntó.',
   diferenciador: 'P12/P13 — "¿Destaca algún elemento como diferenciador del proyecto con respecto a la competencia?" y, si la respuesta es Sí, "¿Qué elementos diferenciadores destaca el vendedor?" (multiple).',
-  hallazgo: 'Porcentaje de visitas a proyectos ACTIVA con al menos un hallazgo de coaching comercial (ver tabla "Hallazgos comerciales" más abajo).',
+  hallazgo: `Porcentaje de visitas a proyectos ${OWN_LABEL} con al menos un hallazgo de coaching comercial (ver tabla "Hallazgos comerciales" más abajo).`,
 };
 
 /* ------------------------------------------------------------
@@ -118,6 +123,13 @@ function normYesNo(raw) {
   if (v === 'no') return 'No';
   return null;
 }
+// "Propio" = inmobiliaria listada en TENANT.ownInmobiliarias. Se compara
+// normalizado (mayúsculas, sin tildes ni espacios de más) para tolerar
+// variaciones de tipeo en el maestro.
+function normInmobiliaria(s) { return stripAccents(cleanStr(s)).toUpperCase(); }
+const OWN_INMOBILIARIAS = new Set(TENANT.ownInmobiliarias.map(normInmobiliaria));
+function isOwnInmobiliaria(name) { return OWN_INMOBILIARIAS.has(normInmobiliaria(name)); }
+
 function yn01(raw) {
   return normYesNo(raw) === 'Si' ? 1 : 0;
 }
@@ -424,7 +436,7 @@ async function parseBBDDFile(file, master, weights, refDate) {
     const meta = masterById[pid];
     if (!meta) {
       notFoundInMaster.push({ project_id: pid, id_respuesta: row[COL.ID] });
-      flags.push(`Respuesta ${row[COL.ID]}: el proyecto ID ${pid} no está en el maestro de competencia cargado — no se pudo clasificar (ACTIVA/competencia, comuna). Revisa si falta actualizar el maestro.`);
+      flags.push(`Respuesta ${row[COL.ID]}: el proyecto ID ${pid} no está en el maestro de competencia cargado — no se pudo clasificar (${OWN_LABEL}/competencia, comuna). Revisa si falta actualizar el maestro.`);
       continue;
     }
 
@@ -450,7 +462,7 @@ async function parseBBDDFile(file, master, weights, refDate) {
       comuna: meta.comuna,
       inmobiliaria: meta.inmobiliaria,
       grupo: meta.grupo ?? null,
-      is_activa: meta.inmobiliaria === 'ACTIVA GRUPO INMOBILIARIO',
+      is_own: isOwnInmobiliaria(meta.inmobiliaria),
       vendedor: cleanName(row[COL.VENDEDOR]),
       vendedor_raw: cleanStr(row[COL.VENDEDOR]),
       encuestador: row[COL.NOMBRE_ENCUESTADOR],
@@ -478,36 +490,45 @@ async function parseMasterFile(file) {
   const wb = XLSX.read(buf, { type: 'array', cellDates: false });
   const ws = wb.Sheets[wb.SheetNames[0]];
   const rows = sheetToRows(ws);
-  // El maestro trae columnas antes de "ID" (en la versión actual, "Grupo";
-  // en versiones viejas, una columna vacía) — por eso buscamos "ID" en
-  // cualquiera de las primeras 3 columnas y todo lo demás se ubica en
-  // relación a esa posición ("offset"), no por nombre de encabezado.
-  let headerIdx = -1, offset = 0;
-  outer: for (let i = 0; i < Math.min(rows.length, 6); i++) {
-    for (let c = 0; c < 3; c++) {
-      if (cleanStr(rows[i] ? rows[i][c] : '').toUpperCase() === 'ID') {
-        headerIdx = i; offset = c; break outer;
-      }
-    }
+  // Las columnas se ubican por nombre de encabezado (el maestro tiene una
+  // sola fila de encabezado simple, a diferencia de la encuesta). Así se
+  // toleran columnas extra o en otro orden (ej. "OFE" en algunos maestros).
+  // El cluster ("Grupo") puede venir como "GRUPO" o "COMPETENCIA"; si no
+  // hay columna con ese nombre, se usa la que esté justo antes de "ID"
+  // (formato histórico). Si no hay nada antes de "ID", queda null.
+  let headerIdx = -1;
+  for (let i = 0; i < Math.min(rows.length, 6); i++) {
+    if ((rows[i] || []).some((h) => cleanStr(h).toUpperCase() === 'ID')) { headerIdx = i; break; }
   }
   if (headerIdx === -1) throw new Error('No se reconoce la estructura del maestro de proyectos (no se encontró columna "ID").');
+  const header = rows[headerIdx].map((h) => stripAccents(cleanStr(h)).toUpperCase());
+  const col = (...names) => header.findIndex((h) => names.includes(h));
+  const idx = {
+    id: col('ID'), tpo: col('TPO'), comuna: col('COMUNA'), nombre: col('NOMBRE'),
+    direccion: col('DIRECCION'), inmobiliaria: col('INMOBILIARIA'), link: col('LINK'),
+    grupo: col('GRUPO', 'COMPETENCIA'),
+  };
+  if (idx.grupo === -1 && idx.id > 0) idx.grupo = idx.id - 1;
+  const missing = ['nombre', 'comuna', 'inmobiliaria'].filter((k) => idx[k] === -1);
+  if (missing.length) throw new Error(`Al maestro de proyectos le faltan columnas: ${missing.map((k) => k.toUpperCase()).join(', ')}.`);
+  const cell = (r, k) => (idx[k] === -1 ? '' : cleanStr(r[idx[k]]));
+
   const proyectos = [];
   rows.slice(headerIdx + 1).forEach((r) => {
-    if (!r || r[offset] === null || r[offset] === '') return;
-    const id = parseInt(r[offset], 10);
+    if (!r) return;
+    const id = parseInt(r[idx.id], 10);
     if (isNaN(id)) return;
     proyectos.push({
       id,
-      tpo: cleanStr(r[offset + 1]),
-      comuna: cleanStr(r[offset + 2]),
-      nombre: cleanStr(r[offset + 3]),
-      direccion: cleanStr(r[offset + 4]),
-      inmobiliaria: cleanStr(r[offset + 5]),
-      // "Grupo": cluster de competencia directa de una sala ACTIVA (1..5,
-      // puede crecer). Va en la columna justo antes de "ID"; si el archivo
-      // no la trae (maestro viejo, offset=0), queda null.
-      grupo: offset > 0 ? (cleanStr(r[offset - 1]) || null) : null,
-      link: cleanStr(r[offset + 6]) || null,
+      tpo: cell(r, 'tpo'),
+      comuna: cell(r, 'comuna'),
+      nombre: cell(r, 'nombre'),
+      direccion: cell(r, 'direccion'),
+      inmobiliaria: cell(r, 'inmobiliaria'),
+      // "Grupo": cluster de competencia directa de una sala propia (1..5,
+      // puede crecer).
+      grupo: cell(r, 'grupo') || null,
+      link: cell(r, 'link') || null,
     });
   });
   return proyectos;
@@ -516,11 +537,28 @@ async function parseMasterFile(file) {
 /* ------------------------------------------------------------
    6. STORAGE (localStorage) — multi-ola
    ------------------------------------------------------------ */
-const LS_KEYS = { waves: 'msd_waves_v1', weights: 'msd_weights_v1', master: 'msd_master_v1' };
+// Prefijo por cliente: el admin de un cliente no ve ni pisa los datos de
+// otro en el mismo navegador. ACTIVA usa "msd" (las claves históricas).
+const LS_KEYS = {
+  waves: `${TENANT.storagePrefix}_waves_v1`,
+  weights: `${TENANT.storagePrefix}_weights_v1`,
+  master: `${TENANT.storagePrefix}_master_v1`,
+};
 
 function loadWaves() {
-  try { return JSON.parse(localStorage.getItem(LS_KEYS.waves)) || []; } catch (e) { return []; }
+  try { return hydrateWaves(JSON.parse(localStorage.getItem(LS_KEYS.waves)) || []); } catch (e) { return []; }
 }
+// "Propio" se recalcula siempre desde la config del cliente, no se confía
+// en lo guardado — cubre datos exportados antes de que existiera is_own
+// (traían is_activa) y cambios posteriores en ownInmobiliarias.
+function hydrateWaves(waves) {
+  waves.forEach((w) => (w.visits || []).forEach((v) => {
+    v.is_own = isOwnInmobiliaria(v.inmobiliaria);
+    delete v.is_activa;
+  }));
+  return waves;
+}
+function clearStorage() { Object.values(LS_KEYS).forEach((k) => localStorage.removeItem(k)); }
 function saveWaves(waves) { localStorage.setItem(LS_KEYS.waves, JSON.stringify(waves)); }
 function loadWeights() {
   try { return { ...DEFAULT_WEIGHTS, ...(JSON.parse(localStorage.getItem(LS_KEYS.weights)) || {}) }; }
@@ -544,6 +582,7 @@ Object.assign(APP, {
   parseFechaVisita, parseHora,
   computeVisitScores, compositeScore, computeFindings,
   parseBBDDFile, parseMasterFile,
+  TENANT, OWN_LABEL, isOwnInmobiliaria, hydrateWaves, clearStorage,
   loadWaves, saveWaves, loadWeights, saveWeights, loadMaster, saveMaster,
   recomputeWaveComposites,
 });

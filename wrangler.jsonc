@@ -1,0 +1,14 @@
+// Un Worker de assets estáticos por cliente, construidos desde el mismo repo.
+// Build: `node build.mjs` · Deploy: `npx wrangler deploy` (activa) / `npx wrangler deploy --env demo`
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "inmo-encuesta-dashboard",
+  "compatibility_date": "2026-08-20",
+  "assets": { "directory": "./dist/activa" },
+  "env": {
+    "demo": {
+      "name": "inmo-demo-dashboard",
+      "assets": { "directory": "./dist/demo" }
+    }
+  }
+}

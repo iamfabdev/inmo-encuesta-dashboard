@@ -1,0 +1,256 @@
+{
+  "updatedAt": "2026-09-23",
+  "source": "COMPETENCIA DEMO1.xlsx",
+  "proyectos": [
+    {
+      "id": 4911,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "RECOLETA",
+      "nombre": "EDIFICIO CONDOR",
+      "direccion": "PERU PLAZA 1471",
+      "inmobiliaria": "INMOBILIARIA ABALOS",
+      "grupo": "1",
+      "link": null
+    },
+    {
+      "id": 5859,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "RECOLETA",
+      "nombre": "EDIFICIO CIPRES",
+      "direccion": "SAN CRISTOBAL 543",
+      "inmobiliaria": "GESTION INMOBILIARIA",
+      "grupo": "1",
+      "link": null
+    },
+    {
+      "id": 6077,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "RECOLETA",
+      "nombre": "EDIFICIO PUMA",
+      "direccion": "EINSTEIN 568",
+      "inmobiliaria": "INMOBILIARIA NORTE NEVADO",
+      "grupo": "1",
+      "link": null
+    },
+    {
+      "id": 6122,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "RECOLETA",
+      "nombre": "EDIFICIO CORDILLERA",
+      "direccion": "PERU 1290",
+      "inmobiliaria": "INMOBILIARIA DOMINGA",
+      "grupo": "1",
+      "link": null
+    },
+    {
+      "id": 6827,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "RECOLETA",
+      "nombre": "EDIFICIO NIEVE",
+      "direccion": "MAESTRA LIDIA TORRES 92",
+      "inmobiliaria": "INMOBILIARIA PRIETO",
+      "grupo": "1",
+      "link": null
+    },
+    {
+      "id": 4421,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "INDEPENDENCIA",
+      "nombre": "EDIFICIO PERU",
+      "direccion": "INDEPENDENCIA 2264",
+      "inmobiliaria": "INMOBILIARIA INGECAVA",
+      "grupo": "2",
+      "link": null
+    },
+    {
+      "id": 5818,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "INDEPENDENCIA",
+      "nombre": "EDIFICIO COLOMBIA",
+      "direccion": "CORONEL ALVARADO 2180",
+      "inmobiliaria": "INMOBILIARIA CREACION",
+      "grupo": "2",
+      "link": null
+    },
+    {
+      "id": 6008,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "INDEPENDENCIA",
+      "nombre": "EDIFICIO ARGENTINA",
+      "direccion": "DAVID ARELLANO 1810",
+      "inmobiliaria": "PANGEA INMOBILIARIA",
+      "grupo": "2",
+      "link": null
+    },
+    {
+      "id": 6011,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "INDEPENDENCIA",
+      "nombre": "EDIFICIO URUGUAY",
+      "direccion": "CORONEL ALVARADO 2505",
+      "inmobiliaria": "INMOBILIARIA COPIHUE",
+      "grupo": "2",
+      "link": null
+    },
+    {
+      "id": 6086,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "INDEPENDENCIA",
+      "nombre": "EDIFICIO CHILE",
+      "direccion": "HUANUCO 2290",
+      "inmobiliaria": "INMOBILIARIA DOMINGA",
+      "grupo": "2",
+      "link": null
+    },
+    {
+      "id": 6151,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "SAN MIGUEL",
+      "nombre": "EDIFICIO REMANSO",
+      "direccion": "INDEPENDENCIA 2935",
+      "inmobiliaria": "INMOBILIARIA IMAGINACION",
+      "grupo": "3",
+      "link": null
+    },
+    {
+      "id": 6417,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "SAN MIGUEL",
+      "nombre": "EDIFICIO RESERVA",
+      "direccion": "ISIDORA ERRAZURIZ 2305",
+      "inmobiliaria": "INMOBILIARIA FUNDAMENTAL",
+      "grupo": "3",
+      "link": null
+    },
+    {
+      "id": 6459,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "SAN MIGUEL",
+      "nombre": "EDIFICIO CAMPO",
+      "direccion": "FERMIN VIVACETA 2648",
+      "inmobiliaria": "INMOBILIARIA VISTA LINDA",
+      "grupo": "3",
+      "link": null
+    },
+    {
+      "id": 6649,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "SAN MIGUEL",
+      "nombre": "EDIFICIO TRINARES",
+      "direccion": "DAVID ARELLANO 1954",
+      "inmobiliaria": "INMOBILIARIA DOMINGA",
+      "grupo": "3",
+      "link": null
+    },
+    {
+      "id": 6859,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "SAN MIGUEL",
+      "nombre": "EDIFICIO PRADO",
+      "direccion": "HIPODROMO 1613",
+      "inmobiliaria": "INMOBILIARIA MAESTRANZA",
+      "grupo": "3",
+      "link": null
+    },
+    {
+      "id": 6380,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "LA FLORIDA",
+      "nombre": "EDIFICIO 1 NORTE",
+      "direccion": "WALKER MARTINEZ 815",
+      "inmobiliaria": "INMOBILIARIA DOMINGA",
+      "grupo": "4",
+      "link": null
+    },
+    {
+      "id": 6481,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "LA FLORIDA",
+      "nombre": "EDIFICIO 4 ORIENTE",
+      "direccion": "GERONIMO DE ALDERETE 396",
+      "inmobiliaria": "INMOBILIARIA IZQUIERDO",
+      "grupo": "4",
+      "link": null
+    },
+    {
+      "id": 6517,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "LA FLORIDA",
+      "nombre": "EDIFICIO 13 NORTE",
+      "direccion": "WALKER MARTINEZ 725",
+      "inmobiliaria": "INMOBILIARIA NUCLEO CENTRAL",
+      "grupo": "4",
+      "link": null
+    },
+    {
+      "id": 6652,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "LA FLORIDA",
+      "nombre": "EDIFICIO 7 SUR",
+      "direccion": "COLOMBIA 7642",
+      "inmobiliaria": "INMOBILIARIA NEOSUTIL",
+      "grupo": "4",
+      "link": null
+    },
+    {
+      "id": 6724,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "LA FLORIDA",
+      "nombre": "EDIFICIO 11 NORTE",
+      "direccion": "VICENTE VALDES 755",
+      "inmobiliaria": "INMOBILIARIA CUATRO",
+      "grupo": "4",
+      "link": null
+    },
+    {
+      "id": 6123,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "PEÑALOLEN",
+      "nombre": "EDIFICIO DOÑA ANTONIA",
+      "direccion": "LLANQUIHUE 6290",
+      "inmobiliaria": "INMOBILIARIA DOMINGA",
+      "grupo": "5",
+      "link": null
+    },
+    {
+      "id": 6651,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "PEÑALOLEN",
+      "nombre": "EDIFICIO JARDIN NORTE",
+      "direccion": "MILLALONGO 72",
+      "inmobiliaria": "INMOBILIARIA MONJES",
+      "grupo": "5",
+      "link": null
+    },
+    {
+      "id": 6781,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "PEÑALOLEN",
+      "nombre": "EDIFICIO DOÑA ALEJANDRA",
+      "direccion": "VICUÑA MACKENNA PONIENTE 6896",
+      "inmobiliaria": "INMOBILIARIA CONQUISTA",
+      "grupo": "5",
+      "link": null
+    },
+    {
+      "id": 6895,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "PEÑALOLEN",
+      "nombre": "EDIFICIO ALTA VISTA",
+      "direccion": "BARCELONA 150",
+      "inmobiliaria": "INMOBILIRIA BRICSAL",
+      "grupo": "5",
+      "link": null
+    },
+    {
+      "id": 6932,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "PEÑALOLEN",
+      "nombre": "EDIFICIO MEDITERRANEO",
+      "direccion": "VICUÑA MACKENNA 6988",
+      "inmobiliaria": "INMOBILIARIA URBANA",
+      "grupo": "5",
+      "link": null
+    }
+  ]
+}

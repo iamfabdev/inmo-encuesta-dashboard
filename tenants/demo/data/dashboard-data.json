@@ -1,0 +1,1576 @@
+{
+  "waves": [
+    {
+      "id": "w_demo_ola1",
+      "label": "Ola 1",
+      "refDate": "2026-08-18",
+      "uploadedAt": "2026-09-23T22:48:59.990Z",
+      "masterUsed": [
+        {
+          "id": 4911,
+          "tpo": "DEPARTAMENTO",
+          "comuna": "RECOLETA",
+          "nombre": "EDIFICIO CONDOR",
+          "direccion": "PERU PLAZA 1471",
+          "inmobiliaria": "INMOBILIARIA ABALOS",
+          "grupo": "1",
+          "link": null
+        },
+        {
+          "id": 5859,
+          "tpo": "DEPARTAMENTO",
+          "comuna": "RECOLETA",
+          "nombre": "EDIFICIO CIPRES",
+          "direccion": "SAN CRISTOBAL 543",
+          "inmobiliaria": "GESTION INMOBILIARIA",
+          "grupo": "1",
+          "link": null
+        },
+        {
+          "id": 6077,
+          "tpo": "DEPARTAMENTO",
+          "comuna": "RECOLETA",
+          "nombre": "EDIFICIO PUMA",
+          "direccion": "EINSTEIN 568",
+          "inmobiliaria": "INMOBILIARIA NORTE NEVADO",
+          "grupo": "1",
+          "link": null
+        },
+        {
+          "id": 6122,
+          "tpo": "DEPARTAMENTO",
+          "comuna": "RECOLETA",
+          "nombre": "EDIFICIO CORDILLERA",
+          "direccion": "PERU 1290",
+          "inmobiliaria": "INMOBILIARIA DOMINGA",
+          "grupo": "1",
+          "link": null
+        },
+        {
+          "id": 6827,
+          "tpo": "DEPARTAMENTO",
+          "comuna": "RECOLETA",
+          "nombre": "EDIFICIO NIEVE",
+          "direccion": "MAESTRA LIDIA TORRES 92",
+          "inmobiliaria": "INMOBILIARIA PRIETO",
+          "grupo": "1",
+          "link": null
+        },
+        {
+          "id": 4421,
+          "tpo": "DEPARTAMENTO",
+          "comuna": "INDEPENDENCIA",
+          "nombre": "EDIFICIO PERU",
+          "direccion": "INDEPENDENCIA 2264",
+          "inmobiliaria": "INMOBILIARIA INGECAVA",
+          "grupo": "2",
+          "link": null
+        },
+        {
+          "id": 5818,
+          "tpo": "DEPARTAMENTO",
+          "comuna": "INDEPENDENCIA",
+          "nombre": "EDIFICIO COLOMBIA",
+          "direccion": "CORONEL ALVARADO 2180",
+          "inmobiliaria": "INMOBILIARIA CREACION",
+          "grupo": "2",
+          "link": null
+        },
+        {
+          "id": 6008,
+          "tpo": "DEPARTAMENTO",
+          "comuna": "INDEPENDENCIA",
+          "nombre": "EDIFICIO ARGENTINA",
+          "direccion": "DAVID ARELLANO 1810",
+          "inmobiliaria": "PANGEA INMOBILIARIA",
+          "grupo": "2",
+          "link": null
+        },
+        {
+          "id": 6011,
+          "tpo": "DEPARTAMENTO",
+          "comuna": "INDEPENDENCIA",
+          "nombre": "EDIFICIO URUGUAY",
+          "direccion": "CORONEL ALVARADO 2505",
+          "inmobiliaria": "INMOBILIARIA COPIHUE",
+          "grupo": "2",
+          "link": null
+        },
+        {
+          "id": 6086,
+          "tpo": "DEPARTAMENTO",
+          "comuna": "INDEPENDENCIA",
+          "nombre": "EDIFICIO CHILE",
+          "direccion": "HUANUCO 2290",
+          "inmobiliaria": "INMOBILIARIA DOMINGA",
+          "grupo": "2",
+          "link": null
+        },
+        {
+          "id": 6151,
+          "tpo": "DEPARTAMENTO",
+          "comuna": "SAN MIGUEL",
+          "nombre": "EDIFICIO REMANSO",
+          "direccion": "INDEPENDENCIA 2935",
+          "inmobiliaria": "INMOBILIARIA IMAGINACION",
+          "grupo": "3",
+          "link": null
+        },
+        {
+          "id": 6417,
+          "tpo": "DEPARTAMENTO",
+          "comuna": "SAN MIGUEL",
+          "nombre": "EDIFICIO RESERVA",
+          "direccion": "ISIDORA ERRAZURIZ 2305",
+          "inmobiliaria": "INMOBILIARIA FUNDAMENTAL",
+          "grupo": "3",
+          "link": null
+        },
+        {
+          "id": 6459,
+          "tpo": "DEPARTAMENTO",
+          "comuna": "SAN MIGUEL",
+          "nombre": "EDIFICIO CAMPO",
+          "direccion": "FERMIN VIVACETA 2648",
+          "inmobiliaria": "INMOBILIARIA VISTA LINDA",
+          "grupo": "3",
+          "link": null
+        },
+        {
+          "id": 6649,
+          "tpo": "DEPARTAMENTO",
+          "comuna": "SAN MIGUEL",
+          "nombre": "EDIFICIO TRINARES",
+          "direccion": "DAVID ARELLANO 1954",
+          "inmobiliaria": "INMOBILIARIA DOMINGA",
+          "grupo": "3",
+          "link": null
+        },
+        {
+          "id": 6859,
+          "tpo": "DEPARTAMENTO",
+          "comuna": "SAN MIGUEL",
+          "nombre": "EDIFICIO PRADO",
+          "direccion": "HIPODROMO 1613",
+          "inmobiliaria": "INMOBILIARIA MAESTRANZA",
+          "grupo": "3",
+          "link": null
+        },
+        {
+          "id": 6380,
+          "tpo": "DEPARTAMENTO",
+          "comuna": "LA FLORIDA",
+          "nombre": "EDIFICIO 1 NORTE",
+          "direccion": "WALKER MARTINEZ 815",
+          "inmobiliaria": "INMOBILIARIA DOMINGA",
+          "grupo": "4",
+          "link": null
+        },
+        {
+          "id": 6481,
+          "tpo": "DEPARTAMENTO",
+          "comuna": "LA FLORIDA",
+          "nombre": "EDIFICIO 4 ORIENTE",
+          "direccion": "GERONIMO DE ALDERETE 396",
+          "inmobiliaria": "INMOBILIARIA IZQUIERDO",
+          "grupo": "4",
+          "link": null
+        },
+        {
+          "id": 6517,
+          "tpo": "DEPARTAMENTO",
+          "comuna": "LA FLORIDA",
+          "nombre": "EDIFICIO 13 NORTE",
+          "direccion": "WALKER MARTINEZ 725",
+          "inmobiliaria": "INMOBILIARIA NUCLEO CENTRAL",
+          "grupo": "4",
+          "link": null
+        },
+        {
+          "id": 6652,
+          "tpo": "DEPARTAMENTO",
+          "comuna": "LA FLORIDA",
+          "nombre": "EDIFICIO 7 SUR",
+          "direccion": "COLOMBIA 7642",
+          "inmobiliaria": "INMOBILIARIA NEOSUTIL",
+          "grupo": "4",
+          "link": null
+        },
+        {
+          "id": 6724,
+          "tpo": "DEPARTAMENTO",
+          "comuna": "LA FLORIDA",
+          "nombre": "EDIFICIO 11 NORTE",
+          "direccion": "VICENTE VALDES 755",
+          "inmobiliaria": "INMOBILIARIA CUATRO",
+          "grupo": "4",
+          "link": null
+        },
+        {
+          "id": 6123,
+          "tpo": "DEPARTAMENTO",
+          "comuna": "PEÑALOLEN",
+          "nombre": "EDIFICIO DOÑA ANTONIA",
+          "direccion": "LLANQUIHUE 6290",
+          "inmobiliaria": "INMOBILIARIA DOMINGA",
+          "grupo": "5",
+          "link": null
+        },
+        {
+          "id": 6651,
+          "tpo": "DEPARTAMENTO",
+          "comuna": "PEÑALOLEN",
+          "nombre": "EDIFICIO JARDIN NORTE",
+          "direccion": "MILLALONGO 72",
+          "inmobiliaria": "INMOBILIARIA MONJES",
+          "grupo": "5",
+          "link": null
+        },
+        {
+          "id": 6781,
+          "tpo": "DEPARTAMENTO",
+          "comuna": "PEÑALOLEN",
+          "nombre": "EDIFICIO DOÑA ALEJANDRA",
+          "direccion": "VICUÑA MACKENNA PONIENTE 6896",
+          "inmobiliaria": "INMOBILIARIA CONQUISTA",
+          "grupo": "5",
+          "link": null
+        },
+        {
+          "id": 6895,
+          "tpo": "DEPARTAMENTO",
+          "comuna": "PEÑALOLEN",
+          "nombre": "EDIFICIO ALTA VISTA",
+          "direccion": "BARCELONA 150",
+          "inmobiliaria": "INMOBILIRIA BRICSAL",
+          "grupo": "5",
+          "link": null
+        },
+        {
+          "id": 6932,
+          "tpo": "DEPARTAMENTO",
+          "comuna": "PEÑALOLEN",
+          "nombre": "EDIFICIO MEDITERRANEO",
+          "direccion": "VICUÑA MACKENNA 6988",
+          "inmobiliaria": "INMOBILIARIA URBANA",
+          "grupo": "5",
+          "link": null
+        }
+      ],
+      "visits": [
+        {
+          "id_respuesta": 1060,
+          "project_id": 5818,
+          "project_name": "EDIFICIO COLOMBIA",
+          "comuna": "INDEPENDENCIA",
+          "inmobiliaria": "INMOBILIARIA CREACION",
+          "grupo": "2",
+          "is_own": false,
+          "vendedor": "Elva Barahona",
+          "vendedor_raw": "Elva Barahona",
+          "encuestador": "claudia Valdés Yáñez",
+          "fecha_visita": "2026-07-18",
+          "p6_ofrece_piloto": "Si",
+          "p7_acompana_piloto": "Si",
+          "tipo_renta": "Renta larga / tradicional",
+          "aspectos_destacados": [
+            "1.- Areas verdes",
+            "10.- Bicicleteros",
+            "12.- Estacionamientos de visita"
+          ],
+          "elementos_diferenciadores": [
+            "7.- Vías de acceso"
+          ],
+          "scores": {
+            "sala_ventas": 72.2,
+            "protocolo_atencion": 100,
+            "indagacion_necesidades": 80,
+            "financiamiento": 83.3,
+            "conocimiento_vendedor": 87.5,
+            "cierre_seguimiento": 50,
+            "satisfaccion_general": 83.3
+          },
+          "tactico": {
+            "cotizacion": 50,
+            "proximo_paso": 0,
+            "descuentos": 100,
+            "financiamiento_espontaneo": 100
+          },
+          "composite": 79.4,
+          "seguimiento_realizado": false
+        },
+        {
+          "id_respuesta": 1061,
+          "project_id": 6008,
+          "project_name": "EDIFICIO ARGENTINA",
+          "comuna": "INDEPENDENCIA",
+          "inmobiliaria": "PANGEA INMOBILIARIA",
+          "grupo": "2",
+          "is_own": false,
+          "vendedor": "Andres Sanchez",
+          "vendedor_raw": "Andres Sanchez",
+          "encuestador": "claudia Valdés Yáñez",
+          "fecha_visita": "2026-07-18",
+          "p6_ofrece_piloto": "Si",
+          "p7_acompana_piloto": "Si",
+          "tipo_renta": null,
+          "aspectos_destacados": [],
+          "elementos_diferenciadores": [],
+          "scores": {
+            "sala_ventas": 70.4,
+            "protocolo_atencion": 100,
+            "indagacion_necesidades": 40,
+            "financiamiento": 33.3,
+            "conocimiento_vendedor": 75,
+            "cierre_seguimiento": 100,
+            "satisfaccion_general": 83.3
+          },
+          "tactico": {
+            "cotizacion": 100,
+            "proximo_paso": 100,
+            "descuentos": 100,
+            "financiamiento_espontaneo": 0
+          },
+          "composite": 73.3,
+          "seguimiento_realizado": true
+        },
+        {
+          "id_respuesta": 1062,
+          "project_id": 4911,
+          "project_name": "EDIFICIO CONDOR",
+          "comuna": "RECOLETA",
+          "inmobiliaria": "INMOBILIARIA ABALOS",
+          "grupo": "1",
+          "is_own": false,
+          "vendedor": "Agustina Ramirez Bustos",
+          "vendedor_raw": "Agustina Ramirez Bustos",
+          "encuestador": "claudia Valdés Yáñez",
+          "fecha_visita": "2026-07-19",
+          "p6_ofrece_piloto": "Si",
+          "p7_acompana_piloto": "Si",
+          "tipo_renta": null,
+          "aspectos_destacados": [
+            "1.- Areas verdes",
+            "3.- Quincho para asados",
+            "4.- Lavandería",
+            "6.- Sala multi uso",
+            "11.- Piscina"
+          ],
+          "elementos_diferenciadores": [],
+          "scores": {
+            "sala_ventas": 29.6,
+            "protocolo_atencion": 92.9,
+            "indagacion_necesidades": 40,
+            "financiamiento": 0,
+            "conocimiento_vendedor": 70.8,
+            "cierre_seguimiento": 40,
+            "satisfaccion_general": 50
+          },
+          "tactico": {
+            "cotizacion": 100,
+            "proximo_paso": 100,
+            "descuentos": 100,
+            "financiamiento_espontaneo": 0
+          },
+          "composite": 46.5,
+          "seguimiento_realizado": false
+        },
+        {
+          "id_respuesta": 1063,
+          "project_id": 5859,
+          "project_name": "EDIFICIO CIPRES",
+          "comuna": "RECOLETA",
+          "inmobiliaria": "GESTION INMOBILIARIA",
+          "grupo": "1",
+          "is_own": false,
+          "vendedor": "Juliana Marin Tamayo",
+          "vendedor_raw": "Juliana Marin Tamayo",
+          "encuestador": "claudia Valdés Yáñez",
+          "fecha_visita": "2026-07-19",
+          "p6_ofrece_piloto": "Si",
+          "p7_acompana_piloto": "Si",
+          "tipo_renta": null,
+          "aspectos_destacados": [],
+          "elementos_diferenciadores": [],
+          "scores": {
+            "sala_ventas": 53.7,
+            "protocolo_atencion": 100,
+            "indagacion_necesidades": 40,
+            "financiamiento": 100,
+            "conocimiento_vendedor": 87.5,
+            "cierre_seguimiento": 95,
+            "satisfaccion_general": 83.3
+          },
+          "tactico": {
+            "cotizacion": 50,
+            "proximo_paso": 100,
+            "descuentos": 100,
+            "financiamiento_espontaneo": 100
+          },
+          "composite": 81.9,
+          "seguimiento_realizado": true
+        },
+        {
+          "id_respuesta": 1064,
+          "project_id": 6459,
+          "project_name": "EDIFICIO CAMPO",
+          "comuna": "SAN MIGUEL",
+          "inmobiliaria": "INMOBILIARIA VISTA LINDA",
+          "grupo": "3",
+          "is_own": false,
+          "vendedor": "Ariana Sanchez",
+          "vendedor_raw": "Ariana Sanchez",
+          "encuestador": "Claudia Vera Moran",
+          "fecha_visita": "2026-07-20",
+          "p6_ofrece_piloto": "Si",
+          "p7_acompana_piloto": "Si",
+          "tipo_renta": "Renta larga / tradicional",
+          "aspectos_destacados": [
+            "2.- Gimnasio",
+            "3.- Quincho para asados",
+            "12.- Estacionamientos de visita"
+          ],
+          "elementos_diferenciadores": [],
+          "scores": {
+            "sala_ventas": 81.5,
+            "protocolo_atencion": 100,
+            "indagacion_necesidades": 80,
+            "financiamiento": 83.3,
+            "conocimiento_vendedor": 87.5,
+            "cierre_seguimiento": 35,
+            "satisfaccion_general": 83.3
+          },
+          "tactico": {
+            "cotizacion": 50,
+            "proximo_paso": 0,
+            "descuentos": 100,
+            "financiamiento_espontaneo": 100
+          },
+          "composite": 78.6,
+          "seguimiento_realizado": false
+        },
+        {
+          "id_respuesta": 1065,
+          "project_id": 6011,
+          "project_name": "EDIFICIO URUGUAY",
+          "comuna": "INDEPENDENCIA",
+          "inmobiliaria": "INMOBILIARIA COPIHUE",
+          "grupo": "2",
+          "is_own": false,
+          "vendedor": "Neudys Chirinos",
+          "vendedor_raw": "Neudys Chirinos",
+          "encuestador": "Claudia Vera Moran",
+          "fecha_visita": "2026-07-20",
+          "p6_ofrece_piloto": "Si",
+          "p7_acompana_piloto": "Si",
+          "tipo_renta": "Renta larga / tradicional",
+          "aspectos_destacados": [
+            "1.- Areas verdes",
+            "4.- Lavandería",
+            "8.- Número de estacionamientos"
+          ],
+          "elementos_diferenciadores": [
+            "1.- Areas verdes"
+          ],
+          "scores": {
+            "sala_ventas": 55.6,
+            "protocolo_atencion": 92.9,
+            "indagacion_necesidades": 80,
+            "financiamiento": 83.3,
+            "conocimiento_vendedor": 70.8,
+            "cierre_seguimiento": 5,
+            "satisfaccion_general": 50
+          },
+          "tactico": {
+            "cotizacion": 50,
+            "proximo_paso": 0,
+            "descuentos": 100,
+            "financiamiento_espontaneo": 100
+          },
+          "composite": 61.6,
+          "seguimiento_realizado": false
+        },
+        {
+          "id_respuesta": 1066,
+          "project_id": 6417,
+          "project_name": "EDIFICIO RESERVA",
+          "comuna": "SAN MIGUEL",
+          "inmobiliaria": "INMOBILIARIA FUNDAMENTAL",
+          "grupo": "3",
+          "is_own": false,
+          "vendedor": "Maricel Moreno",
+          "vendedor_raw": "Maricel Moreno",
+          "encuestador": "Claudia Vera Moran",
+          "fecha_visita": "2026-07-20",
+          "p6_ofrece_piloto": "Si",
+          "p7_acompana_piloto": "Si",
+          "tipo_renta": "Renta larga / tradicional",
+          "aspectos_destacados": [
+            "2.- Gimnasio",
+            "5.- Cowork",
+            "6.- Sala multi uso",
+            "12.- Estacionamientos de visita"
+          ],
+          "elementos_diferenciadores": [],
+          "scores": {
+            "sala_ventas": 70.4,
+            "protocolo_atencion": 100,
+            "indagacion_necesidades": 80,
+            "financiamiento": 33.3,
+            "conocimiento_vendedor": 66.7,
+            "cierre_seguimiento": 65,
+            "satisfaccion_general": 66.7
+          },
+          "tactico": {
+            "cotizacion": 50,
+            "proximo_paso": 0,
+            "descuentos": 100,
+            "financiamiento_espontaneo": 0
+          },
+          "composite": 68.3,
+          "seguimiento_realizado": true
+        },
+        {
+          "id_respuesta": 1067,
+          "project_id": 6481,
+          "project_name": "EDIFICIO 4 ORIENTE",
+          "comuna": "LA FLORIDA",
+          "inmobiliaria": "INMOBILIARIA IZQUIERDO",
+          "grupo": "4",
+          "is_own": false,
+          "vendedor": "Barbara Armijo",
+          "vendedor_raw": "Barbara Armijo",
+          "encuestador": "Claudia Vera Moran",
+          "fecha_visita": "2026-07-20",
+          "p6_ofrece_piloto": "Si",
+          "p7_acompana_piloto": "Si",
+          "tipo_renta": "Renta larga / tradicional",
+          "aspectos_destacados": [
+            "2.- Gimnasio",
+            "3.- Quincho para asados",
+            "5.- Cowork"
+          ],
+          "elementos_diferenciadores": [],
+          "scores": {
+            "sala_ventas": 81.5,
+            "protocolo_atencion": 100,
+            "indagacion_necesidades": 100,
+            "financiamiento": 100,
+            "conocimiento_vendedor": 91.7,
+            "cierre_seguimiento": 80,
+            "satisfaccion_general": 83.3
+          },
+          "tactico": {
+            "cotizacion": 50,
+            "proximo_paso": 100,
+            "descuentos": 100,
+            "financiamiento_espontaneo": 100
+          },
+          "composite": 90.5,
+          "seguimiento_realizado": true
+        },
+        {
+          "id_respuesta": 1068,
+          "project_id": 6380,
+          "project_name": "EDIFICIO 1 NORTE",
+          "comuna": "LA FLORIDA",
+          "inmobiliaria": "INMOBILIARIA DOMINGA",
+          "grupo": "4",
+          "is_own": true,
+          "vendedor": "Yetzi Gomez",
+          "vendedor_raw": "Yetzi Gomez",
+          "encuestador": "Claudia Vera Moran",
+          "fecha_visita": "2026-07-20",
+          "p6_ofrece_piloto": "Si",
+          "p7_acompana_piloto": "Si",
+          "tipo_renta": "Renta corta",
+          "aspectos_destacados": [
+            "2.- Gimnasio",
+            "3.- Quincho para asados",
+            "4.- Lavandería",
+            "5.- Cowork",
+            "9.- Amplia conserjería",
+            "10.- Bicicleteros"
+          ],
+          "elementos_diferenciadores": [
+            "2.- Gimnasio"
+          ],
+          "scores": {
+            "sala_ventas": 96.3,
+            "protocolo_atencion": 100,
+            "indagacion_necesidades": 100,
+            "financiamiento": 83.3,
+            "conocimiento_vendedor": 100,
+            "cierre_seguimiento": 100,
+            "satisfaccion_general": 100
+          },
+          "tactico": {
+            "cotizacion": 100,
+            "proximo_paso": 100,
+            "descuentos": 100,
+            "financiamiento_espontaneo": 100
+          },
+          "composite": 96.9,
+          "seguimiento_realizado": true
+        },
+        {
+          "id_respuesta": 1069,
+          "project_id": 6517,
+          "project_name": "EDIFICIO 13 NORTE",
+          "comuna": "LA FLORIDA",
+          "inmobiliaria": "INMOBILIARIA NUCLEO CENTRAL",
+          "grupo": "4",
+          "is_own": false,
+          "vendedor": "Gisele Ferlissi",
+          "vendedor_raw": "Gisele Ferlissi",
+          "encuestador": "Claudia Vera Moran",
+          "fecha_visita": "2026-07-20",
+          "p6_ofrece_piloto": "Si",
+          "p7_acompana_piloto": "Si",
+          "tipo_renta": "Renta larga / tradicional",
+          "aspectos_destacados": [
+            "1.- Areas verdes",
+            "2.- Gimnasio",
+            "11.- Piscina"
+          ],
+          "elementos_diferenciadores": [],
+          "scores": {
+            "sala_ventas": 72.2,
+            "protocolo_atencion": 100,
+            "indagacion_necesidades": 80,
+            "financiamiento": 33.3,
+            "conocimiento_vendedor": 75,
+            "cierre_seguimiento": 70,
+            "satisfaccion_general": 50
+          },
+          "tactico": {
+            "cotizacion": 100,
+            "proximo_paso": 50,
+            "descuentos": 100,
+            "financiamiento_espontaneo": 0
+          },
+          "composite": 68.1,
+          "seguimiento_realizado": true
+        },
+        {
+          "id_respuesta": 1070,
+          "project_id": 6086,
+          "project_name": "EDIFICIO CHILE",
+          "comuna": "INDEPENDENCIA",
+          "inmobiliaria": "INMOBILIARIA DOMINGA",
+          "grupo": "2",
+          "is_own": true,
+          "vendedor": "Camila Tapia",
+          "vendedor_raw": "Camila Tapia",
+          "encuestador": "claudia Valdés Yáñez",
+          "fecha_visita": "2026-07-20",
+          "p6_ofrece_piloto": "Si",
+          "p7_acompana_piloto": "Si",
+          "tipo_renta": "Renta corta",
+          "aspectos_destacados": [
+            "1.- Areas verdes",
+            "2.- Gimnasio",
+            "3.- Quincho para asados",
+            "5.- Cowork",
+            "6.- Sala multi uso",
+            "11.- Piscina",
+            "12.- Estacionamientos de visita"
+          ],
+          "elementos_diferenciadores": [
+            "7.- Vías de acceso",
+            "12.- Estacionamientos de visita",
+            "1.- Areas verdes",
+            "2.- Gimnasio"
+          ],
+          "scores": {
+            "sala_ventas": 87,
+            "protocolo_atencion": 100,
+            "indagacion_necesidades": 100,
+            "financiamiento": 100,
+            "conocimiento_vendedor": 100,
+            "cierre_seguimiento": 100,
+            "satisfaccion_general": 100
+          },
+          "tactico": {
+            "cotizacion": 100,
+            "proximo_paso": 100,
+            "descuentos": 100,
+            "financiamiento_espontaneo": 100
+          },
+          "composite": 98.1,
+          "seguimiento_realizado": true
+        },
+        {
+          "id_respuesta": 1071,
+          "project_id": 6077,
+          "project_name": "EDIFICIO PUMA",
+          "comuna": "RECOLETA",
+          "inmobiliaria": "INMOBILIARIA NORTE NEVADO",
+          "grupo": "1",
+          "is_own": false,
+          "vendedor": "Cristian Repenning",
+          "vendedor_raw": "Cristian Repenning",
+          "encuestador": "claudia Valdés Yáñez",
+          "fecha_visita": "2026-07-20",
+          "p6_ofrece_piloto": "Si",
+          "p7_acompana_piloto": "Si",
+          "tipo_renta": "Renta corta",
+          "aspectos_destacados": [
+            "4.- Lavandería",
+            "5.- Cowork",
+            "6.- Sala multi uso",
+            "9.- Amplia conserjería",
+            "10.- Bicicleteros"
+          ],
+          "elementos_diferenciadores": [
+            "7.- Vías de acceso"
+          ],
+          "scores": {
+            "sala_ventas": 66.7,
+            "protocolo_atencion": 100,
+            "indagacion_necesidades": 100,
+            "financiamiento": 100,
+            "conocimiento_vendedor": 100,
+            "cierre_seguimiento": 100,
+            "satisfaccion_general": 100
+          },
+          "tactico": {
+            "cotizacion": 100,
+            "proximo_paso": 100,
+            "descuentos": 100,
+            "financiamiento_espontaneo": 100
+          },
+          "composite": 95,
+          "seguimiento_realizado": true
+        },
+        {
+          "id_respuesta": 1072,
+          "project_id": 4421,
+          "project_name": "EDIFICIO PERU",
+          "comuna": "INDEPENDENCIA",
+          "inmobiliaria": "INMOBILIARIA INGECAVA",
+          "grupo": "2",
+          "is_own": false,
+          "vendedor": "Juliana Marin Tamayo",
+          "vendedor_raw": "Juliana Marin",
+          "encuestador": "claudia Valdés Yáñez",
+          "fecha_visita": "2026-07-20",
+          "p6_ofrece_piloto": "Si",
+          "p7_acompana_piloto": "Existe responsable en Piloto",
+          "tipo_renta": "Renta corta",
+          "aspectos_destacados": [
+            "6.- Sala multi uso",
+            "7.- Vías de acceso",
+            "8.- Número de estacionamientos"
+          ],
+          "elementos_diferenciadores": [],
+          "scores": {
+            "sala_ventas": 63,
+            "protocolo_atencion": 100,
+            "indagacion_necesidades": 100,
+            "financiamiento": 100,
+            "conocimiento_vendedor": 70.8,
+            "cierre_seguimiento": 100,
+            "satisfaccion_general": 100
+          },
+          "tactico": {
+            "cotizacion": 100,
+            "proximo_paso": 100,
+            "descuentos": 100,
+            "financiamiento_espontaneo": 100
+          },
+          "composite": 90.1,
+          "seguimiento_realizado": true
+        },
+        {
+          "id_respuesta": 1073,
+          "project_id": 6123,
+          "project_name": "EDIFICIO DOÑA ANTONIA",
+          "comuna": "PEÑALOLEN",
+          "inmobiliaria": "INMOBILIARIA DOMINGA",
+          "grupo": "5",
+          "is_own": true,
+          "vendedor": "Grecia Tamariz",
+          "vendedor_raw": "Grecia Tamariz",
+          "encuestador": "Lissette Riquelme",
+          "fecha_visita": "2026-07-23",
+          "p6_ofrece_piloto": "Si",
+          "p7_acompana_piloto": "Si",
+          "tipo_renta": "Renta larga / tradicional",
+          "aspectos_destacados": [
+            "1.- Areas verdes",
+            "2.- Gimnasio",
+            "3.- Quincho para asados",
+            "4.- Lavandería",
+            "5.- Cowork",
+            "6.- Sala multi uso",
+            "9.- Amplia conserjería",
+            "10.- Bicicleteros",
+            "11.- Piscina"
+          ],
+          "elementos_diferenciadores": [
+            "7.- Vías de acceso",
+            "1.- Areas verdes"
+          ],
+          "scores": {
+            "sala_ventas": 63,
+            "protocolo_atencion": 100,
+            "indagacion_necesidades": 100,
+            "financiamiento": 83.3,
+            "conocimiento_vendedor": 91.7,
+            "cierre_seguimiento": 100,
+            "satisfaccion_general": 100
+          },
+          "tactico": {
+            "cotizacion": 100,
+            "proximo_paso": 100,
+            "descuentos": 100,
+            "financiamiento_espontaneo": 100
+          },
+          "composite": 90.7,
+          "seguimiento_realizado": true
+        },
+        {
+          "id_respuesta": 1074,
+          "project_id": 6651,
+          "project_name": "EDIFICIO JARDIN NORTE",
+          "comuna": "PEÑALOLEN",
+          "inmobiliaria": "INMOBILIARIA MONJES",
+          "grupo": "5",
+          "is_own": false,
+          "vendedor": "Paulina Figueroa",
+          "vendedor_raw": "Paulina Figueroa",
+          "encuestador": "Lissette Riquelme",
+          "fecha_visita": "2026-07-23",
+          "p6_ofrece_piloto": "Si",
+          "p7_acompana_piloto": "Si",
+          "tipo_renta": "Renta larga / tradicional",
+          "aspectos_destacados": [
+            "1.- Areas verdes",
+            "2.- Gimnasio",
+            "3.- Quincho para asados",
+            "6.- Sala multi uso",
+            "11.- Piscina"
+          ],
+          "elementos_diferenciadores": [],
+          "scores": {
+            "sala_ventas": 87,
+            "protocolo_atencion": 100,
+            "indagacion_necesidades": 60,
+            "financiamiento": 50,
+            "conocimiento_vendedor": 83.3,
+            "cierre_seguimiento": 40,
+            "satisfaccion_general": 66.7
+          },
+          "tactico": {
+            "cotizacion": 100,
+            "proximo_paso": 50,
+            "descuentos": 100,
+            "financiamiento_espontaneo": 100
+          },
+          "composite": 70.1,
+          "seguimiento_realizado": false
+        },
+        {
+          "id_respuesta": 1075,
+          "project_id": 6781,
+          "project_name": "EDIFICIO DOÑA ALEJANDRA",
+          "comuna": "PEÑALOLEN",
+          "inmobiliaria": "INMOBILIARIA CONQUISTA",
+          "grupo": "5",
+          "is_own": false,
+          "vendedor": "Jocelyn Godoy",
+          "vendedor_raw": "Jocelyn Godoy",
+          "encuestador": "Lissette Riquelme",
+          "fecha_visita": "2026-07-23",
+          "p6_ofrece_piloto": "Si",
+          "p7_acompana_piloto": "Si",
+          "tipo_renta": "Renta larga / tradicional",
+          "aspectos_destacados": [
+            "2.- Gimnasio",
+            "3.- Quincho para asados",
+            "4.- Lavandería",
+            "5.- Cowork",
+            "6.- Sala multi uso",
+            "7.- Vías de acceso"
+          ],
+          "elementos_diferenciadores": [
+            "7.- Vías de acceso"
+          ],
+          "scores": {
+            "sala_ventas": 72.2,
+            "protocolo_atencion": 100,
+            "indagacion_necesidades": 100,
+            "financiamiento": 83.3,
+            "conocimiento_vendedor": 87.5,
+            "cierre_seguimiento": 95,
+            "satisfaccion_general": 100
+          },
+          "tactico": {
+            "cotizacion": 50,
+            "proximo_paso": 100,
+            "descuentos": 100,
+            "financiamiento_espontaneo": 100
+          },
+          "composite": 90.7,
+          "seguimiento_realizado": true
+        },
+        {
+          "id_respuesta": 1078,
+          "project_id": 6895,
+          "project_name": "EDIFICIO ALTA VISTA",
+          "comuna": "PEÑALOLEN",
+          "inmobiliaria": "INMOBILIRIA BRICSAL",
+          "grupo": "5",
+          "is_own": false,
+          "vendedor": "Carola Uribe",
+          "vendedor_raw": "Carola Uribe",
+          "encuestador": "Lissette Riquelme",
+          "fecha_visita": "2026-07-25",
+          "p6_ofrece_piloto": "Si",
+          "p7_acompana_piloto": "Si",
+          "tipo_renta": "Renta larga / tradicional",
+          "aspectos_destacados": [
+            "1.- Areas verdes",
+            "2.- Gimnasio",
+            "3.- Quincho para asados",
+            "6.- Sala multi uso",
+            "7.- Vías de acceso",
+            "10.- Bicicleteros",
+            "11.- Piscina"
+          ],
+          "elementos_diferenciadores": [
+            "7.- Vías de acceso",
+            "11.- Piscina",
+            "1.- Areas verdes",
+            "2.- Gimnasio",
+            "3.- Quincho para asados",
+            "4.- Lavandería"
+          ],
+          "scores": {
+            "sala_ventas": 74.1,
+            "protocolo_atencion": 100,
+            "indagacion_necesidades": 100,
+            "financiamiento": 100,
+            "conocimiento_vendedor": 95.8,
+            "cierre_seguimiento": 95,
+            "satisfaccion_general": 100
+          },
+          "tactico": {
+            "cotizacion": 50,
+            "proximo_paso": 100,
+            "descuentos": 100,
+            "financiamiento_espontaneo": 100
+          },
+          "composite": 94.7,
+          "seguimiento_realizado": true
+        },
+        {
+          "id_respuesta": 1079,
+          "project_id": 6724,
+          "project_name": "EDIFICIO 11 NORTE",
+          "comuna": "LA FLORIDA",
+          "inmobiliaria": "INMOBILIARIA CUATRO",
+          "grupo": "4",
+          "is_own": false,
+          "vendedor": "Verónica Trejo",
+          "vendedor_raw": "Verónica Trejo",
+          "encuestador": "Lissette Riquelme",
+          "fecha_visita": "2026-07-25",
+          "p6_ofrece_piloto": "Si",
+          "p7_acompana_piloto": "Si",
+          "tipo_renta": "Renta larga / tradicional",
+          "aspectos_destacados": [
+            "1.- Areas verdes",
+            "6.- Sala multi uso",
+            "7.- Vías de acceso"
+          ],
+          "elementos_diferenciadores": [
+            "10.- Bicicleteros",
+            "1.- Areas verdes",
+            "2.- Gimnasio"
+          ],
+          "scores": {
+            "sala_ventas": 55.6,
+            "protocolo_atencion": 100,
+            "indagacion_necesidades": 80,
+            "financiamiento": 83.3,
+            "conocimiento_vendedor": 91.7,
+            "cierre_seguimiento": 95,
+            "satisfaccion_general": 100
+          },
+          "tactico": {
+            "cotizacion": 50,
+            "proximo_paso": 100,
+            "descuentos": 100,
+            "financiamiento_espontaneo": 100
+          },
+          "composite": 86.8,
+          "seguimiento_realizado": true
+        },
+        {
+          "id_respuesta": 1118,
+          "project_id": 6827,
+          "project_name": "EDIFICIO NIEVE",
+          "comuna": "RECOLETA",
+          "inmobiliaria": "INMOBILIARIA PRIETO",
+          "grupo": "1",
+          "is_own": false,
+          "vendedor": "Mitchele Vidal",
+          "vendedor_raw": "Mitchele Vidal",
+          "encuestador": "Cristian Valenzuela",
+          "fecha_visita": "2026-08-05",
+          "p6_ofrece_piloto": "No",
+          "p7_acompana_piloto": "No",
+          "tipo_renta": "Renta larga / tradicional",
+          "aspectos_destacados": [
+            "1.- Areas verdes",
+            "2.- Gimnasio",
+            "3.- Quincho para asados",
+            "5.- Cowork",
+            "6.- Sala multi uso",
+            "7.- Vías de acceso",
+            "9.- Amplia conserjería",
+            "10.- Bicicleteros"
+          ],
+          "elementos_diferenciadores": [],
+          "scores": {
+            "sala_ventas": 70.4,
+            "protocolo_atencion": 100,
+            "indagacion_necesidades": 60,
+            "financiamiento": 83.3,
+            "conocimiento_vendedor": 87.5,
+            "cierre_seguimiento": 100,
+            "satisfaccion_general": 83.3
+          },
+          "tactico": {
+            "cotizacion": 100,
+            "proximo_paso": 100,
+            "descuentos": 100,
+            "financiamiento_espontaneo": 100
+          },
+          "composite": 84.7,
+          "seguimiento_realizado": true
+        },
+        {
+          "id_respuesta": 1122,
+          "project_id": 6122,
+          "project_name": "EDIFICIO CORDILLERA",
+          "comuna": "RECOLETA",
+          "inmobiliaria": "INMOBILIARIA DOMINGA",
+          "grupo": "1",
+          "is_own": true,
+          "vendedor": "Camila Tapia",
+          "vendedor_raw": "Camila Tapia",
+          "encuestador": "Cristian Valenzuela",
+          "fecha_visita": "2026-08-07",
+          "p6_ofrece_piloto": "Si",
+          "p7_acompana_piloto": "Si",
+          "tipo_renta": "Renta larga / tradicional",
+          "aspectos_destacados": [
+            "1.- Areas verdes",
+            "2.- Gimnasio",
+            "3.- Quincho para asados",
+            "4.- Lavandería",
+            "5.- Cowork",
+            "6.- Sala multi uso",
+            "7.- Vías de acceso",
+            "8.- Número de estacionamientos",
+            "9.- Amplia conserjería",
+            "10.- Bicicleteros",
+            "11.- Piscina",
+            "12.- Estacionamientos de visita"
+          ],
+          "elementos_diferenciadores": [
+            "6.- Sala multi uso",
+            "7.- Vías de acceso",
+            "8.- Número de estacionamientos",
+            "9.- Amplia conserjería",
+            "10.- Bicicleteros",
+            "11.- Piscina",
+            "12.- Estacionamientos de visita",
+            "1.- Areas verdes",
+            "2.- Gimnasio",
+            "3.- Quincho para asados",
+            "4.- Lavandería",
+            "5.- Cowork"
+          ],
+          "scores": {
+            "sala_ventas": 88.9,
+            "protocolo_atencion": 100,
+            "indagacion_necesidades": 100,
+            "financiamiento": 83.3,
+            "conocimiento_vendedor": 100,
+            "cierre_seguimiento": 65,
+            "satisfaccion_general": 100
+          },
+          "tactico": {
+            "cotizacion": 50,
+            "proximo_paso": 0,
+            "descuentos": 100,
+            "financiamiento_espontaneo": 100
+          },
+          "composite": 90.6,
+          "seguimiento_realizado": true
+        },
+        {
+          "id_respuesta": 1123,
+          "project_id": 6649,
+          "project_name": "EDIFICIO TRINARES",
+          "comuna": "SAN MIGUEL",
+          "inmobiliaria": "INMOBILIARIA DOMINGA",
+          "grupo": "3",
+          "is_own": true,
+          "vendedor": "Maria Soledad Villa",
+          "vendedor_raw": "Maria Soledad Villa",
+          "encuestador": "Manuel Montanares",
+          "fecha_visita": "2026-08-06",
+          "p6_ofrece_piloto": "Si",
+          "p7_acompana_piloto": "Si",
+          "tipo_renta": "Renta larga / tradicional",
+          "aspectos_destacados": [
+            "1.- Areas verdes",
+            "3.- Quincho para asados",
+            "4.- Lavandería",
+            "5.- Cowork",
+            "6.- Sala multi uso",
+            "10.- Bicicleteros",
+            "11.- Piscina"
+          ],
+          "elementos_diferenciadores": [
+            "11.- Piscina",
+            "3.- Quincho para asados",
+            "5.- Cowork"
+          ],
+          "scores": {
+            "sala_ventas": 75.9,
+            "protocolo_atencion": 100,
+            "indagacion_necesidades": 80,
+            "financiamiento": 83.3,
+            "conocimiento_vendedor": 95.8,
+            "cierre_seguimiento": 100,
+            "satisfaccion_general": 100
+          },
+          "tactico": {
+            "cotizacion": 100,
+            "proximo_paso": 100,
+            "descuentos": 100,
+            "financiamiento_espontaneo": 100
+          },
+          "composite": 91.3,
+          "seguimiento_realizado": true
+        },
+        {
+          "id_respuesta": 1124,
+          "project_id": 6859,
+          "project_name": "EDIFICIO PRADO",
+          "comuna": "SAN MIGUEL",
+          "inmobiliaria": "INMOBILIARIA MAESTRANZA",
+          "grupo": "3",
+          "is_own": false,
+          "vendedor": "Sandra Quezada",
+          "vendedor_raw": "Sandra Quezada",
+          "encuestador": "Manuel Montanares",
+          "fecha_visita": "46239",
+          "p6_ofrece_piloto": "Si",
+          "p7_acompana_piloto": "Si",
+          "tipo_renta": null,
+          "aspectos_destacados": [
+            "1.- Areas verdes",
+            "2.- Gimnasio",
+            "3.- Quincho para asados",
+            "4.- Lavandería",
+            "6.- Sala multi uso",
+            "7.- Vías de acceso",
+            "10.- Bicicleteros",
+            "11.- Piscina"
+          ],
+          "elementos_diferenciadores": [],
+          "scores": {
+            "sala_ventas": 55.6,
+            "protocolo_atencion": 85.7,
+            "indagacion_necesidades": 20,
+            "financiamiento": 0,
+            "conocimiento_vendedor": 87.5,
+            "cierre_seguimiento": 35,
+            "satisfaccion_general": 66.7
+          },
+          "tactico": {
+            "cotizacion": 50,
+            "proximo_paso": 50,
+            "descuentos": 100,
+            "financiamiento_espontaneo": 0
+          },
+          "composite": 51.6,
+          "seguimiento_realizado": true
+        },
+        {
+          "id_respuesta": 1125,
+          "project_id": 6380,
+          "project_name": "EDIFICIO 1 NORTE",
+          "comuna": "LA FLORIDA",
+          "inmobiliaria": "INMOBILIARIA DOMINGA",
+          "grupo": "4",
+          "is_own": true,
+          "vendedor": "Adriana De Aguas",
+          "vendedor_raw": "Adriana de Aguas",
+          "encuestador": "claudia Valdés Yáñez",
+          "fecha_visita": "46250",
+          "p6_ofrece_piloto": "Si",
+          "p7_acompana_piloto": "Si",
+          "tipo_renta": null,
+          "aspectos_destacados": [
+            "1.- Areas verdes",
+            "3.- Quincho para asados",
+            "6.- Sala multi uso",
+            "7.- Vías de acceso",
+            "9.- Amplia conserjería",
+            "10.- Bicicleteros",
+            "12.- Estacionamientos de visita"
+          ],
+          "elementos_diferenciadores": [
+            "6.- Sala multi uso",
+            "7.- Vías de acceso",
+            "1.- Areas verdes",
+            "5.- Cowork"
+          ],
+          "scores": {
+            "sala_ventas": 83.3,
+            "protocolo_atencion": 100,
+            "indagacion_necesidades": 80,
+            "financiamiento": 83.3,
+            "conocimiento_vendedor": 100,
+            "cierre_seguimiento": 100,
+            "satisfaccion_general": 100
+          },
+          "tactico": {
+            "cotizacion": 100,
+            "proximo_paso": 100,
+            "descuentos": 100,
+            "financiamiento_espontaneo": 100
+          },
+          "composite": 93,
+          "seguimiento_realizado": true
+        }
+      ],
+      "flags": [
+        "Respuesta 1093: el proyecto ID 6009 no está en el maestro de competencia cargado — no se pudo clasificar (DOMINGA/competencia, comuna). Revisa si falta actualizar el maestro.",
+        "Respuesta 1103: el proyecto ID 6377 no está en el maestro de competencia cargado — no se pudo clasificar (DOMINGA/competencia, comuna). Revisa si falta actualizar el maestro.",
+        "Respuesta 1104: el proyecto ID 6767 no está en el maestro de competencia cargado — no se pudo clasificar (DOMINGA/competencia, comuna). Revisa si falta actualizar el maestro."
+      ],
+      "notFoundInMaster": [
+        {
+          "project_id": 6009,
+          "id_respuesta": 1093
+        },
+        {
+          "project_id": 6377,
+          "id_respuesta": 1103
+        },
+        {
+          "project_id": 6767,
+          "id_respuesta": 1104
+        }
+      ],
+      "notSurveyed": [
+        {
+          "id": 6151,
+          "tpo": "DEPARTAMENTO",
+          "comuna": "SAN MIGUEL",
+          "nombre": "EDIFICIO REMANSO",
+          "direccion": "INDEPENDENCIA 2935",
+          "inmobiliaria": "INMOBILIARIA IMAGINACION",
+          "grupo": "3",
+          "link": null
+        },
+        {
+          "id": 6652,
+          "tpo": "DEPARTAMENTO",
+          "comuna": "LA FLORIDA",
+          "nombre": "EDIFICIO 7 SUR",
+          "direccion": "COLOMBIA 7642",
+          "inmobiliaria": "INMOBILIARIA NEOSUTIL",
+          "grupo": "4",
+          "link": null
+        },
+        {
+          "id": 6932,
+          "tpo": "DEPARTAMENTO",
+          "comuna": "PEÑALOLEN",
+          "nombre": "EDIFICIO MEDITERRANEO",
+          "direccion": "VICUÑA MACKENNA 6988",
+          "inmobiliaria": "INMOBILIARIA URBANA",
+          "grupo": "5",
+          "link": null
+        }
+      ],
+      "vendorMerges": [
+        {
+          "de": "Juliana Marin",
+          "a": "Juliana Marin Tamayo"
+        }
+      ]
+    }
+  ],
+  "weights": {
+    "sala_ventas": 15,
+    "protocolo_atencion": 15,
+    "indagacion_necesidades": 10,
+    "financiamiento": 15,
+    "conocimiento_vendedor": 15,
+    "cierre_seguimiento": 15,
+    "satisfaccion_general": 15
+  },
+  "master": [
+    {
+      "id": 4911,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "RECOLETA",
+      "nombre": "EDIFICIO CONDOR",
+      "direccion": "PERU PLAZA 1471",
+      "inmobiliaria": "INMOBILIARIA ABALOS",
+      "grupo": "1",
+      "link": null
+    },
+    {
+      "id": 5859,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "RECOLETA",
+      "nombre": "EDIFICIO CIPRES",
+      "direccion": "SAN CRISTOBAL 543",
+      "inmobiliaria": "GESTION INMOBILIARIA",
+      "grupo": "1",
+      "link": null
+    },
+    {
+      "id": 6077,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "RECOLETA",
+      "nombre": "EDIFICIO PUMA",
+      "direccion": "EINSTEIN 568",
+      "inmobiliaria": "INMOBILIARIA NORTE NEVADO",
+      "grupo": "1",
+      "link": null
+    },
+    {
+      "id": 6122,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "RECOLETA",
+      "nombre": "EDIFICIO CORDILLERA",
+      "direccion": "PERU 1290",
+      "inmobiliaria": "INMOBILIARIA DOMINGA",
+      "grupo": "1",
+      "link": null
+    },
+    {
+      "id": 6827,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "RECOLETA",
+      "nombre": "EDIFICIO NIEVE",
+      "direccion": "MAESTRA LIDIA TORRES 92",
+      "inmobiliaria": "INMOBILIARIA PRIETO",
+      "grupo": "1",
+      "link": null
+    },
+    {
+      "id": 4421,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "INDEPENDENCIA",
+      "nombre": "EDIFICIO PERU",
+      "direccion": "INDEPENDENCIA 2264",
+      "inmobiliaria": "INMOBILIARIA INGECAVA",
+      "grupo": "2",
+      "link": null
+    },
+    {
+      "id": 5818,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "INDEPENDENCIA",
+      "nombre": "EDIFICIO COLOMBIA",
+      "direccion": "CORONEL ALVARADO 2180",
+      "inmobiliaria": "INMOBILIARIA CREACION",
+      "grupo": "2",
+      "link": null
+    },
+    {
+      "id": 6008,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "INDEPENDENCIA",
+      "nombre": "EDIFICIO ARGENTINA",
+      "direccion": "DAVID ARELLANO 1810",
+      "inmobiliaria": "PANGEA INMOBILIARIA",
+      "grupo": "2",
+      "link": null
+    },
+    {
+      "id": 6011,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "INDEPENDENCIA",
+      "nombre": "EDIFICIO URUGUAY",
+      "direccion": "CORONEL ALVARADO 2505",
+      "inmobiliaria": "INMOBILIARIA COPIHUE",
+      "grupo": "2",
+      "link": null
+    },
+    {
+      "id": 6086,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "INDEPENDENCIA",
+      "nombre": "EDIFICIO CHILE",
+      "direccion": "HUANUCO 2290",
+      "inmobiliaria": "INMOBILIARIA DOMINGA",
+      "grupo": "2",
+      "link": null
+    },
+    {
+      "id": 6151,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "SAN MIGUEL",
+      "nombre": "EDIFICIO REMANSO",
+      "direccion": "INDEPENDENCIA 2935",
+      "inmobiliaria": "INMOBILIARIA IMAGINACION",
+      "grupo": "3",
+      "link": null
+    },
+    {
+      "id": 6417,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "SAN MIGUEL",
+      "nombre": "EDIFICIO RESERVA",
+      "direccion": "ISIDORA ERRAZURIZ 2305",
+      "inmobiliaria": "INMOBILIARIA FUNDAMENTAL",
+      "grupo": "3",
+      "link": null
+    },
+    {
+      "id": 6459,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "SAN MIGUEL",
+      "nombre": "EDIFICIO CAMPO",
+      "direccion": "FERMIN VIVACETA 2648",
+      "inmobiliaria": "INMOBILIARIA VISTA LINDA",
+      "grupo": "3",
+      "link": null
+    },
+    {
+      "id": 6649,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "SAN MIGUEL",
+      "nombre": "EDIFICIO TRINARES",
+      "direccion": "DAVID ARELLANO 1954",
+      "inmobiliaria": "INMOBILIARIA DOMINGA",
+      "grupo": "3",
+      "link": null
+    },
+    {
+      "id": 6859,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "SAN MIGUEL",
+      "nombre": "EDIFICIO PRADO",
+      "direccion": "HIPODROMO 1613",
+      "inmobiliaria": "INMOBILIARIA MAESTRANZA",
+      "grupo": "3",
+      "link": null
+    },
+    {
+      "id": 6380,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "LA FLORIDA",
+      "nombre": "EDIFICIO 1 NORTE",
+      "direccion": "WALKER MARTINEZ 815",
+      "inmobiliaria": "INMOBILIARIA DOMINGA",
+      "grupo": "4",
+      "link": null
+    },
+    {
+      "id": 6481,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "LA FLORIDA",
+      "nombre": "EDIFICIO 4 ORIENTE",
+      "direccion": "GERONIMO DE ALDERETE 396",
+      "inmobiliaria": "INMOBILIARIA IZQUIERDO",
+      "grupo": "4",
+      "link": null
+    },
+    {
+      "id": 6517,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "LA FLORIDA",
+      "nombre": "EDIFICIO 13 NORTE",
+      "direccion": "WALKER MARTINEZ 725",
+      "inmobiliaria": "INMOBILIARIA NUCLEO CENTRAL",
+      "grupo": "4",
+      "link": null
+    },
+    {
+      "id": 6652,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "LA FLORIDA",
+      "nombre": "EDIFICIO 7 SUR",
+      "direccion": "COLOMBIA 7642",
+      "inmobiliaria": "INMOBILIARIA NEOSUTIL",
+      "grupo": "4",
+      "link": null
+    },
+    {
+      "id": 6724,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "LA FLORIDA",
+      "nombre": "EDIFICIO 11 NORTE",
+      "direccion": "VICENTE VALDES 755",
+      "inmobiliaria": "INMOBILIARIA CUATRO",
+      "grupo": "4",
+      "link": null
+    },
+    {
+      "id": 6123,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "PEÑALOLEN",
+      "nombre": "EDIFICIO DOÑA ANTONIA",
+      "direccion": "LLANQUIHUE 6290",
+      "inmobiliaria": "INMOBILIARIA DOMINGA",
+      "grupo": "5",
+      "link": null
+    },
+    {
+      "id": 6651,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "PEÑALOLEN",
+      "nombre": "EDIFICIO JARDIN NORTE",
+      "direccion": "MILLALONGO 72",
+      "inmobiliaria": "INMOBILIARIA MONJES",
+      "grupo": "5",
+      "link": null
+    },
+    {
+      "id": 6781,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "PEÑALOLEN",
+      "nombre": "EDIFICIO DOÑA ALEJANDRA",
+      "direccion": "VICUÑA MACKENNA PONIENTE 6896",
+      "inmobiliaria": "INMOBILIARIA CONQUISTA",
+      "grupo": "5",
+      "link": null
+    },
+    {
+      "id": 6895,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "PEÑALOLEN",
+      "nombre": "EDIFICIO ALTA VISTA",
+      "direccion": "BARCELONA 150",
+      "inmobiliaria": "INMOBILIRIA BRICSAL",
+      "grupo": "5",
+      "link": null
+    },
+    {
+      "id": 6932,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "PEÑALOLEN",
+      "nombre": "EDIFICIO MEDITERRANEO",
+      "direccion": "VICUÑA MACKENNA 6988",
+      "inmobiliaria": "INMOBILIARIA URBANA",
+      "grupo": "5",
+      "link": null
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "slug": "demo",
+  "clientName": "Inmobiliaria Dominga",
+  "shortName": "DOMINGA",
+  "ownInmobiliarias": ["INMOBILIARIA DOMINGA"],
+  "brandColor": "#2F6FDE",
+  "storagePrefix": "msd_demo"
+}

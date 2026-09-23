@@ -1,0 +1,8 @@
+{
+  "slug": "activa",
+  "clientName": "Inmobiliaria Activa",
+  "shortName": "ACTIVA",
+  "ownInmobiliarias": ["ACTIVA GRUPO INMOBILIARIO"],
+  "brandColor": "#6DB023",
+  "storagePrefix": "msd"
+}

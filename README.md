@@ -1,61 +1,91 @@
-# Panel de Calidad de Servicio · Cliente Incógnito ACTIVA
+# Panel de Calidad de Servicio · Cliente Incógnito (multi-cliente)
 
 Sitio estático (sin backend) para cargar los resultados de cada ola del
 estudio de cliente incógnito, normalizarlos y visualizar la evolución del
-índice de calidad de servicio de ACTIVA vs. su competencia.
+índice de calidad de servicio de una inmobiliaria vs. su competencia.
 
-El proyecto tiene **dos puntos de entrada** que comparten el mismo motor
-(`app.js`/`ui.js`/`styles.css`), pero con roles distintos:
+Se ofrece a varias inmobiliarias. **Cada cliente tiene su propio build y su
+propio deploy**, así el sitio de un cliente nunca contiene datos de otro.
+
+| Cliente | Carpeta | Worker de Cloudflare | URL |
+|---|---|---|---|
+| Inmobiliaria Activa | `tenants/activa/` | `inmo-encuesta-dashboard` | `activa.inmotrack.cl` |
+| Demo (datos ficticios) | `tenants/demo/` | `inmo-demo-dashboard` | `demo.inmotrack.cl` |
+
+## Estructura
+
+```
+src/                 código común (app.js, ui.js, styles.css, index.html, admin.html, assets/)
+tenants/<slug>/
+  tenant.json        nombre, inmobiliaria(s) propia(s), color, prefijo de localStorage
+  data/              dashboard-data.json (lo publicado) y master.json (maestro de referencia)
+  assets/            opcional: pisa los assets comunes (ej. logo propio)
+build.mjs            arma dist/<slug>/ = src/ + tenants/<slug>/
+wrangler.jsonc       un Worker por cliente (env por defecto = activa, --env demo)
+```
+
+`tenant.json`:
+
+| Campo | Para qué |
+|---|---|
+| `shortName` / `clientName` | Textos de la UI ("ACTIVA vs. Competencia", subtítulos) |
+| `ownInmobiliarias` | Valores de la columna INMOBILIARIA del maestro que cuentan como "propios" (se compara sin mayúsculas/tildes/espacios de más) |
+| `brandColor` | Color de acento y de las barras "propias" en los gráficos |
+| `storagePrefix` | Prefijo de las claves de `localStorage` del admin — separa los datos de cada cliente en el mismo navegador. Activa usa `msd` (las claves históricas) |
+
+En los HTML de `src/` se usan placeholders `{{shortName}}`, `{{clientName}}`,
+`{{brandColor}}`, `{{brandInitial}}` que reemplaza el build; en JS, la config
+llega como `window.TENANT` (`tenant.js`, generado por el build).
+
+El proyecto tiene **dos puntos de entrada** que comparten el mismo motor:
 
 - **`admin.html`** — la herramienta completa (subir Excel, revisar calidad
-  de datos, ajustar ponderadores). Se usa **solo en local**, nunca la abre
-  el cliente final. Todo el procesamiento ocurre en el navegador con
-  SheetJS y se guarda en `localStorage` de ese equipo.
-- **`index.html`** — el dashboard público, de **solo lectura**. No tiene
-  "Cargar datos" ni "Calidad de datos" ni "Configuración" — solo lee
-  `data/dashboard-data.json`, un archivo estático que se genera desde
-  `admin.html` y se sube al repo. Esto es lo que se despliega en Cloudflare
-  Pages, detrás de un login (ver más abajo).
+  de datos, ajustar ponderadores). Todo el procesamiento ocurre en el
+  navegador con SheetJS y se guarda en `localStorage` de ese equipo.
+- **`index.html`** — el dashboard de **solo lectura**. Solo lee
+  `data/dashboard-data.json`.
+
+## Desarrollo local
+
+```bash
+node build.mjs                                   # todos los clientes (o: node build.mjs demo)
+python3 -m http.server 8080 -d dist/activa       # http://localhost:8080/admin.html
+```
+
+Después de editar algo en `src/` o `tenants/`, vuelve a correr `node build.mjs`.
 
 ## Flujo de trabajo (cada vez que hay datos nuevos)
 
-1. En tu equipo, levanta un servidor estático simple en esta carpeta (ej.
-   `python3 -m http.server 8080`) y abre `http://localhost:8080/admin.html`.
-2. Carga el Excel de la ola (y el maestro de proyectos, si cambió) como
-   siempre — ver "Cómo cargar una nueva ola" más abajo.
-3. Revisa **Calidad de datos** y ajusta ponderadores en **Configuración**
-   si hace falta.
+1. `node build.mjs <slug>` y levanta `dist/<slug>` como arriba; abre `admin.html`.
+2. Carga el Excel de la ola (y el maestro, si cambió) — ver "Cómo cargar una
+   nueva ola".
+3. Revisa **Calidad de datos** y ajusta ponderadores en **Configuración**.
 4. **Configuración → Exportar todo** — descarga `mystery_shopper_backup.json`.
-5. Reemplaza `data/dashboard-data.json` en el repo con ese archivo (mismo
-   contenido, solo renómbralo), y revisa el diff antes de commitear —
-   es tu control de calidad final antes de publicar.
-6. `git add data/dashboard-data.json && git commit -m "..." && git push`
-   a `main`.
-7. Cloudflare Pages detecta el push y despliega solo — no hay paso manual
-   de deploy. El versionado de los datos lo da git: cada commit de
-   `data/dashboard-data.json` es una versión, con historial y rollback
-   (`git revert`/`git checkout`) gratis.
+5. Reemplaza `tenants/<slug>/data/dashboard-data.json` con ese archivo y
+   revisa el diff antes de commitear.
+6. Commit + push a `master`. Cloudflare Workers Builds construye y despliega
+   cada Worker conectado al repo.
 
-## Setup único (antes del primer uso)
+## Setup en Cloudflare (por cliente)
 
-1. **Repo + Cloudflare Pages**: si esta carpeta todavía no es un repo git,
-   `git init`, crea el repo remoto (GitHub/GitLab) y haz el primer push.
-   Luego, en el dashboard de Cloudflare → Workers & Pages → Create → Pages
-   → **Connect to Git** → elige el repo → framework preset "None", sin
-   build command, directorio de salida = esta carpeta → rama de
-   producción = `main`. Desde ahí, cada push a `main` dispara un deploy
-   automático — no hace falta `wrangler deploy` ni arrastrar archivos a
-   mano.
-2. **Acceso (usuario/contraseña)**: se usa **Cloudflare Access** (Zero
-   Trust), sin código nuevo. En el dashboard de Cloudflare → Zero Trust →
-   Access → Applications → Add an application → Self-hosted → apunta al
-   dominio `*.pages.dev` (o tu dominio propio) → política: permite la
-   lista de correos de tu equipo/cliente → método de login: **One-time
-   PIN** (la persona pone su correo, le llega un código, lo ingresa — no
-   hay contraseñas que administrar). `admin.html` queda detrás del mismo
-   login que el resto del sitio; solo tú y quien tenga acceso concedido
-   pueden abrirlo, y aunque lo abran no afecta el dato publicado (el sitio
-   público nunca lee `localStorage`, solo `data/dashboard-data.json`).
+El dominio `inmotrack.cl` **no está en nuestra cuenta de Cloudflare** (su DNS
+lo administra un tercero). Se publica con **Cloudflare for SaaS** sobre la
+zona `terrabit.cl`:
+
+1. **Worker**: Workers & Pages → Create → Import repo (este repo) →
+   nombre `inmo-<slug>-dashboard` · build command `node build.mjs <slug>` ·
+   deploy command `npx wrangler deploy --env <slug>` (Activa: sin `--env`).
+2. **Custom hostname**: zona `terrabit.cl` → SSL/TLS → Custom Hostnames →
+   Add `<slug>.inmotrack.cl` (el fallback origin ya es `fallback.terrabit.cl`).
+   Cloudflare entrega un registro TXT de verificación.
+3. **DNS (lo hace el dueño de inmotrack.cl)**:
+   - `CNAME <slug>.inmotrack.cl → fallback.terrabit.cl`
+   - `TXT _cf-custom-hostname.<slug>.inmotrack.cl → <valor que entrega Cloudflare>`
+4. **Ruta**: zona `terrabit.cl` → Workers Routes → `<slug>.inmotrack.cl/*` →
+   Worker `inmo-<slug>-dashboard`.
+5. **Acceso**: Zero Trust → Access → Applications → Self-hosted →
+   `<slug>.inmotrack.cl` → política con los correos permitidos → login
+   One-time PIN.
 
 ## Cómo cargar una nueva ola
 
@@ -64,13 +94,13 @@ El proyecto tiene **dos puntos de entrada** que comparten el mismo motor
 3. Si hubo cambios en el universo de proyectos (nuevo competidor, proyecto
    que ya no vende, cambio de cluster/Grupo), arrastra también el maestro
    de proyectos actualizado. Si no subes uno, se reutiliza el último
-   guardado (o el de referencia incluido en `data/master.json`).
+   guardado (o el de referencia incluido en `tenants/<slug>/data/master.json`).
 4. Ponle nombre a la ola y confirma la fecha de referencia.
 5. Click en **Procesar archivo** → revisa el preview (alertas, cobertura) →
    **Guardar esta ola**.
 
 Recuerda seguir el "Flujo de trabajo" de arriba (Exportar todo → reemplazar
-`data/dashboard-data.json` → commit → push) para que el dashboard público
+`tenants/<slug>/data/dashboard-data.json` → commit → push) para que el dashboard
 se actualice.
 
 ## Estructura esperada del Excel
@@ -88,7 +118,7 @@ hace poco confiable emparejar por texto). Esto significa:
   procesar datos incorrectos en silencio.
 
 Si el cuestionario cambia de forma importante en el futuro, hay que
-actualizar el mapeo de columnas en `app.js` (objeto `COL` al inicio del
+actualizar el mapeo de columnas en `src/app.js` (objeto `COL` al inicio del
 archivo) — está comentado para que sea fácil de ajustar.
 
 ## Reglas de normalización aplicadas

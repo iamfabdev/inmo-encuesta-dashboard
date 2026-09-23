@@ -6,6 +6,9 @@
 // false en admin.html (herramienta local, localStorage). Ver README.
 const PRODUCTION_MODE = window.PRODUCTION_MODE === true;
 
+const OWN = APP.OWN_LABEL;
+const OWN_COLOR = APP.TENANT.brandColor;
+
 const state = {
   waves: APP.loadWaves(),
   weights: APP.loadWeights(),
@@ -164,7 +167,7 @@ async function onProcesar() {
 
 function renderParsePreview() {
   const p = state.pendingParse;
-  const nActiva = p.visits.filter((v) => v.is_activa).length;
+  const nActiva = p.visits.filter((v) => v.is_own).length;
   const nComp = p.visits.length - nActiva;
   const nComunas = new Set(p.visits.map((v) => v.comuna)).size;
   const errCount = p.notFoundInMaster.length;
@@ -172,7 +175,7 @@ function renderParsePreview() {
     <div class="preview-card">
       <div class="preview-kpis">
         <div class="mini-kpi"><span>${p.visits.length}</span>visitas leídas</div>
-        <div class="mini-kpi"><span>${nActiva}</span>ACTIVA</div>
+        <div class="mini-kpi"><span>${nActiva}</span>${OWN}</div>
         <div class="mini-kpi"><span>${nComp}</span>competencia</div>
         <div class="mini-kpi"><span>${nComunas}</span>comunas</div>
         <div class="mini-kpi ${p.flags.length ? 'mini-kpi--warn' : ''}"><span>${p.flags.length}</span>alertas</div>
@@ -258,15 +261,15 @@ function downloadJSON(obj, filename) {
 /* ------------------------------------------------------------
    RESUMEN
    ------------------------------------------------------------ */
-// Los clusters se derivan desde las salas ACTIVA, no desde todos los
+// Los clusters se derivan desde las salas propias, no desde todos los
 // valores de "Grupo" que aparezcan en el maestro — así un grupo sin sala
-// ACTIVA (ej. competidores nuevos aún sin asignar) no genera un filtro
-// vacío tipo "Cluster NUEVO": esta vista es para comparar cada sala ACTIVA
+// propia (ej. competidores nuevos aún sin asignar) no genera un filtro
+// vacío tipo "Cluster NUEVO": esta vista es para comparar cada sala propia
 // contra su competencia directa, no para listar grupos sueltos.
 function buildClusters(wave) {
   const master = wave.masterUsed || [];
   return master
-    .filter((p) => p.inmobiliaria === 'ACTIVA GRUPO INMOBILIARIO' && p.grupo)
+    .filter((p) => APP.isOwnInmobiliaria(p.inmobiliaria) && p.grupo)
     .map((activaP) => ({
       id: activaP.grupo,
       label: activaP.nombre,
@@ -289,8 +292,8 @@ function renderResumenTab() {
   const scopedVisits = state.resumenCluster === 'all'
     ? wave.visits
     : wave.visits.filter((v) => v.grupo === state.resumenCluster);
-  const activa = scopedVisits.filter((v) => v.is_activa);
-  const comp = scopedVisits.filter((v) => !v.is_activa);
+  const activa = scopedVisits.filter((v) => v.is_own);
+  const comp = scopedVisits.filter((v) => !v.is_own);
   const avg = (arr) => { const vals = arr.map((v) => v.composite).filter((x) => x !== null); return vals.length ? vals.reduce((a, b) => a + b, 0) / vals.length : null; };
   const idxActiva = avg(activa), idxComp = avg(comp);
   const gap = idxActiva !== null && idxComp !== null ? idxActiva - idxComp : null;
@@ -323,7 +326,7 @@ function renderResumenTab() {
 
     <div class="kpi-row">
       <div class="kpi-card kpi-card--activa">
-        ${kpiLabelHtml('indice_activa', 'Índice ACTIVA', 'Promedio del índice compuesto (0-100) de las visitas a proyectos ACTIVA dentro de la selección actual.')}
+        ${kpiLabelHtml('indice_activa', `Índice ${OWN}`, `Promedio del índice compuesto (0-100) de las visitas a proyectos ${OWN} dentro de la selección actual.`)}
         <div class="kpi-value">${fmt1(idxActiva)}</div>
         <div class="kpi-sub">n=${activa.length} proyectos</div>
       </div>
@@ -333,7 +336,7 @@ function renderResumenTab() {
         <div class="kpi-sub">n=${comp.length} proyectos</div>
       </div>
       <div class="kpi-card ${gap >= 0 ? 'kpi-card--pos' : 'kpi-card--neg'}">
-        ${kpiLabelHtml('brecha', 'Brecha ACTIVA vs competencia', 'Diferencia entre el índice ACTIVA y el de competencia, en puntos sobre 100.')}
+        ${kpiLabelHtml('brecha', `Brecha ${OWN} vs competencia`, `Diferencia entre el índice ${OWN} y el de competencia, en puntos sobre 100.`)}
         <div class="kpi-value">${gap === null ? '—' : (gap >= 0 ? '+' : '') + fmt1(gap)}</div>
         <div class="kpi-sub">puntos sobre 100</div>
       </div>
@@ -351,7 +354,7 @@ function renderResumenTab() {
 
     <div class="grid-2">
       <div class="chart-card">
-        <h3>ACTIVA vs Competencia — por bloque</h3>
+        <h3>${OWN} vs Competencia — por bloque</h3>
         <canvas id="chart-blocks"></canvas>
       </div>
       ${clusters.length ? `
@@ -398,7 +401,7 @@ function renderBlocksChart(activa, comp) {
     data: {
       labels,
       datasets: [
-        { label: 'ACTIVA', data: keys.map((k) => blockAvg(activa, k)), backgroundColor: '#6DB023' },
+        { label: OWN, data: keys.map((k) => blockAvg(activa, k)), backgroundColor: OWN_COLOR },
         { label: 'Competencia', data: keys.map((k) => blockAvg(comp, k)), backgroundColor: '#4E5862' },
       ],
     },
@@ -408,15 +411,15 @@ function renderBlocksChart(activa, comp) {
 
 function renderClusterChart(wave, clusters) {
   const labels = clusters.map((c) => c.label);
-  const activaData = clusters.map((c) => blockAvgComposite(wave.visits.filter((v) => v.grupo === c.id && v.is_activa)));
-  const compData = clusters.map((c) => blockAvgComposite(wave.visits.filter((v) => v.grupo === c.id && !v.is_activa)));
+  const activaData = clusters.map((c) => blockAvgComposite(wave.visits.filter((v) => v.grupo === c.id && v.is_own)));
+  const compData = clusters.map((c) => blockAvgComposite(wave.visits.filter((v) => v.grupo === c.id && !v.is_own)));
   destroyChart('cluster');
   charts.cluster = new Chart($('#chart-cluster'), {
     type: 'bar',
     data: {
       labels,
       datasets: [
-        { label: 'ACTIVA', data: activaData, backgroundColor: '#6DB023' },
+        { label: OWN, data: activaData, backgroundColor: OWN_COLOR },
         { label: 'Competencia directa', data: compData, backgroundColor: '#4E5862' },
       ],
     },
@@ -438,7 +441,7 @@ function renderRankingChart(visits) {
       labels: sorted.map((v) => `${v.project_name} (${v.comuna[0]}${v.comuna.slice(1).toLowerCase()})`),
       datasets: [{
         data: sorted.map((v) => v.composite),
-        backgroundColor: sorted.map((v) => (v.is_activa ? '#6DB023' : '#A5ACB4')),
+        backgroundColor: sorted.map((v) => (v.is_own ? OWN_COLOR : '#A5ACB4')),
       }],
     },
     options: chartBaseOptions({ x: { max: 100 } }, true),
@@ -460,7 +463,7 @@ function chartBaseOptions(scaleOverrides = {}, horizontal = false) {
 function destroyChart(key) { if (charts[key]) { charts[key].destroy(); delete charts[key]; } }
 
 /* ------------------------------------------------------------
-   PROYECTOS ACTIVA (foco en los proyectos propios, multi-selección)
+   PROYECTOS PROPIOS (foco en los proyectos propios, multi-selección)
    ------------------------------------------------------------ */
 const KPI_ICONS = {
   score_global: 'monitoring',
@@ -482,7 +485,7 @@ function kpiLabelHtml(iconKey, text, tooltip) {
 }
 function renderProyectosActivaTab() {
   const root = $('#panel-activa');
-  if (!state.waves.length) { root.innerHTML = emptyState(PRODUCTION_MODE ? 'Todavía no hay datos publicados.' : 'Sube una encuesta en "Cargar datos" para ver los proyectos ACTIVA y su competencia.'); return; }
+  if (!state.waves.length) { root.innerHTML = emptyState(PRODUCTION_MODE ? 'Todavía no hay datos publicados.' : `Sube una encuesta en "Cargar datos" para ver los proyectos ${OWN} y su competencia.`); return; }
 
   const af = state.activaFilter;
 
@@ -496,12 +499,12 @@ function renderProyectosActivaTab() {
     visits = wave.visits;
   }
 
-  // universo completo del período: proyectos propios de ACTIVA + competencia,
-  // todos seleccionables por igual (la distinción ACTIVA/competencia queda
+  // universo completo del período: proyectos propios + competencia,
+  // todos seleccionables por igual (la distinción propio/competencia queda
   // como marca visual en la pill/ranking, no como filtro de fondo).
   const poolVisits = visits;
   const projectIsActiva = {};
-  poolVisits.forEach((v) => { projectIsActiva[v.project_name] = v.is_activa; });
+  poolVisits.forEach((v) => { projectIsActiva[v.project_name] = v.is_own; });
   const projectNames = [...new Set(poolVisits.map((v) => v.project_name))].sort((a, b) => {
     if (projectIsActiva[a] !== projectIsActiva[b]) return projectIsActiva[a] ? -1 : 1;
     return a.localeCompare(b);
@@ -542,8 +545,8 @@ function renderProyectosActivaTab() {
   const diferenciadorPct = sel.length ? Math.round((sel.filter((v) => v.elementos_diferenciadores.length > 0).length / sel.length) * 100) : null;
 
   // Los hallazgos comerciales son coaching interno — solo tienen sentido para
-  // el propio equipo de ACTIVA, aunque la selección de pills incluya competencia.
-  const activaSel = sel.filter((v) => v.is_activa);
+  // el propio equipo del cliente, aunque la selección de pills incluya competencia.
+  const activaSel = sel.filter((v) => v.is_own);
   const findings = activaSel.flatMap((v) => APP.computeFindings(v).map((f) => ({ ...f, fecha: v.fecha_visita, proyecto: v.project_name, vendedor: v.vendedor })));
   const visitasConAlerta = new Set(activaSel.filter((v) => APP.computeFindings(v).length > 0).map((v) => v.id_respuesta)).size;
   const alertasPct = activaSel.length ? Math.round((visitasConAlerta / activaSel.length) * 100) : null;
@@ -592,8 +595,8 @@ function renderProyectosActivaTab() {
           <label class="filter-label">Proyectos (selección múltiple)</label>
           <div class="project-pills" id="activa-pills">
             <div class="pill all ${nSel === projectNames.length ? 'active' : ''}" data-all="1">Todos los proyectos</div>
-            <div class="pill all ${af.projects.size === activaProjectNames.length && activaProjectNames.every((p) => af.projects.has(p)) ? 'active' : ''}" data-onlyactiva="1">Solo ACTIVA</div>
-            ${projectNames.map((p) => `<div class="pill ${projectIsActiva[p] ? 'pill--activa' : ''} ${af.projects.has(p) ? 'active' : ''}" data-name="${p}">${p}${projectIsActiva[p] ? ' <span class="badge-activa">ACTIVA</span>' : ''}</div>`).join('')}
+            <div class="pill all ${af.projects.size === activaProjectNames.length && activaProjectNames.every((p) => af.projects.has(p)) ? 'active' : ''}" data-onlyactiva="1">Solo ${OWN}</div>
+            ${projectNames.map((p) => `<div class="pill ${projectIsActiva[p] ? 'pill--activa' : ''} ${af.projects.has(p) ? 'active' : ''}" data-name="${p}">${p}${projectIsActiva[p] ? ` <span class="badge-activa">${OWN}</span>` : ''}</div>`).join('')}
           </div>
         </div>
         <div class="filterbar-row">
@@ -645,7 +648,7 @@ function renderProyectosActivaTab() {
         <div class="tactical-grid">
           ${Object.keys(APP.TACTICAL_LABELS).map((k) => `<div class="metric-box"><div class="metric-label tooltip" data-tooltip="${APP.TACTICAL_DESCRIPTIONS[k].replace(/"/g, '&quot;')}">${APP.TACTICAL_LABELS[k]}</div><div class="metric-big">${fmtPct(tacticoAvg(k))}</div></div>`).join('')}
           <div class="metric-box"><div class="metric-label tooltip" data-tooltip="${APP.TACTICAL_DESCRIPTIONS.diferenciador.replace(/"/g, '&quot;')}">Destaca diferenciador</div><div class="metric-big">${fmtPct(diferenciadorPct)}</div></div>
-          <div class="metric-box"><div class="metric-label tooltip" data-tooltip="${APP.TACTICAL_DESCRIPTIONS.hallazgo.replace(/"/g, '&quot;')}">Visitas ACTIVA con hallazgo</div><div class="metric-big">${fmtPct(alertasPct)}</div></div>
+          <div class="metric-box"><div class="metric-label tooltip" data-tooltip="${APP.TACTICAL_DESCRIPTIONS.hallazgo.replace(/"/g, '&quot;')}">Visitas ${OWN} con hallazgo</div><div class="metric-big">${fmtPct(alertasPct)}</div></div>
         </div>
       </div>
     </div>
@@ -660,14 +663,14 @@ function renderProyectosActivaTab() {
       <div class="chart-card">
         <h3>Detalle por proyecto seleccionado</h3>
         <div class="bars">
-          ${ranking.length ? ranking.map((r) => barRowHtml(r.isActiva ? `${r.name} <span class="badge-activa">ACTIVA</span>` : r.name, r.score, 100, fmt1(r.score))).join('') : '<p class="empty-hint">Sin visitas para la selección actual.</p>'}
+          ${ranking.length ? ranking.map((r) => barRowHtml(r.isActiva ? `${r.name} <span class="badge-activa">${OWN}</span>` : r.name, r.score, 100, fmt1(r.score))).join('') : '<p class="empty-hint">Sin visitas para la selección actual.</p>'}
         </div>
       </div>
     </div>
 
     <div class="chart-card">
       <h3>Hallazgos comerciales (${findings.length})</h3>
-      <p class="config-hint" style="margin-bottom:12px;">Coaching interno — solo considera visitas a proyectos ACTIVA, aunque la selección de arriba incluya competencia.</p>
+      <p class="config-hint" style="margin-bottom:12px;">Coaching interno — solo considera visitas a proyectos ${OWN}, aunque la selección de arriba incluya competencia.</p>
       <div class="table-wrap">
         <table class="data-table data-table--dense">
           <thead><tr><th>Fecha</th><th>Proyecto</th><th>Ejecutivo</th><th>Hallazgo</th><th>Severidad</th><th>Acción sugerida</th></tr></thead>
@@ -680,7 +683,7 @@ function renderProyectosActivaTab() {
                 <td>${f.hallazgo}</td>
                 <td><span class="tag ${severityTagClass(f.severidad)}">${f.severidad}</span></td>
                 <td>${f.accion}</td>
-              </tr>`).join('') : `<tr><td colspan="6" class="empty-hint">${activaSel.length ? 'Sin hallazgos para los proyectos ACTIVA seleccionados.' : 'Selecciona al menos un proyecto ACTIVA para ver hallazgos comerciales.'}</td></tr>`}
+              </tr>`).join('') : `<tr><td colspan="6" class="empty-hint">${activaSel.length ? `Sin hallazgos para los proyectos ${OWN} seleccionados.` : `Selecciona al menos un proyecto ${OWN} para ver hallazgos comerciales.`}</td></tr>`}
           </tbody>
         </table>
       </div>
@@ -744,7 +747,7 @@ function renderDetalleTab() {
     <div class="filters-row">
       <select id="f-ola"><option value="all">Todas las olas</option>${state.waves.map((w) => `<option value="${w.id}">${w.label}</option>`).join('')}</select>
       <select id="f-comuna"><option value="all">Todas las comunas</option>${comunas.map((c) => `<option value="${c}">${c}</option>`).join('')}</select>
-      <select id="f-grupo"><option value="all">ACTIVA + competencia</option><option value="activa">Solo ACTIVA</option><option value="comp">Solo competencia</option></select>
+      <select id="f-grupo"><option value="all">${OWN} + competencia</option><option value="activa">Solo ${OWN}</option><option value="comp">Solo competencia</option></select>
     </div>
     <div class="table-wrap" id="detalle-table"></div>
   `;
@@ -763,8 +766,8 @@ function renderDetalleTable() {
   const f = state.detailFilter;
   if (f.ola !== 'all') rows = rows.filter((r) => r.olaId === f.ola);
   if (f.comuna !== 'all') rows = rows.filter((r) => r.comuna === f.comuna);
-  if (f.grupo === 'activa') rows = rows.filter((r) => r.is_activa);
-  if (f.grupo === 'comp') rows = rows.filter((r) => !r.is_activa);
+  if (f.grupo === 'activa') rows = rows.filter((r) => r.is_own);
+  if (f.grupo === 'comp') rows = rows.filter((r) => !r.is_own);
 
   const cols = [
     { key: 'olaLabel', label: 'Ola' },
@@ -795,7 +798,7 @@ function renderDetalleTable() {
   const tbody = rows.map((r) => `
     <tr>
       <td>${r.olaLabel}</td>
-      <td>${r.project_name}${r.is_activa ? ' <span class="badge-activa">ACTIVA</span>' : ''}</td>
+      <td>${r.project_name}${r.is_own ? ` <span class="badge-activa">${OWN}</span>` : ''}</td>
       <td>${titleCaseLite(r.comuna)}</td>
       <td>${r.inmobiliaria}</td>
       <td>${r.vendedor}</td>
@@ -875,8 +878,8 @@ function renderConfigTab() {
   root.innerHTML = `
     ${state.waves.length ? `
     <div class="config-section">
-      <h3>Resumen ejecutivo (pestaña "Proyectos ACTIVA")</h3>
-      <p class="config-hint">El bloque "Resumen ejecutivo" de la pestaña Proyectos ACTIVA no llama a ningún LLM — pega acá el texto que generaste externamente (ej. con Claude) para esta ola. Se guarda por ola.</p>
+      <h3>Resumen ejecutivo (pestaña "Proyectos ${OWN}")</h3>
+      <p class="config-hint">El bloque "Resumen ejecutivo" de la pestaña Proyectos ${OWN} no llama a ningún LLM — pega acá el texto que generaste externamente (ej. con Claude) para esta ola. Se guarda por ola.</p>
       <div class="wave-selector">
         <label>Ola:</label>
         <select id="ai-wave-select">${state.waves.map((w2) => `<option value="${w2.id}" ${w2.id === aiWave.id ? 'selected' : ''}>${w2.label} — ${w2.refDate}</option>`).join('')}</select>
@@ -957,7 +960,7 @@ function renderConfigTab() {
     const text = await file.text();
     try {
       const obj = JSON.parse(text);
-      if (obj.waves) { state.waves = obj.waves; APP.saveWaves(state.waves); }
+      if (obj.waves) { state.waves = APP.hydrateWaves(obj.waves); APP.saveWaves(state.waves); }
       if (obj.weights) { state.weights = obj.weights; APP.saveWeights(state.weights); }
       if (obj.master) { state.master = obj.master; APP.saveMaster(state.master); }
       renderConfigTab();
@@ -966,7 +969,7 @@ function renderConfigTab() {
   });
   $('#btn-clear-all').addEventListener('click', () => {
     if (confirm('Esto borra todas las olas, ponderadores personalizados y el maestro guardado en este navegador. ¿Continuar?')) {
-      localStorage.clear();
+      APP.clearStorage();
       state.waves = []; state.weights = { ...APP.DEFAULT_WEIGHTS }; state.master = null; state.selectedWaveId = null;
       renderActiveTab();
     }
@@ -992,7 +995,7 @@ function emptyState(msg) { return `<div class="empty-state">${msg}</div>`; }
     try {
       const res = await fetch('data/dashboard-data.json');
       const data = await res.json();
-      state.waves = data.waves || [];
+      state.waves = APP.hydrateWaves(data.waves || []);
       state.weights = { ...APP.DEFAULT_WEIGHTS, ...(data.weights || {}) };
       state.master = data.master || null;
     } catch (e) { /* deja state.waves vacío -> las pestañas muestran su empty-state normal */ }
