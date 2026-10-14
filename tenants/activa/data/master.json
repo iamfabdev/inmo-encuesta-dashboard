@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-08-13",
-  "source": "COMPETENCIA ACTIVA VF1.csv",
+  "updatedAt": "2026-10-14",
+  "source": "COMPETENCIA ACTIVA VF2.xlsx",
   "proyectos": [
     { "id": 4911, "tpo": "DEPARTAMENTO", "comuna": "RECOLETA", "nombre": "EDIFICIO AVENIDA PERU PLAZA", "direccion": "PERU PLAZA 1471", "inmobiliaria": "ABSAL INMOBILIARIA", "grupo": "1", "link": "https://absal.cl/proyectos/avenida-peru-plaza" },
     { "id": 5859, "tpo": "DEPARTAMENTO", "comuna": "RECOLETA", "nombre": "EDIFICIO SAN CRISTOBAL", "direccion": "SAN CRISTOBAL 543", "inmobiliaria": "DICSA", "grupo": "1", "link": "https://idicsa.cl/proyectos-inmobiliarios/?commune=recoleta&price=2527%3B15800" },
@@ -29,6 +29,7 @@
     { "id": 6781, "tpo": "DEPARTAMENTO", "comuna": "LA FLORIDA", "nombre": "EDIFICIO VICUÑA MACKENNA 6896", "direccion": "VICUÑA MACKENNA PONIENTE 6896", "inmobiliaria": "INMOBILIARIA NORTE VERDE", "grupo": "5", "link": "https://norte-verde.cl/secciones_internas/edificio-vicuna-mackenna-6896/" },
     { "id": 6895, "tpo": "DEPARTAMENTO", "comuna": "LA FLORIDA", "nombre": "VIVE BARCELONA", "direccion": "BARCELONA 150", "inmobiliaria": "BRICSA", "grupo": "5", "link": "https://www.bricsa.cl/edificio-barcelona/" },
     { "id": 6932, "tpo": "DEPARTAMENTO", "comuna": "LA FLORIDA", "nombre": "EDIFICIO LOS LILENES", "direccion": "VICUÑA MACKENNA 6988", "inmobiliaria": "INMOBILIARIA INGEVEC", "grupo": "5", "link": "https://ingevecinmobiliaria.cl/proyecto-loslilenes" },
-    { "id": 6377, "tpo": "DEPARTAMENTO", "comuna": "LA FLORIDA", "nombre": "Edificio Mirador Casona", "direccion": "Av. Vicuña Mackenna 7197", "inmobiliaria": "Inmobiliaria Exxacon", "grupo": "5", "link": "https://exxacon.cl/projects/mirador-casona/" }
+    { "id": 6377, "tpo": "DEPARTAMENTO", "comuna": "LA FLORIDA", "nombre": "Edificio Mirador Casona", "direccion": "Av. Vicuña Mackenna 7197", "inmobiliaria": "Inmobiliaria Exxacon", "grupo": "5", "link": "https://exxacon.cl/projects/mirador-casona/" },
+    { "id": 10000, "tpo": "DEPARTAMENTO", "comuna": "LA FLORIDA", "nombre": "SALA INVERSION", "direccion": "VICUÑA MACKENNA 6315, LOCAL 4", "inmobiliaria": "ACTIVA GRUPO INMOBILIARIO", "grupo": null, "link": null }
   ]
 }

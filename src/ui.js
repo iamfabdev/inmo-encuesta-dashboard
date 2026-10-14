@@ -99,6 +99,10 @@ function renderCargarTab() {
         <input type="text" id="wave-label" value="Ola ${state.waves.length + 1}" />
       </div>
       <div class="field">
+        <label>Ola en el archivo</label>
+        <input type="number" id="wave-ola" min="1" value="${state.waves.length + 1}" title="Si el Excel trae la columna OLA (todas las olas juntas), solo se procesan las filas de este número. Planillas sin esa columna se procesan completas." />
+      </div>
+      <div class="field">
         <label>Fecha de referencia</label>
         <input type="date" id="wave-date" value="${new Date().toISOString().slice(0, 10)}" />
       </div>
@@ -148,7 +152,8 @@ async function onProcesar() {
       master = await ensureMaster();
     }
     const refDate = $('#wave-date').value;
-    const result = await APP.parseBBDDFile(dropFiles.bbdd, master, state.weights, refDate);
+    const olaNumber = parseInt($('#wave-ola').value, 10) || state.waves.length + 1;
+    const result = await APP.parseBBDDFile(dropFiles.bbdd, master, state.weights, refDate, olaNumber);
     state.pendingParse = {
       id: uid(),
       label: $('#wave-label').value.trim() || `Ola ${state.waves.length + 1}`,
@@ -182,6 +187,7 @@ function renderParsePreview() {
         <div class="mini-kpi ${errCount ? 'mini-kpi--error' : ''}"><span>${errCount}</span>sin maestro</div>
         <div class="mini-kpi"><span>${p.vendorMerges.length}</span>vendedores fusionados</div>
       </div>
+      ${p.olaInfo ? `<p class="config-hint">El archivo trae la columna OLA (olas ${p.olaInfo.available.join(', ')}): se leyeron solo las filas de la ola ${p.olaInfo.ola}; ${p.olaInfo.skipped} fila(s) de otras olas se omitieron.</p>` : ''}
       ${errCount ? `<div class="alert alert-error">${errCount} respuesta(s) no calzan con ningún proyecto del maestro y quedaron fuera del análisis. Revísalas en la pestaña "Calidad de datos" luego de guardar, o corrige el maestro antes de guardar.</div>` : ''}
       <div class="preview-actions">
         <button class="btn btn-primary" id="btn-guardar-ola">Guardar esta ola</button>
@@ -268,12 +274,17 @@ function downloadJSON(obj, filename) {
 // contra su competencia directa, no para listar grupos sueltos.
 function buildClusters(wave) {
   const master = wave.masterUsed || [];
-  return master
+  const byGrupo = {};
+  master
     .filter((p) => APP.isOwnInmobiliaria(p.inmobiliaria) && p.grupo)
-    .map((activaP) => ({
-      id: activaP.grupo,
-      label: activaP.nombre,
-      projects: master.filter((p) => p.grupo === activaP.grupo),
+    .forEach((activaP) => { (byGrupo[activaP.grupo] = byGrupo[activaP.grupo] || []).push(activaP.nombre); });
+  // un grupo puede tener más de una sala propia (ej. una sala nueva asignada
+  // al cluster de otra): un solo cluster, con las salas en la etiqueta
+  return Object.entries(byGrupo)
+    .map(([grupo, names]) => ({
+      id: grupo,
+      label: names.join(' + '),
+      projects: master.filter((p) => p.grupo === grupo),
     }))
     .sort((a, b) => a.id.localeCompare(b.id));
 }
@@ -289,9 +300,8 @@ function renderResumenTab() {
     state.resumenCluster = 'all';
   }
 
-  const scopedVisits = state.resumenCluster === 'all'
-    ? wave.visits
-    : wave.visits.filter((v) => v.grupo === state.resumenCluster);
+  const scopeVisits = (visits) => (state.resumenCluster === 'all' ? visits : visits.filter((v) => v.grupo === state.resumenCluster));
+  const scopedVisits = scopeVisits(wave.visits);
   const activa = scopedVisits.filter((v) => v.is_own);
   const comp = scopedVisits.filter((v) => !v.is_own);
   const avg = (arr) => { const vals = arr.map((v) => v.composite).filter((x) => x !== null); return vals.length ? vals.reduce((a, b) => a + b, 0) / vals.length : null; };
@@ -306,6 +316,15 @@ function renderResumenTab() {
   const surveyedProjectCount = new Set(scopedVisits.map((v) => v.project_id)).size;
   const coverage = clusterMaster.length ? Math.round((surveyedProjectCount / clusterMaster.length) * 100) : 0;
   const segPct = scopedVisits.length ? Math.round((scopedVisits.filter((v) => v.seguimiento_realizado).length / scopedVisits.length) * 100) : 0;
+
+  // ola anterior (por fecha de referencia), con el mismo filtro de cluster
+  const prevWave = previousWave(wave);
+  const prevScoped = prevWave ? scopeVisits(prevWave.visits) : [];
+  const prevActiva = prevScoped.filter((v) => v.is_own), prevComp = prevScoped.filter((v) => !v.is_own);
+  const prevIdxActiva = avg(prevActiva), prevIdxComp = avg(prevComp);
+  const prevGap = prevIdxActiva !== null && prevIdxComp !== null ? prevIdxActiva - prevIdxComp : null;
+  const prevSegPct = prevScoped.length ? Math.round((prevScoped.filter((v) => v.seguimiento_realizado).length / prevScoped.length) * 100) : null;
+  const vsLabel = prevWave ? prevWave.label : '';
 
   root.innerHTML = `
     <div class="wave-selector">
@@ -328,17 +347,20 @@ function renderResumenTab() {
       <div class="kpi-card kpi-card--activa">
         ${kpiLabelHtml('indice_activa', `Índice ${OWN}`, `Promedio del índice compuesto (0-100) de las visitas a proyectos ${OWN} dentro de la selección actual.`)}
         <div class="kpi-value">${fmt1(idxActiva)}</div>
-        <div class="kpi-sub">n=${activa.length} proyectos</div>
+        <div class="kpi-sub">n=${activa.length} visitas</div>
+        ${prevWave ? deltaHtml(idxActiva, prevIdxActiva, 'pts', vsLabel) : ''}
       </div>
       <div class="kpi-card">
         ${kpiLabelHtml('indice_competencia', 'Índice competencia', 'Promedio del índice compuesto de las visitas a la competencia dentro de la selección actual (solo el cluster elegido, si hay uno).')}
         <div class="kpi-value">${fmt1(idxComp)}</div>
-        <div class="kpi-sub">n=${comp.length} proyectos</div>
+        <div class="kpi-sub">${comp.length ? `n=${comp.length} visitas` : 'sin visitas a competencia en esta ola'}</div>
+        ${prevWave ? deltaHtml(idxComp, prevIdxComp, 'pts', vsLabel) : ''}
       </div>
-      <div class="kpi-card ${gap >= 0 ? 'kpi-card--pos' : 'kpi-card--neg'}">
+      <div class="kpi-card ${gap === null ? '' : gap >= 0 ? 'kpi-card--pos' : 'kpi-card--neg'}">
         ${kpiLabelHtml('brecha', `Brecha ${OWN} vs competencia`, `Diferencia entre el índice ${OWN} y el de competencia, en puntos sobre 100.`)}
         <div class="kpi-value">${gap === null ? '—' : (gap >= 0 ? '+' : '') + fmt1(gap)}</div>
-        <div class="kpi-sub">puntos sobre 100</div>
+        <div class="kpi-sub">${gap === null && !comp.length ? 'sin competencia medida en esta ola' : 'puntos sobre 100'}</div>
+        ${prevWave ? deltaHtml(gap, prevGap, 'pts', vsLabel) : ''}
       </div>
       <div class="kpi-card">
         ${kpiLabelHtml('cobertura', 'Cobertura del maestro', '% de proyectos del maestro (dentro de la selección actual) que tuvieron al menos una visita en esta ola.')}
@@ -349,8 +371,11 @@ function renderResumenTab() {
         ${kpiLabelHtml('seguimiento', 'Seguimiento a 7 días', '% de visitas donde el vendedor efectivamente hizo seguimiento a 7 días (P26 = Sí), dentro de la selección actual.')}
         <div class="kpi-value">${segPct}%</div>
         <div class="kpi-sub">visitas con seguimiento (P26)</div>
+        ${prevWave ? deltaHtml(scopedVisits.length ? segPct : null, prevSegPct, 'pp', vsLabel) : ''}
       </div>
     </div>
+
+    ${prevWave ? evolucionSectionHtml(wave, prevWave, activa, prevActiva) : ''}
 
     <div class="grid-2">
       <div class="chart-card">
@@ -383,8 +408,130 @@ function renderResumenTab() {
   }
 
   renderBlocksChart(activa, comp);
+  if (prevWave) {
+    renderEvolutionChart(wave, scopeVisits);
+    renderBlocksWaveChart(activa, prevActiva, prevWave, wave);
+  }
   if (clusters.length) renderClusterChart(wave, clusters);
   renderRankingChart(scopedVisits);
+}
+
+/* ------------------------------------------------------------
+   COMPARATIVO ENTRE OLAS (Resumen)
+   Todo se compara contra la ola inmediatamente anterior por fecha de
+   referencia, con el mismo filtro de cluster que el resto del Resumen.
+   ------------------------------------------------------------ */
+function wavesChrono() { return [...state.waves].sort((a, b) => new Date(a.refDate) - new Date(b.refDate)); }
+function previousWave(wave) {
+  const list = wavesChrono();
+  const i = list.findIndex((w) => w.id === wave.id);
+  return i > 0 ? list[i - 1] : null;
+}
+// cur/prev: valores en la misma unidad; unit 'pts' (puntos de índice) o 'pp' (puntos porcentuales)
+function deltaHtml(cur, prev, unit, vsLabel) {
+  if (cur === null || cur === undefined) return '<div class="kpi-delta kpi-delta--na">sin dato para comparar</div>';
+  if (prev === null || prev === undefined) return `<div class="kpi-delta kpi-delta--na">sin dato en ${vsLabel}</div>`;
+  const d = cur - prev;
+  const cls = Math.abs(d) < 0.05 ? 'flat' : d > 0 ? 'up' : 'down';
+  const arrow = cls === 'flat' ? '=' : cls === 'up' ? '▲' : '▼';
+  return `<div class="kpi-delta kpi-delta--${cls}">${arrow} ${d > 0 ? '+' : ''}${unit === 'pp' ? d.toFixed(0) : fmt1(d)} ${unit} vs ${vsLabel}</div>`;
+}
+function deltaCell(cur, prev) {
+  if (cur === null || prev === null) return '<td class="num delta-na">—</td>';
+  const d = cur - prev;
+  const cls = Math.abs(d) < 0.05 ? 'flat' : d > 0 ? 'up' : 'down';
+  const arrow = cls === 'flat' ? '=' : cls === 'up' ? '▲' : '▼';
+  return `<td class="num delta-${cls}">${arrow} ${d > 0 ? '+' : ''}${fmt1(d)}</td>`;
+}
+function groupAvg(visits, keyFn) {
+  const out = {};
+  visits.forEach((v) => {
+    const k = keyFn(v);
+    (out[k] = out[k] || { vals: [], n: 0, sample: v }).n++;
+    if (v.composite !== null && v.composite !== undefined) out[k].vals.push(v.composite);
+  });
+  Object.values(out).forEach((g) => { g.avg = g.vals.length ? g.vals.reduce((a, b) => a + b, 0) / g.vals.length : null; });
+  return out;
+}
+function changeTableHtml(cur, prev, prevWave, wave, firstCol, extraCol) {
+  const keys = [...new Set([...Object.keys(cur), ...Object.keys(prev)])]
+    .sort((a, b) => ((cur[b] && cur[b].avg) ?? -1) - ((cur[a] && cur[a].avg) ?? -1));
+  const rows = keys.map((k) => {
+    const c = cur[k], p = prev[k];
+    const tag = !p ? ' <span class="tag-optional">nueva</span>' : !c ? ' <span class="tag-optional">sin visita</span>' : '';
+    return `<tr>
+      <td>${k}${tag}</td>
+      ${extraCol ? `<td>${extraCol(c || p)}</td>` : ''}
+      <td class="num">${p ? `${fmt1(p.avg)} <span class="n-sub">(${p.n})</span>` : '—'}</td>
+      <td class="num">${c ? `${fmt1(c.avg)} <span class="n-sub">(${c.n})</span>` : '—'}</td>
+      ${deltaCell(c ? c.avg : null, p ? p.avg : null)}
+    </tr>`;
+  }).join('');
+  return `
+    <div class="table-wrap">
+      <table class="data-table data-table--dense">
+        <thead><tr><th>${firstCol}</th>${extraCol ? '<th>Sala</th>' : ''}<th class="num">${prevWave.label}</th><th class="num">${wave.label}</th><th class="num">Cambio</th></tr></thead>
+        <tbody>${rows}</tbody>
+      </table>
+    </div>`;
+}
+function evolucionSectionHtml(wave, prevWave, activa, prevActiva) {
+  const salaCur = groupAvg(activa, (v) => v.project_name), salaPrev = groupAvg(prevActiva, (v) => v.project_name);
+  const vendCur = groupAvg(activa, (v) => v.vendedor), vendPrev = groupAvg(prevActiva, (v) => v.vendedor);
+  return `
+    <h2 class="section-title">Evolución ${prevWave.label} → ${wave.label}</h2>
+    <p class="config-hint">Índice compuesto promedio (0-100); entre paréntesis, n.º de visitas. ${OWN}: ${prevActiva.length} visitas en ${prevWave.label} y ${activa.length} en ${wave.label} — con 1-2 visitas por sala, cambios de pocos puntos pueden ser variación normal entre visitas.</p>
+    <div class="grid-2">
+      <div class="chart-card">
+        <h3>Índice compuesto por ola</h3>
+        <div class="chart-fixed"><canvas id="chart-evolution"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <h3>${OWN} por bloque — ${prevWave.label} vs ${wave.label}</h3>
+        <div class="chart-fixed"><canvas id="chart-blocks-wave"></canvas></div>
+      </div>
+    </div>
+    <div class="grid-2">
+      <div class="chart-card">
+        <h3>Cambio por sala ${OWN}</h3>
+        ${changeTableHtml(salaCur, salaPrev, prevWave, wave, 'Sala')}
+      </div>
+      <div class="chart-card">
+        <h3>Cambio por vendedor(a) ${OWN}</h3>
+        ${changeTableHtml(vendCur, vendPrev, prevWave, wave, 'Vendedor(a)', (g) => g.sample.project_name)}
+      </div>
+    </div>`;
+}
+function renderEvolutionChart(wave, scopeVisits) {
+  const list = wavesChrono().filter((w) => new Date(w.refDate) <= new Date(wave.refDate));
+  const series = (own) => list.map((w) => blockAvgComposite(scopeVisits(w.visits).filter((v) => v.is_own === own)));
+  destroyChart('evolution');
+  charts.evolution = new Chart($('#chart-evolution'), {
+    type: 'line',
+    data: {
+      labels: list.map((w) => w.label),
+      datasets: [
+        { label: OWN, data: series(true), borderColor: OWN_COLOR, backgroundColor: OWN_COLOR, borderWidth: 2, pointRadius: 5, pointHoverRadius: 7 },
+        { label: 'Competencia', data: series(false), borderColor: '#4E5862', backgroundColor: '#4E5862', borderWidth: 2, pointRadius: 5, pointHoverRadius: 7, spanGaps: false },
+      ],
+    },
+    options: { ...chartBaseOptions({ y: { max: 100 } }), interaction: { mode: 'index', intersect: false } },
+  });
+}
+function renderBlocksWaveChart(activa, prevActiva, prevWave, wave) {
+  const keys = Object.keys(APP.BLOCK_LABELS);
+  destroyChart('blocksWave');
+  charts.blocksWave = new Chart($('#chart-blocks-wave'), {
+    type: 'bar',
+    data: {
+      labels: keys.map((k) => APP.BLOCK_LABELS[k]),
+      datasets: [
+        { label: prevWave.label, data: keys.map((k) => blockAvg(prevActiva, k)), backgroundColor: '#A5ACB4' },
+        { label: wave.label, data: keys.map((k) => blockAvg(activa, k)), backgroundColor: OWN_COLOR },
+      ],
+    },
+    options: chartBaseOptions({ y: { max: 100 } }),
+  });
 }
 
 function blockAvg(arr, key) {

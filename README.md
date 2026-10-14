@@ -32,6 +32,7 @@ wrangler.jsonc       un Worker por cliente (env por defecto = activa, --env demo
 | `ownInmobiliarias` | Valores de la columna INMOBILIARIA del maestro que cuentan como "propios" (se compara sin mayúsculas/tildes/espacios de más) |
 | `brandColor` | Color de acento y de las barras "propias" en los gráficos |
 | `storagePrefix` | Prefijo de las claves de `localStorage` del admin — separa los datos de cada cliente en el mismo navegador. Activa usa `msd` (las claves históricas) |
+| `vendorAliases` | Opcional. `{ "variante": "nombre correcto" }` para errores de tipeo en nombres de vendedor que la fusión automática no detecta (ej. `"Grecia Tamarez": "Grecia Tamariz"`) |
 
 En los HTML de `src/` se usan placeholders `{{shortName}}`, `{{clientName}}`,
 `{{brandColor}}`, `{{brandInitial}}` que reemplaza el build; en JS, la config
@@ -95,7 +96,11 @@ zona `terrabit.cl`:
    que ya no vende, cambio de cluster/Grupo), arrastra también el maestro
    de proyectos actualizado. Si no subes uno, se reutiliza el último
    guardado (o el de referencia incluido en `tenants/<slug>/data/master.json`).
-4. Ponle nombre a la ola y confirma la fecha de referencia.
+4. Ponle nombre a la ola, indica **Ola en el archivo** y confirma la fecha
+   de referencia. Desde la ola 2 la planilla trae **todas las olas juntas**
+   con una columna `OLA` al final: solo se procesan las filas cuyo `OLA`
+   coincide con ese número (el preview dice cuántas se omitieron). Planillas
+   sin esa columna se procesan completas.
 5. Click en **Procesar archivo** → revisa el preview (alertas, cobertura) →
    **Guardar esta ola**.
 
@@ -116,6 +121,9 @@ hace poco confiable emparejar por texto). Esto significa:
   título arriba, pero no que cambie el orden de las columnas).
 - Si la estructura no calza, el parser lo dice explícitamente en vez de
   procesar datos incorrectos en silencio.
+- La columna `OLA` (si existe) se ubica por su encabezado, no por posición.
+- Fecha y horas de visita se aceptan como texto (`dd-mm-aaaa`, `hh:mm`) o
+  como celdas de fecha/hora de Excel.
 
 Si el cuestionario cambia de forma importante en el futuro, hay que
 actualizar el mapeo de columnas en `src/app.js` (objeto `COL` al inicio del
@@ -194,6 +202,14 @@ falta algún bloque, ese peso se excluye y se renormaliza sobre los bloques
 disponibles, en vez de contar como 0. Al cambiar los ponderadores en
 **Configuración**, se recalculan los índices de **todas** las olas
 guardadas, para que la comparación siga siendo consistente en el tiempo.
+
+## Comparativo entre olas
+
+Cuando hay más de una ola, el **Resumen** compara la ola seleccionada con la
+inmediatamente anterior (por fecha de referencia), respetando el filtro de
+cluster: deltas ▲/▼ en los KPIs, evolución del índice por ola, bloques
+propios ola anterior vs actual, y cambio por sala y por vendedor(a). Una
+sala o vendedor(a) sin visita en la ola anterior aparece como "nueva".
 
 ## Datos y privacidad
 

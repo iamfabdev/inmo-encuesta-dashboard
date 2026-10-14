@@ -184,8 +184,20 @@ function titleCase(s) {
     .map((w) => (w.length ? w[0].toUpperCase() + w.slice(1).toLowerCase() : w))
     .join(' ');
 }
+// Alias explícitos (TENANT.vendorAliases, "variante": "nombre correcto")
+// para errores de tipeo que la fusión por tokens no detecta, ej.
+// "Grecia Tamarez" → "Grecia Tamariz". Se comparan sin mayúsculas/tildes.
+const VENDOR_ALIASES = Object.fromEntries(
+  Object.entries(TENANT.vendorAliases || {}).map(([from, to]) => [stripAccents(titleCase(from)).toLowerCase(), titleCase(to)])
+);
 function mergeVendorNames(rawNames) {
-  const cleaned = rawNames.map(titleCase);
+  const aliasMerges = [];
+  const applyAlias = (n) => {
+    const to = VENDOR_ALIASES[stripAccents(n).toLowerCase()];
+    if (to && to !== n && !aliasMerges.some((m) => m.de === n)) aliasMerges.push({ de: n, a: to });
+    return to || n;
+  };
+  const cleaned = rawNames.map((n) => applyAlias(titleCase(n)));
   const uniq = [...new Set(cleaned.filter(Boolean))];
   const tokensOf = (n) => stripAccents(n).toLowerCase().split(' ').filter(Boolean);
   const canonical = {};
@@ -206,13 +218,23 @@ function mergeVendorNames(rawNames) {
       }
     }
   }
-  return { cleanName: (raw) => canonical[titleCase(raw)] || titleCase(raw), merges };
+  const clean = (raw) => { const n = applyAlias(titleCase(raw)); return canonical[n] || n; };
+  return { cleanName: clean, merges: [...aliasMerges, ...merges] };
 }
 
 /* ------------------------------------------------------------
    3. FECHAS Y HORAS
    ------------------------------------------------------------ */
+// Desde la ola 2 la planilla trae fechas y horas como celdas de fecha de
+// Excel (número de serie: días desde 1900, la hora es la parte decimal) en
+// vez de texto "dd-mm-aaaa" / "hh:mm". Se aceptan ambos formatos.
 function parseFechaVisita(raw) {
+  if (typeof raw === 'number') {
+    const d = XLSX.SSF.parse_date_code(raw);
+    if (!d) return { iso: null, raw: String(raw) };
+    const iso = `${d.y}-${String(d.m).padStart(2, '0')}-${String(d.d).padStart(2, '0')}`;
+    return { iso, raw: iso };
+  }
   const v = cleanStr(raw);
   const m = v.match(/^(\d{1,2})[-/](\d{1,2})[-/](\d{4})/);
   if (!m) return { iso: null, raw: v };
@@ -221,6 +243,7 @@ function parseFechaVisita(raw) {
   return { iso, raw: v };
 }
 function parseHora(raw) {
+  if (typeof raw === 'number') return Math.round((raw - Math.floor(raw)) * 1440);
   const v = cleanStr(raw);
   const m = v.match(/^(\d{1,2}):(\d{2})/);
   if (!m) return null;
@@ -404,7 +427,10 @@ function pickSheet(wb, matcher) {
   return name ? wb.Sheets[name] : null;
 }
 
-async function parseBBDDFile(file, master, weights, refDate) {
+// olaNumber: desde la ola 2 la planilla trae todas las olas juntas, con una
+// columna "OLA" al final (1, 2, ...). Si existe, solo se procesan las filas
+// de olaNumber; si no existe (planillas antiguas), se procesa todo.
+async function parseBBDDFile(file, master, weights, refDate, olaNumber) {
   const buf = await file.arrayBuffer();
   const wb = XLSX.read(buf, { type: 'array', cellDates: false });
 
@@ -419,7 +445,19 @@ async function parseBBDDFile(file, master, weights, refDate) {
       'Verifica que estás subiendo la planilla de "Cliente Incógnito" con el mismo formato de siempre.'
     );
   }
-  const dataRows = mainRows.slice(headerIdx + 1).filter((r) => r && r[COL.ID] !== null && r[COL.ID] !== '');
+  const allRows = mainRows.slice(headerIdx + 1).filter((r) => r && r[COL.ID] !== null && r[COL.ID] !== '');
+  const olaCol = (mainRows[headerIdx] || []).findIndex((h) => cleanStr(h).toUpperCase() === 'OLA');
+  let dataRows = allRows;
+  let olaInfo = null;
+  if (olaCol !== -1) {
+    const valueOf = (r) => cleanStr(r[olaCol]);
+    const available = [...new Set(allRows.map(valueOf).filter(Boolean))].sort();
+    dataRows = allRows.filter((r) => valueOf(r) === String(olaNumber));
+    if (!dataRows.length) {
+      throw new Error(`El archivo trae una columna "OLA" pero ninguna fila es de la ola ${olaNumber}. Olas en el archivo: ${available.join(', ') || '(vacía)'}. Ajusta "Ola en el archivo".`);
+    }
+    olaInfo = { ola: String(olaNumber), skipped: allRows.length - dataRows.length, available };
+  }
 
   const masterById = {};
   master.forEach((p) => (masterById[p.id] = p));
@@ -482,7 +520,7 @@ async function parseBBDDFile(file, master, weights, refDate) {
   const surveyedIds = new Set(visits.map((v) => v.project_id));
   const notSurveyed = master.filter((p) => !surveyedIds.has(p.id));
 
-  return { visits, flags, notFoundInMaster, notSurveyed, vendorMerges: merges };
+  return { visits, flags, notFoundInMaster, notSurveyed, vendorMerges: merges, olaInfo };
 }
 
 async function parseMasterFile(file) {
