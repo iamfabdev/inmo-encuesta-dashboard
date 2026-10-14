@@ -428,6 +428,15 @@ function previousWave(wave) {
   return i > 0 ? list[i - 1] : null;
 }
 // cur/prev: valores en la misma unidad; unit 'pts' (puntos de índice) o 'pp' (puntos porcentuales)
+// Resumen ejecutivo: se acepta markdown (títulos, negritas, listas, tablas).
+// El HTML resultante pasa por DOMPurify; si las librerías no cargaron, se
+// muestra el texto plano escapado.
+function renderMarkdown(text) {
+  if (window.marked && window.DOMPurify) {
+    return DOMPurify.sanitize(marked.parse(text, { gfm: true, breaks: true }));
+  }
+  return `<p class="ai-summary-plain">${text.replace(/&/g, '&amp;').replace(/</g, '&lt;')}</p>`;
+}
 function deltaHtml(cur, prev, unit, vsLabel) {
   if (cur === null || cur === undefined) return '<div class="kpi-delta kpi-delta--na">sin dato para comparar</div>';
   if (prev === null || prev === undefined) return `<div class="kpi-delta kpi-delta--na">sin dato en ${vsLabel}</div>`;
@@ -766,8 +775,8 @@ function renderProyectosActivaTab() {
     <div class="ai-summary">
       <div class="ai-summary-icon">✨</div>
       <div>
-        <h3>Resumen ejecutivo <span class="tag-ai">Pegado desde LLM</span></h3>
-        <p>${aiText.replace(/</g, '&lt;')}</p>
+        <h3>Resumen ejecutivo <span class="tag-ai">Generado con IA</span></h3>
+        <div class="ai-summary-body">${renderMarkdown(aiText)}</div>
       </div>
     </div>` : ''}
 
@@ -1031,7 +1040,7 @@ function renderConfigTab() {
         <label>Ola:</label>
         <select id="ai-wave-select">${state.waves.map((w2) => `<option value="${w2.id}" ${w2.id === aiWave.id ? 'selected' : ''}>${w2.label} — ${w2.refDate}</option>`).join('')}</select>
       </div>
-      <textarea class="ai-config-textarea" id="ai-summary-text" placeholder="Pega acá el resumen ejecutivo generado con un LLM...">${aiWave.aiSummary || ''}</textarea>
+      <textarea class="ai-config-textarea" id="ai-summary-text" placeholder="Pega acá el resumen ejecutivo generado con un LLM (acepta markdown: ## títulos, **negritas**, listas y tablas)...">${(aiWave.aiSummary || '').replace(/&/g, '&amp;').replace(/</g, '&lt;')}</textarea>
       <div class="config-actions">
         <button class="btn btn-primary" id="btn-guardar-ai-summary">Guardar resumen</button>
       </div>
