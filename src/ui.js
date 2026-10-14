@@ -390,8 +390,8 @@ function renderResumenTab() {
     </div>
 
     <div class="chart-card">
-      <h3>Ranking de proyectos</h3>
-      <div class="chart-ranking-wrap" style="height:${Math.max(280, scopedVisits.length * 26)}px">
+      <h3>Ranking de proyectos <span class="n-sub">· promedio de sus visitas</span></h3>
+      <div class="chart-ranking-wrap" style="height:${Math.max(280, new Set(scopedVisits.map((v) => v.project_id)).size * 26)}px">
         <canvas id="chart-ranking"></canvas>
       </div>
     </div>
@@ -588,19 +588,37 @@ function blockAvgComposite(arr) {
 }
 function round1sum(vals) { return Math.round((vals.reduce((a, b) => a + b, 0) / vals.length) * 10) / 10; }
 
+// Una barra por proyecto (promedio de sus visitas), no una por visita: desde
+// la ola 2 hay salas con 2-4 visitas y se repetían en el ranking.
 function renderRankingChart(visits) {
-  const sorted = [...visits].sort((a, b) => (b.composite || 0) - (a.composite || 0));
+  const byProject = {};
+  visits.forEach((v) => {
+    const p = (byProject[v.project_id] = byProject[v.project_id] || { name: v.project_name, comuna: v.comuna, is_own: v.is_own, vals: [] });
+    if (v.composite !== null && v.composite !== undefined) p.vals.push(v.composite);
+  });
+  const sorted = Object.values(byProject)
+    .map((p) => ({ ...p, avg: p.vals.length ? p.vals.reduce((a, b) => a + b, 0) / p.vals.length : null }))
+    .sort((a, b) => (b.avg || 0) - (a.avg || 0));
   destroyChart('ranking');
   charts.ranking = new Chart($('#chart-ranking'), {
     type: 'bar',
     data: {
-      labels: sorted.map((v) => `${v.project_name} (${v.comuna[0]}${v.comuna.slice(1).toLowerCase()})`),
+      labels: sorted.map((p) => `${p.name} (${p.comuna[0]}${p.comuna.slice(1).toLowerCase()})`),
       datasets: [{
-        data: sorted.map((v) => v.composite),
-        backgroundColor: sorted.map((v) => (v.is_own ? OWN_COLOR : '#A5ACB4')),
+        data: sorted.map((p) => p.avg),
+        backgroundColor: sorted.map((p) => (p.is_own ? OWN_COLOR : '#A5ACB4')),
       }],
     },
-    options: chartBaseOptions({ x: { max: 100 } }, true),
+    options: {
+      ...chartBaseOptions({ x: { max: 100 } }, true),
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: { label: (ctx) => {
+          const n = sorted[ctx.dataIndex].vals.length;
+          return ` ${fmt1(ctx.parsed.x)} — promedio de ${n} visita${n === 1 ? '' : 's'}`;
+        } } },
+      },
+    },
   });
 }
 
