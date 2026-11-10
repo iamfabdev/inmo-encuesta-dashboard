@@ -11,6 +11,7 @@ propio deploy**, así el sitio de un cliente nunca contiene datos de otro.
 |---|---|---|---|
 | Inmobiliaria Activa | `tenants/activa/` | `inmo-encuesta-dashboard` | `activa.inmotrack.cl` |
 | Demo (datos ficticios) | `tenants/demo/` | `inmo-demo-dashboard` | `demo.inmotrack.cl` |
+| Guzmán y Larraín | `tenants/gyl/` | `inmo-gyl-dashboard` | `gyl.inmotrack.cl` |
 
 ## Estructura
 

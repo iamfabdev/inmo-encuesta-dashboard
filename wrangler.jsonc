@@ -1,5 +1,5 @@
 // Un Worker de assets estáticos por cliente, construidos desde el mismo repo.
-// Build: `node build.mjs` · Deploy: `npx wrangler deploy` (activa) / `npx wrangler deploy --env demo`
+// Build: `node build.mjs` · Deploy: `npx wrangler deploy` (activa) / `npx wrangler deploy --env demo` / `--env gyl`
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "inmo-encuesta-dashboard",
@@ -9,6 +9,10 @@
     "demo": {
       "name": "inmo-demo-dashboard",
       "assets": { "directory": "./dist/demo" }
+    },
+    "gyl": {
+      "name": "inmo-gyl-dashboard",
+      "assets": { "directory": "./dist/gyl" }
     }
   }
 }

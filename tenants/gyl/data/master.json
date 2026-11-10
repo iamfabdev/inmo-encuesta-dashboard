@@ -1,0 +1,8 @@
+{
+  "updatedAt": "2026-11-10",
+  "source": "MAESTRO PROYECTOS Guzman y Larrain.xlsx",
+  "proyectos": [
+    { "id": 1, "tpo": "DEPARTAMENTO", "comuna": "MAIPU", "nombre": "CONDOMINIO EL ROSAL ORIENTE II", "direccion": "", "inmobiliaria": "GUZMAN Y LARRAIN", "grupo": "1", "link": null },
+    { "id": 2, "tpo": "DEPARTAMENTO", "comuna": "ANTOFAGASTA", "nombre": "EL TAMARUGAL", "direccion": "", "inmobiliaria": "GUZMAN Y LARRAIN", "grupo": "2", "link": null }
+  ]
+}

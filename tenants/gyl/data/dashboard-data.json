@@ -1,0 +1,413 @@
+{
+  "waves": [
+    {
+      "id": "w_pvul66xpmwakz07g",
+      "label": "Ola 1",
+      "refDate": "2026-11-05",
+      "uploadedAt": "2026-11-10T11:02:12.172Z",
+      "masterUsed": [
+        {
+          "id": 1,
+          "tpo": "DEPARTAMENTO",
+          "comuna": "MAIPU",
+          "nombre": "CONDOMINIO EL ROSAL ORIENTE II",
+          "direccion": "",
+          "inmobiliaria": "GUZMAN Y LARRAIN",
+          "grupo": "1",
+          "link": null
+        },
+        {
+          "id": 2,
+          "tpo": "DEPARTAMENTO",
+          "comuna": "ANTOFAGASTA",
+          "nombre": "EL TAMARUGAL",
+          "direccion": "",
+          "inmobiliaria": "GUZMAN Y LARRAIN",
+          "grupo": "2",
+          "link": null
+        }
+      ],
+      "visits": [
+        {
+          "id_respuesta": 1357,
+          "project_id": 1,
+          "project_name": "CONDOMINIO EL ROSAL ORIENTE II",
+          "comuna": "MAIPU",
+          "inmobiliaria": "GUZMAN Y LARRAIN",
+          "grupo": "1",
+          "is_own": true,
+          "vendedor": "William Villavicencio",
+          "vendedor_raw": "William Villavicencio",
+          "encuestador": "Claudia Vera",
+          "fecha_visita": "2026-10-29",
+          "p6_ofrece_piloto": "No tiene piloto",
+          "p7_acompana_piloto": null,
+          "tipo_renta": "Renta larga / tradicional",
+          "aspectos_destacados": [
+            "6.- Sala multi uso",
+            "7.- Vías de acceso"
+          ],
+          "elementos_diferenciadores": [],
+          "scores": {
+            "sala_ventas": null,
+            "protocolo_atencion": 92.9,
+            "indagacion_necesidades": 80,
+            "financiamiento": 100,
+            "conocimiento_vendedor": 50,
+            "cierre_seguimiento": 100,
+            "satisfaccion_general": null
+          },
+          "tactico": {
+            "cotizacion": 100,
+            "proximo_paso": 100,
+            "descuentos": 100,
+            "financiamiento_espontaneo": 100
+          },
+          "composite": 84.9,
+          "seguimiento_realizado": true
+        },
+        {
+          "id_respuesta": 1358,
+          "project_id": 1,
+          "project_name": "CONDOMINIO EL ROSAL ORIENTE II",
+          "comuna": "MAIPU",
+          "inmobiliaria": "GUZMAN Y LARRAIN",
+          "grupo": "1",
+          "is_own": true,
+          "vendedor": "Anne Fuica",
+          "vendedor_raw": "Anne Fuica",
+          "encuestador": "Lissette Riquelme",
+          "fecha_visita": "2026-10-29",
+          "p6_ofrece_piloto": "No tiene piloto",
+          "p7_acompana_piloto": null,
+          "tipo_renta": "Renta corta",
+          "aspectos_destacados": [
+            "1.- Areas verdes",
+            "2.- Gimnasio",
+            "3.- Quincho para asados",
+            "7.- Vías de acceso",
+            "10.- Bicicleteros",
+            "12.- Estacionamientos de visita"
+          ],
+          "elementos_diferenciadores": [
+            "7.- Vías de acceso",
+            "1.- Areas verdes",
+            "2.- Gimnasio",
+            "3.- Quincho para asados"
+          ],
+          "scores": {
+            "sala_ventas": null,
+            "protocolo_atencion": 100,
+            "indagacion_necesidades": 100,
+            "financiamiento": 66.7,
+            "conocimiento_vendedor": null,
+            "cierre_seguimiento": 100,
+            "satisfaccion_general": null
+          },
+          "tactico": {
+            "cotizacion": 100,
+            "proximo_paso": 100,
+            "descuentos": 100,
+            "financiamiento_espontaneo": 100
+          },
+          "composite": 90.9,
+          "seguimiento_realizado": true
+        },
+        {
+          "id_respuesta": 1359,
+          "project_id": 1,
+          "project_name": "CONDOMINIO EL ROSAL ORIENTE II",
+          "comuna": "MAIPU",
+          "inmobiliaria": "GUZMAN Y LARRAIN",
+          "grupo": "1",
+          "is_own": true,
+          "vendedor": "Anne Fuica",
+          "vendedor_raw": "Anne Fuica",
+          "encuestador": "Tiare Gutierrez",
+          "fecha_visita": "2026-10-28",
+          "p6_ofrece_piloto": "No tiene piloto",
+          "p7_acompana_piloto": null,
+          "tipo_renta": "Renta larga / tradicional",
+          "aspectos_destacados": [
+            "1.- Areas verdes",
+            "3.- Quincho para asados",
+            "8.- Número de estacionamientos"
+          ],
+          "elementos_diferenciadores": [],
+          "scores": {
+            "sala_ventas": null,
+            "protocolo_atencion": 100,
+            "indagacion_necesidades": 80,
+            "financiamiento": 100,
+            "conocimiento_vendedor": null,
+            "cierre_seguimiento": 100,
+            "satisfaccion_general": null
+          },
+          "tactico": {
+            "cotizacion": 100,
+            "proximo_paso": 100,
+            "descuentos": 100,
+            "financiamiento_espontaneo": 100
+          },
+          "composite": 96.4,
+          "seguimiento_realizado": true
+        },
+        {
+          "id_respuesta": 1360,
+          "project_id": 1,
+          "project_name": "CONDOMINIO EL ROSAL ORIENTE II",
+          "comuna": "MAIPU",
+          "inmobiliaria": "GUZMAN Y LARRAIN",
+          "grupo": "1",
+          "is_own": true,
+          "vendedor": "William Villavicencio",
+          "vendedor_raw": "William Villavicencio",
+          "encuestador": "Claudia Valdés Yáñez",
+          "fecha_visita": "2026-10-28",
+          "p6_ofrece_piloto": "No tiene piloto",
+          "p7_acompana_piloto": null,
+          "tipo_renta": null,
+          "aspectos_destacados": [
+            "1.- Areas verdes",
+            "3.- Quincho para asados",
+            "4.- Lavandería",
+            "7.- Vías de acceso",
+            "8.- Número de estacionamientos"
+          ],
+          "elementos_diferenciadores": [
+            "6.- Sala multi uso",
+            "7.- Vías de acceso",
+            "8.- Número de estacionamientos",
+            "9.- Amplia conserjería",
+            "1.- Areas verdes",
+            "3.- Quincho para asados",
+            "5.- Cowork"
+          ],
+          "scores": {
+            "sala_ventas": null,
+            "protocolo_atencion": 100,
+            "indagacion_necesidades": 60,
+            "financiamiento": 100,
+            "conocimiento_vendedor": null,
+            "cierre_seguimiento": 100,
+            "satisfaccion_general": null
+          },
+          "tactico": {
+            "cotizacion": 100,
+            "proximo_paso": 100,
+            "descuentos": 100,
+            "financiamiento_espontaneo": 100
+          },
+          "composite": 92.7,
+          "seguimiento_realizado": true
+        },
+        {
+          "id_respuesta": 1361,
+          "project_id": 2,
+          "project_name": "EL TAMARUGAL",
+          "comuna": "ANTOFAGASTA",
+          "inmobiliaria": "GUZMAN Y LARRAIN",
+          "grupo": "2",
+          "is_own": true,
+          "vendedor": "Naida Tello",
+          "vendedor_raw": "Nada Tello",
+          "encuestador": "Gilda Reyes",
+          "fecha_visita": "2026-11-03",
+          "p6_ofrece_piloto": "No tiene piloto",
+          "p7_acompana_piloto": null,
+          "tipo_renta": null,
+          "aspectos_destacados": [
+            "1.- Areas verdes",
+            "8.- Número de estacionamientos"
+          ],
+          "elementos_diferenciadores": [],
+          "scores": {
+            "sala_ventas": null,
+            "protocolo_atencion": 100,
+            "indagacion_necesidades": 60,
+            "financiamiento": 66.7,
+            "conocimiento_vendedor": null,
+            "cierre_seguimiento": 100,
+            "satisfaccion_general": null
+          },
+          "tactico": {
+            "cotizacion": 100,
+            "proximo_paso": 100,
+            "descuentos": 100,
+            "financiamiento_espontaneo": 100
+          },
+          "composite": 83.6,
+          "seguimiento_realizado": true
+        },
+        {
+          "id_respuesta": 1363,
+          "project_id": 2,
+          "project_name": "EL TAMARUGAL",
+          "comuna": "ANTOFAGASTA",
+          "inmobiliaria": "GUZMAN Y LARRAIN",
+          "grupo": "2",
+          "is_own": true,
+          "vendedor": "Elizabeth Navea",
+          "vendedor_raw": "Elizabeth Navea Escobar",
+          "encuestador": "Paulina Huerta Muñoz",
+          "fecha_visita": "2026-11-04",
+          "p6_ofrece_piloto": "No tiene piloto",
+          "p7_acompana_piloto": null,
+          "tipo_renta": null,
+          "aspectos_destacados": [
+            "2.- Gimnasio",
+            "6.- Sala multi uso",
+            "7.- Vías de acceso",
+            "8.- Número de estacionamientos",
+            "11.- Piscina"
+          ],
+          "elementos_diferenciadores": [],
+          "scores": {
+            "sala_ventas": null,
+            "protocolo_atencion": 92.9,
+            "indagacion_necesidades": 60,
+            "financiamiento": 66.7,
+            "conocimiento_vendedor": null,
+            "cierre_seguimiento": 100,
+            "satisfaccion_general": null
+          },
+          "tactico": {
+            "cotizacion": 100,
+            "proximo_paso": 100,
+            "descuentos": 100,
+            "financiamiento_espontaneo": 100
+          },
+          "composite": 81.7,
+          "seguimiento_realizado": true
+        },
+        {
+          "id_respuesta": 1365,
+          "project_id": 2,
+          "project_name": "EL TAMARUGAL",
+          "comuna": "ANTOFAGASTA",
+          "inmobiliaria": "GUZMAN Y LARRAIN",
+          "grupo": "2",
+          "is_own": true,
+          "vendedor": "Elizabeth Navea",
+          "vendedor_raw": "Elizabeth Navea",
+          "encuestador": "Lorena Zamora",
+          "fecha_visita": "2026-11-04",
+          "p6_ofrece_piloto": "No tiene piloto",
+          "p7_acompana_piloto": null,
+          "tipo_renta": "Renta corta",
+          "aspectos_destacados": [
+            "1.- Areas verdes",
+            "2.- Gimnasio",
+            "3.- Quincho para asados",
+            "6.- Sala multi uso",
+            "7.- Vías de acceso",
+            "8.- Número de estacionamientos",
+            "10.- Bicicleteros"
+          ],
+          "elementos_diferenciadores": [],
+          "scores": {
+            "sala_ventas": null,
+            "protocolo_atencion": 100,
+            "indagacion_necesidades": 100,
+            "financiamiento": 100,
+            "conocimiento_vendedor": null,
+            "cierre_seguimiento": 100,
+            "satisfaccion_general": null
+          },
+          "tactico": {
+            "cotizacion": 100,
+            "proximo_paso": 100,
+            "descuentos": 100,
+            "financiamiento_espontaneo": 100
+          },
+          "composite": 100,
+          "seguimiento_realizado": true
+        },
+        {
+          "id_respuesta": 1366,
+          "project_id": 2,
+          "project_name": "EL TAMARUGAL",
+          "comuna": "ANTOFAGASTA",
+          "inmobiliaria": "GUZMAN Y LARRAIN",
+          "grupo": "2",
+          "is_own": true,
+          "vendedor": "Naida Tello",
+          "vendedor_raw": "Naida Tello",
+          "encuestador": "javiera carrasco",
+          "fecha_visita": "2026-11-04",
+          "p6_ofrece_piloto": "No tiene piloto",
+          "p7_acompana_piloto": null,
+          "tipo_renta": "Renta corta",
+          "aspectos_destacados": [
+            "1.- Areas verdes",
+            "5.- Cowork",
+            "8.- Número de estacionamientos",
+            "11.- Piscina"
+          ],
+          "elementos_diferenciadores": [],
+          "scores": {
+            "sala_ventas": null,
+            "protocolo_atencion": 100,
+            "indagacion_necesidades": 100,
+            "financiamiento": 66.7,
+            "conocimiento_vendedor": null,
+            "cierre_seguimiento": 85,
+            "satisfaccion_general": null
+          },
+          "tactico": {
+            "cotizacion": 100,
+            "proximo_paso": 100,
+            "descuentos": 100,
+            "financiamiento_espontaneo": 100
+          },
+          "composite": 86.8,
+          "seguimiento_realizado": false
+        }
+      ],
+      "flags": [],
+      "notFoundInMaster": [],
+      "notSurveyed": [],
+      "vendorMerges": [
+        {
+          "de": "Nada Tello",
+          "a": "Naida Tello"
+        },
+        {
+          "de": "Elizabeth Navea Escobar",
+          "a": "Elizabeth Navea"
+        }
+      ]
+    }
+  ],
+  "weights": {
+    "sala_ventas": 15,
+    "protocolo_atencion": 15,
+    "indagacion_necesidades": 10,
+    "financiamiento": 15,
+    "conocimiento_vendedor": 15,
+    "cierre_seguimiento": 15,
+    "satisfaccion_general": 15
+  },
+  "master": [
+    {
+      "id": 1,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "MAIPU",
+      "nombre": "CONDOMINIO EL ROSAL ORIENTE II",
+      "direccion": "",
+      "inmobiliaria": "GUZMAN Y LARRAIN",
+      "grupo": "1",
+      "link": null
+    },
+    {
+      "id": 2,
+      "tpo": "DEPARTAMENTO",
+      "comuna": "ANTOFAGASTA",
+      "nombre": "EL TAMARUGAL",
+      "direccion": "",
+      "inmobiliaria": "GUZMAN Y LARRAIN",
+      "grupo": "2",
+      "link": null
+    }
+  ]
+}

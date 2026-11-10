@@ -1,0 +1,12 @@
+{
+  "slug": "gyl",
+  "clientName": "Guzmán y Larraín",
+  "shortName": "GYL",
+  "ownInmobiliarias": ["GUZMAN Y LARRAIN"],
+  "brandColor": "#1F3A5F",
+  "storagePrefix": "msd_gyl",
+  "vendorAliases": {
+    "Nada Tello": "Naida Tello",
+    "Elizabeth Navea Escobar": "Elizabeth Navea"
+  }
+}
