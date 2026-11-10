@@ -1,10 +1,10 @@
 {
   "waves": [
     {
-      "id": "w_pvul66xpmwakz07g",
+      "id": "w_xayim4gxmway16xj",
       "label": "Ola 1",
       "refDate": "2026-11-05",
-      "uploadedAt": "2026-11-10T11:02:12.172Z",
+      "uploadedAt": "2026-11-10T17:07:49.207Z",
       "masterUsed": [
         {
           "id": 1,
@@ -49,13 +49,13 @@
           ],
           "elementos_diferenciadores": [],
           "scores": {
-            "sala_ventas": null,
+            "sala_ventas": 87,
             "protocolo_atencion": 92.9,
             "indagacion_necesidades": 80,
             "financiamiento": 100,
-            "conocimiento_vendedor": 50,
+            "conocimiento_vendedor": 83.3,
             "cierre_seguimiento": 100,
-            "satisfaccion_general": null
+            "satisfaccion_general": 100
           },
           "tactico": {
             "cotizacion": 100,
@@ -63,7 +63,7 @@
             "descuentos": 100,
             "financiamiento_espontaneo": 100
           },
-          "composite": 84.9,
+          "composite": 92.5,
           "seguimiento_realizado": true
         },
         {
@@ -96,13 +96,13 @@
             "3.- Quincho para asados"
           ],
           "scores": {
-            "sala_ventas": null,
+            "sala_ventas": 100,
             "protocolo_atencion": 100,
             "indagacion_necesidades": 100,
             "financiamiento": 66.7,
-            "conocimiento_vendedor": null,
+            "conocimiento_vendedor": 100,
             "cierre_seguimiento": 100,
-            "satisfaccion_general": null
+            "satisfaccion_general": 100
           },
           "tactico": {
             "cotizacion": 100,
@@ -110,7 +110,7 @@
             "descuentos": 100,
             "financiamiento_espontaneo": 100
           },
-          "composite": 90.9,
+          "composite": 95,
           "seguimiento_realizado": true
         },
         {
@@ -135,13 +135,13 @@
           ],
           "elementos_diferenciadores": [],
           "scores": {
-            "sala_ventas": null,
+            "sala_ventas": 96.3,
             "protocolo_atencion": 100,
             "indagacion_necesidades": 80,
             "financiamiento": 100,
-            "conocimiento_vendedor": null,
+            "conocimiento_vendedor": 100,
             "cierre_seguimiento": 100,
-            "satisfaccion_general": null
+            "satisfaccion_general": 100
           },
           "tactico": {
             "cotizacion": 100,
@@ -149,7 +149,7 @@
             "descuentos": 100,
             "financiamiento_espontaneo": 100
           },
-          "composite": 96.4,
+          "composite": 97.4,
           "seguimiento_realizado": true
         },
         {
@@ -184,13 +184,13 @@
             "5.- Cowork"
           ],
           "scores": {
-            "sala_ventas": null,
+            "sala_ventas": 94.4,
             "protocolo_atencion": 100,
             "indagacion_necesidades": 60,
             "financiamiento": 100,
-            "conocimiento_vendedor": null,
+            "conocimiento_vendedor": 100,
             "cierre_seguimiento": 100,
-            "satisfaccion_general": null
+            "satisfaccion_general": 100
           },
           "tactico": {
             "cotizacion": 100,
@@ -198,7 +198,7 @@
             "descuentos": 100,
             "financiamiento_espontaneo": 100
           },
-          "composite": 92.7,
+          "composite": 95.2,
           "seguimiento_realizado": true
         },
         {
@@ -222,13 +222,13 @@
           ],
           "elementos_diferenciadores": [],
           "scores": {
-            "sala_ventas": null,
+            "sala_ventas": 90.7,
             "protocolo_atencion": 100,
             "indagacion_necesidades": 60,
             "financiamiento": 66.7,
-            "conocimiento_vendedor": null,
+            "conocimiento_vendedor": 91.7,
             "cierre_seguimiento": 100,
-            "satisfaccion_general": null
+            "satisfaccion_general": 83.3
           },
           "tactico": {
             "cotizacion": 100,
@@ -236,7 +236,7 @@
             "descuentos": 100,
             "financiamiento_espontaneo": 100
           },
-          "composite": 83.6,
+          "composite": 85.9,
           "seguimiento_realizado": true
         },
         {
@@ -263,13 +263,13 @@
           ],
           "elementos_diferenciadores": [],
           "scores": {
-            "sala_ventas": null,
+            "sala_ventas": 92.6,
             "protocolo_atencion": 92.9,
             "indagacion_necesidades": 60,
             "financiamiento": 66.7,
-            "conocimiento_vendedor": null,
+            "conocimiento_vendedor": 79.2,
             "cierre_seguimiento": 100,
-            "satisfaccion_general": null
+            "satisfaccion_general": 66.7
           },
           "tactico": {
             "cotizacion": 100,
@@ -277,7 +277,7 @@
             "descuentos": 100,
             "financiamiento_espontaneo": 100
           },
-          "composite": 81.7,
+          "composite": 80.7,
           "seguimiento_realizado": true
         },
         {
@@ -306,13 +306,13 @@
           ],
           "elementos_diferenciadores": [],
           "scores": {
-            "sala_ventas": null,
+            "sala_ventas": 94.4,
             "protocolo_atencion": 100,
             "indagacion_necesidades": 100,
             "financiamiento": 100,
-            "conocimiento_vendedor": null,
+            "conocimiento_vendedor": 100,
             "cierre_seguimiento": 100,
-            "satisfaccion_general": null
+            "satisfaccion_general": 100
           },
           "tactico": {
             "cotizacion": 100,
@@ -320,7 +320,7 @@
             "descuentos": 100,
             "financiamiento_espontaneo": 100
           },
-          "composite": 100,
+          "composite": 99.2,
           "seguimiento_realizado": true
         },
         {
@@ -346,13 +346,13 @@
           ],
           "elementos_diferenciadores": [],
           "scores": {
-            "sala_ventas": null,
+            "sala_ventas": 87,
             "protocolo_atencion": 100,
             "indagacion_necesidades": 100,
             "financiamiento": 66.7,
-            "conocimiento_vendedor": null,
+            "conocimiento_vendedor": 100,
             "cierre_seguimiento": 85,
-            "satisfaccion_general": null
+            "satisfaccion_general": 83.3
           },
           "tactico": {
             "cotizacion": 100,
@@ -360,7 +360,7 @@
             "descuentos": 100,
             "financiamiento_espontaneo": 100
           },
-          "composite": 86.8,
+          "composite": 88.3,
           "seguimiento_realizado": false
         }
       ],
